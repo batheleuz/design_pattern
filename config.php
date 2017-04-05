@@ -22,7 +22,7 @@ define ("USER_BD" , "root" );     //NOM_UTILISATEUR
 
 define ("PASS_BD" , "root" );     //MOT DE PASSE
 
-define ("URL" , "http://localhost/snt_drgt_sonatel/"); //ADDRESSE INDEX DE L'APPLICATION
+define ("URL" , "http://localhost/design_pattern/"); //ADDRESSE INDEX DE L'APPLICATION
 
 $_GLOBALS['vr'] = Database::getDb()->all("formVrByDir");
 

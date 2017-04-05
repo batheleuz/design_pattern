@@ -1,268 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/chosen-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/Z_DRG_ENCOURS_HPE_1456760.lis" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/Dictionnaire des indicateurs DINT.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/Détails entete Z derangement encours HPE.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/Détails entete requete releve HPE.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/FEB _Automat_Reporting CAC2401 .docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/FLASH Instances HPE S02.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/FLASH RELEVES HPE S02.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/MAQUETTE BASE DE DONNEE PMT (1).xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/specimen .xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/avatar/avatar1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/avatar/avatar2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/avatar/avatar3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/avatar/avatar4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/avatar/avatar5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/avatar/avatar6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/hourglass.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/snt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/image/squares.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/gfx/vml-radial-gradient.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/graphics/meteogram-symbols-30px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/graphics/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/graphics/skies.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/graphics/snow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/graphics/sun.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/images/ui-icons_444444_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/images/ui-icons_555555_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/images/ui-icons_777620_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/images/ui-icons_777777_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/images/ui-icons_cc0000_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/jsLinters/jscs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/markdown-navigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/snt_drgt_reporting.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/Autoloader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/AutreReportingBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/CodeCompressor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/Database.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/FormBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/GlobalReportingBuilder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/ReportingCRUD.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/UploadCodiFile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/classes/UploadDrgtFile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/controller/ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/controller/app.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/controller/dec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/app.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/chosen.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/dataTables/dataTables.bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/dataTables/dataTables.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/dataTables/dataTables.jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/dataTables/datatables.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/responsive.bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/css/w3css.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/services/PMT/reportings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/services/PMT/tmp_file.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/acces_adsl.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/agent_ori.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/categorie.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/csig.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/defaut.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/nd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/releve.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/ui.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt encours HPE .csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE S04.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE S05.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt relevés HPE .csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt_releves.lis" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/test.lis" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/element/drgt_releves.lis" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/css/highcharts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/highcharts-3d.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/highcharts-3d.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/highcharts-more.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/highcharts-more.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/highcharts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/highcharts.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/accessibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/accessibility.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/annotations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/annotations.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/boost-canvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/boost-canvas.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/boost.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/boost.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/broken-axis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/broken-axis.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/data.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/drilldown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/drilldown.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/exporting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/exporting.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/funnel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/funnel.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/gantt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/gantt.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/grid-axis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/grid-axis.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/heatmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/heatmap.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/no-data-to-display.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/no-data-to-display.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/offline-exporting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/offline-exporting.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/overlapping-datalabels.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/overlapping-datalabels.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/series-label.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/series-label.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/solid-gauge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/solid-gauge.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/static-scale.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/static-scale.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/stock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/stock.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/treemap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/treemap.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/xrange-series.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/modules/xrange-series.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/dark-blue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/dark-green.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/dark-unica.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/gray.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/grid-light.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/sand-signika.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/js/themes/skies.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/canvg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/canvg.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/jspdf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/jspdf.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/rgbcolor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/rgbcolor.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/svg2pdf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/lib/svg2pdf.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/accessibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/accessibility.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/annotations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/annotations.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/boost-canvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/boost-canvas.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/boost.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/boost.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/broken-axis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/broken-axis.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/data.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/drilldown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/drilldown.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/exporting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/exporting.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/funnel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/funnel.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/gantt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/gantt.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/grid-axis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/grid-axis.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/heatmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/heatmap.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/no-data-to-display.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/no-data-to-display.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/offline-exporting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/offline-exporting.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/overlapping-datalabels.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/overlapping-datalabels.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/series-label.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/series-label.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/solid-gauge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/solid-gauge.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/static-scale.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/static-scale.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/stock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/stock.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/treemap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/treemap.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/xrange-series.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/modules/xrange-series.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/dark-blue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/dark-green.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/dark-unica.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/gray.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/grid-light.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/sand-signika.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/code/themes/skies.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/Highcharts/graphics/earth.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/chosen.jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/createKPI.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/dataTables.bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/dataTables.jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/dataTables.responsive.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/daterange.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/dt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/AUTHORS.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/external/jquery/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.structure.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.structure.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/jquery-ui.theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery-ui/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/jquery.table2excel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/js/tableExport.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/calcul_functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/calcule.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/charts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/date_functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/reporting.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/reporting_functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/uploader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/modele/users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/ajax/codification.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/ajax/codificationScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/ajax/configKPI.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/ajax/configKPIScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/ajax/organisation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/ajax/organisationScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/ReportingFilesScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/configuration.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/createChartsScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/newReporting.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/newReportingScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/reportingFiles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/uploadForm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/uploadFormScript.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/template/app.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/vueCSS.html" />
+    <list default="true" id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="initial commit">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/utilisateur.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../design_pattern/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/config.php" afterPath="$PROJECT_DIR$/../design_pattern/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/controller/dec.php" afterPath="$PROJECT_DIR$/../design_pattern/controller/dec.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/../design_pattern/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/acces_adsl.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/acces_adsl.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/agent_ori.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/agent_ori.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/categorie.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/categorie.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/csig.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/csig.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/defaut.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/defaut.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/nd.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/nd.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/releve.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/releve.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/ui.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/codification/ui.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt encours HPE .csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt encours HPE .csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE S04.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE S04.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE S05.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE S05.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE.csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt releves HPE.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt relevés HPE .csv" afterPath="$PROJECT_DIR$/../design_pattern/datas/uploads/drgt/drgt relevés HPE .csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/js/dataTables.jquery-ui.min.js" afterPath="$PROJECT_DIR$/../design_pattern/js/dataTables.jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/js/dataTables.responsive.min.js" afterPath="$PROJECT_DIR$/../design_pattern/js/dataTables.responsive.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/js/daterange.js" afterPath="$PROJECT_DIR$/../design_pattern/js/daterange.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/modele/users.php" afterPath="$PROJECT_DIR$/../design_pattern/modele/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../design_pattern/vue/app/configuration.php" afterPath="$PROJECT_DIR$/../design_pattern/vue/app/configuration.php" />
     </list>
     <ignored path="snt_drgt_reporting.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -284,11 +47,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../design_pattern/modele/users.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utilisateur.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../design_pattern/vue/app/utilisateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../design_pattern/vue/template/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../design_pattern/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../design_pattern/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -297,13 +102,19 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../design_pattern" />
+    <option name="FORCE_PUSH_ALLOWED" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/../design_pattern/vue/template/app.php" />
+        <option value="$PROJECT_DIR$/../design_pattern/config.php" />
+        <option value="$PROJECT_DIR$/../design_pattern/modele/users.php" />
+        <option value="$PROJECT_DIR$/../design_pattern/vue/app/utilisateur.php" />
       </list>
     </option>
   </component>
@@ -328,7 +139,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -363,6 +174,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snt_drgt_reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snt_drgt_reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,7 +287,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -457,12 +300,34 @@
       <workItem from="1491389936936" duration="36000" />
       <workItem from="1491389986479" duration="3000" />
       <workItem from="1491390003956" duration="201000" />
-      <workItem from="1491390230396" duration="930000" />
+      <workItem from="1491390230396" duration="2847000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1491391617895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1491391617895</updated>
+    </task>
+    <task id="LOCAL-00002" summary="initial commit">
+      <created>1491392480131</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1491392480131</updated>
+    </task>
+    <task id="LOCAL-00003" summary="initial commit">
+      <created>1491392524509</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1491392524509</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1225000" />
+    <option name="totallyTimeSpent" value="3142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1440" height="900" extended-state="0" />
@@ -470,12 +335,13 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13662376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2879518" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49713877" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -498,6 +364,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="true" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -507,7 +378,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -537,6 +410,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -544,13 +418,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../design_pattern/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -582,10 +450,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../design_pattern/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../design_pattern/vue/template/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../design_pattern/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../design_pattern/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../design_pattern/vue/app/configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../design_pattern/modele/users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../design_pattern/vue/app/utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
