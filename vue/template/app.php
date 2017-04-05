@@ -42,12 +42,11 @@
 
             <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id']): ?>
                 <a href="<?= URL ?>app/users" class="w3-hover-none w3-hover-text-green w3-show-inline-block"><i
-                        class="fa fa-2x fa-user-o "></i></a>
+                        class="fa fa-2x fa-users"></i></a>
                 <a href="<?= URL ?>app/config"
                    class="w3-hover-none w3-hover-text-blue w3-show-inline-block <?= $menu_conf ?> "><i
                         class="fa fa-2x fa-cogs"></i></a>
             <?php endif; ?>
-
         </div>
     </div>
     <hr class="w3-margin-0">
