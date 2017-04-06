@@ -1,11 +1,6 @@
 {
-    "name": "Mass",
+    "name": "reporting hebdomadaire",
     "direction": "SONATEL",
-    "column": {
-        "origine": "PREIT ",
-        "acces_reseau": "HOME ",
-        "segment": "RE2 "
-    },
     "column_kpi": [
         {
             "id": "2",
@@ -38,6 +33,16 @@
             "id_indicateur": "4"
         },
         {
+            "id": "7",
+            "delai": "3",
+            "type_drgt": "adsl",
+            "delai_time": "DAY",
+            "nom": "",
+            "abreviation": "VR3J ADSL",
+            "type_kpi": "pourcentage",
+            "id_indicateur": "7"
+        },
+        {
             "id": "8",
             "delai": "24",
             "type_drgt": "adsl",
@@ -56,31 +61,21 @@
             "abreviation": "VR5J  TVO",
             "type_kpi": "pourcentage",
             "id_indicateur": "11"
-        },
-        {
-            "id": "15",
-            "delai": "24",
-            "type_drgt": "adsl",
-            "delai_time": "HOUR",
-            "nom": "",
-            "abreviation": "VR24H  ADSL",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "15"
-        },
-        {
-            "id": "16",
-            "delai": "3",
-            "type_drgt": "tvo",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR3J  TVO",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "16"
         }
     ],
     "dates": {
-        "start": "2017-01-01",
-        "end": "2017-03-31"
+        "start": "2017-01-23",
+        "end": "2017-01-29"
     },
-    "par": "month"
+    "par": "week",
+    "groupe_intervention": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+    ]
 }

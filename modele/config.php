@@ -9,7 +9,7 @@
 
 function  all( $table , $where = null ){
 
-    $rqt = "SELECT * FROM $table " ;
+    $rqt = "SELECT * FROM $table" ;
 
     if( $where != null )
         $rqt .= " WHERE $where " ;
@@ -19,7 +19,7 @@ function  all( $table , $where = null ){
 
 function count_code($colone){
 
-    $n=Database::getDb()->rqt("select count(*) as n from code where colonne ='$colone' ") ;
+    $n=Database::getDb()->rqt("select count(*) as n from code where colonne ='$colone'") ;
     return $n[0]['n'];
 
 }
