@@ -31,7 +31,7 @@ if( $_GET['controller'] ==  "ajax.php" ){
     function tag($text, $color)
     {
         return "<div class='w3-tag  $color ' style='padding:2px;margin:2px;'>
-            <div class='w3-tag $color w3-border w3-border-white'>" .
+            <div class='w3-tag $color w3-border w3-border-white' style='min-width:96px;'>" .
         "<span class='w3-small'>" . $text . " </span>" .
         "</div></div>";
     }

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/dec.php" afterPath="$PROJECT_DIR$/controller/dec.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/css/bootstrap-theme.min.css" />
@@ -25,7 +23,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dataTables.jquery-ui.min.js" afterPath="$PROJECT_DIR$/js/dataTables.jquery-ui.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dataTables.responsive.min.js" afterPath="$PROJECT_DIR$/js/dataTables.responsive.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/daterange.js" afterPath="$PROJECT_DIR$/js/daterange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/config.php" afterPath="$PROJECT_DIR$/modele/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/users.php" afterPath="$PROJECT_DIR$/modele/users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/configuration.php" afterPath="$PROJECT_DIR$/vue/app/configuration.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/utilisateur.php" afterPath="$PROJECT_DIR$/vue/app/utilisateur.php" />
@@ -50,49 +47,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="users.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modele/users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="792">
+              <caret line="33" column="92" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
-                <element signature="e#697#964#0#PHP" expanded="false" />
-                <element signature="e#970#1668#0#PHP" expanded="false" />
-                <marker date="1491411302000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
-                <marker date="1491411302000" expanded="true" signature="783:794" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="783:806" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:831" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:872" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:874" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:909" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:943" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:944" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="807:955" placeholder="..." />
-                <marker date="1491411302000" expanded="true" signature="909:943" placeholder="..." />
+                <element signature="e#994#1692#0#PHP" expanded="false" />
+                <marker date="1491482996000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
+                <marker date="1491482996000" expanded="true" signature="783:794" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="783:806" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:831" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:872" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:898" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:933" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:967" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:968" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="807:979" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="881:896" placeholder="..." />
+                <marker date="1491482996000" expanded="true" signature="933:967" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utilisateur.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utilisateur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/app/utilisateur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+            <state relative-caret-position="259">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#footer#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/template/app.php">
+      <file leaf-file-name="configuration.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/app/configuration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1416">
-              <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+            <state relative-caret-position="-14">
+              <caret line="10" column="41" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadFormScript.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/app/uploadFormScript.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="5" selection-end-column="4" />
+              <folding>
+                <marker date="1490180400000" expanded="true" signature="1970:2217" placeholder="..." />
+                <marker date="1490180400000" expanded="true" signature="1974:2071" placeholder="..." />
+                <marker date="1490180400000" expanded="true" signature="2008:2066" placeholder="..." />
+                <marker date="1490180400000" expanded="true" signature="2113:2209" placeholder="..." />
+                <marker date="1490180400000" expanded="true" signature="2149:2204" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,6 +138,7 @@
         <option value="$PROJECT_DIR$/vue/template/app.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/modele/config.php" />
+        <option value="$PROJECT_DIR$/vue/app/newReportingScript.php" />
         <option value="$PROJECT_DIR$/modele/users.php" />
         <option value="$PROJECT_DIR$/vue/app/utilisateur.php" />
       </list>
@@ -182,6 +199,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modele" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -264,7 +327,7 @@
       <workItem from="1491389986479" duration="3000" />
       <workItem from="1491390003956" duration="201000" />
       <workItem from="1491390230396" duration="25813000" />
-      <workItem from="1491473445648" duration="225000" />
+      <workItem from="1491473445648" duration="5491000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1491391617895</created>
@@ -308,11 +371,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491408785948</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Formulaire d'ajout d'utilisateur ( En dev )">
+      <created>1491473733767</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1491473733767</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26333000" />
+    <option name="totallyTimeSpent" value="31599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1440" height="900" extended-state="0" />
@@ -320,14 +390,14 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13805436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -368,19 +438,19 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
-            <element signature="e#697#964#0#PHP" expanded="false" />
-            <element signature="e#970#1668#0#PHP" expanded="false" />
-            <marker date="1491411302000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
-            <marker date="1491411302000" expanded="true" signature="783:794" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="783:806" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:831" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:872" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:874" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:909" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:943" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:944" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:955" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="909:943" placeholder="..." />
+            <element signature="e#994#1692#0#PHP" expanded="false" />
+            <marker date="1491482996000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
+            <marker date="1491482996000" expanded="true" signature="783:794" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="783:806" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:831" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:872" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:898" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:933" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:967" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:968" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:979" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="881:896" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="933:967" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -391,19 +461,19 @@
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
-            <element signature="e#697#964#0#PHP" expanded="false" />
-            <element signature="e#970#1668#0#PHP" expanded="false" />
-            <marker date="1491411302000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
-            <marker date="1491411302000" expanded="true" signature="783:794" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="783:806" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:831" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:872" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:874" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:909" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:943" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:944" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:955" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="909:943" placeholder="..." />
+            <element signature="e#994#1692#0#PHP" expanded="false" />
+            <marker date="1491482996000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
+            <marker date="1491482996000" expanded="true" signature="783:794" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="783:806" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:831" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:872" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:898" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:933" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:967" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:968" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:979" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="881:896" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="933:967" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -413,6 +483,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -421,6 +492,7 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor>
             <js_state />
@@ -439,31 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="240">
-            <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="216">
-            <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
         </state>
       </provider>
     </entry>
@@ -478,13 +525,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-479">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/app/configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -513,47 +554,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="71" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
           <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-            <element signature="e#697#964#0#PHP" expanded="false" />
-            <element signature="e#970#1668#0#PHP" expanded="false" />
-            <marker date="1491411302000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
-            <marker date="1491411302000" expanded="true" signature="783:794" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="783:806" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:831" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:872" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:874" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:909" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:943" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:944" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="807:955" placeholder="..." />
-            <marker date="1491411302000" expanded="true" signature="909:943" placeholder="..." />
+            <marker date="1491410755000" expanded="true" signature="145:159" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1491410755000" expanded="true" signature="337:392" placeholder="select count... code" />
+            <marker date="1491410755000" expanded="true" signature="913:974" placeholder="SELECT * FRO... kpi" />
+            <marker date="1491410755000" expanded="true" signature="1575:1658" placeholder="SELECT * FRO... groupe_intervention" />
+            <marker date="1491410755000" expanded="true" signature="2025:2062" placeholder="SELECT * FRO... ui" />
+            <marker date="1491410755000" expanded="true" signature="3861:4025" placeholder="..." />
+            <marker date="1491410755000" expanded="true" signature="3881:4003" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/app/utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/template/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1416">
-          <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -562,6 +571,111 @@
         <state relative-caret-position="432">
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="240">
+            <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="216">
+            <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/app/newReportingScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="87" column="142" selection-start-line="87" selection-start-column="142" selection-end-line="87" selection-end-column="142" />
+          <folding>
+            <marker date="1491478903000" expanded="true" signature="5222:5238" placeholder="..." />
+            <marker date="1491478903000" expanded="true" signature="8015:8049" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/template/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/app/uploadFormScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <marker date="1490180400000" expanded="true" signature="1970:2217" placeholder="..." />
+            <marker date="1490180400000" expanded="true" signature="1974:2071" placeholder="..." />
+            <marker date="1490180400000" expanded="true" signature="2008:2066" placeholder="..." />
+            <marker date="1490180400000" expanded="true" signature="2113:2209" placeholder="..." />
+            <marker date="1490180400000" expanded="true" signature="2149:2204" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/app/utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#footer#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/app/configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="92" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="e#994#1692#0#PHP" expanded="false" />
+            <marker date="1491482996000" expanded="true" signature="226:266" placeholder="SELECT * FRO... groupe_intervention" />
+            <marker date="1491482996000" expanded="true" signature="783:794" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="783:806" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:831" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:872" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:898" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:933" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:967" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:968" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="807:979" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="881:896" placeholder="..." />
+            <marker date="1491482996000" expanded="true" signature="933:967" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

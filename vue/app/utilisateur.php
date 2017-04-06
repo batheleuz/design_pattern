@@ -28,16 +28,18 @@
         </div>
         <div class="w3-threequarter w3-responsive" style="border-left: 1px solid #ccc ;">
             <table class="w3-table-all w3-hoverable ">
-                <thead class="w3-center"><th>Avatar</th><th>Nom</th><th>Prénom</th><th>Login</th> <th>Email</th> <th>Privilèges</th></thead>
+                <thead class="w3-center"><th>Avatar</th><th>Prénom Nom</th><th>Login</th><th>Privilèges</th> <th>action</th> </thead>
                 <tbody>
                    <?php  foreach ( Database::getDb()->all('user' , "service" , $_SESSION['service']['id'] ) as $user ): ?>
                     <tr style="cursor: pointer;">
                         <td><img src="<?= URL."/image/avatar/".$user['icon']; ?>" class="w3-circle" style="height:50px;"></td>
-                        <td><?= $user['nom'];    ?></td>
-                        <td><?= $user['prenom']; ?></td>
+                        <td><?= $user['prenom']." ".$user['nom']; ?></td>
                         <td><?= $user['login'];  ?></td>
-                        <td><?= $user['email'];  ?></td>
                         <td><?= privilege($user['privileges']); ?></td>
+                        <td>
+                            <a class="w3-hover-text-blue  w3-xlarge"> <i class="fa fa-edit"></i> </a>
+                            <a class="w3-hover-text-red w3-xlarge"> <i class="fa fa-trash"></i> </a>
+                        </td>
                     </tr>
                    <?php endforeach; ?>
                 </tbody>
@@ -53,13 +55,14 @@
                   class="w3-btn w3-light-gray w3-hover-black w3-display-topright"> x </span>
                 <h3> NOUVEAU UTILISATEUR </h3>
             </header>
-            <div class="w3-container">
-                <form action="" id="add_user" >
+            <div id="rsl"></div>
+            <form action="" id="add_user" >
+                 <div class="w3-container">
                     <div class="w3-section">
                         <div class="w3-row">
                             <div class="w3-quarter"> <p><label><b>AVATAR</b></label> </div>
                             <div class="w3-threequarter w3-padding-bottom">
-                                <input type="text" name="avatar" >
+                                <input type="hidden" name="avatar" >
                                 <ol id="selectable">
                                     <?php for($i = 1 ; $i <= 6 ; $i++  ): ?>
                                         <li style="width:50px;height:50px;" class="w3-col ui-state-default w3-border" value ="<?= 'avatar'.$i.'.png'; ?>" >
@@ -88,36 +91,43 @@
                         <div class="w3-row">
                             <div class="w3-quarter"><p><label><b>PRIVILEGES</b></label> </div>
                             <div class="w3-threequarter">
+                                <input type="hidden" name="privileges" value="0" >
                                 <p><label for="checkbox-1"> reporting </label>
-                                <input class="privileges" type="checkbox" value="1" name="reporting" id="checkbox-1" >
+                                <input class="privileges" type="checkbox" value="1" id="checkbox-1" >
                                 <label for="checkbox-2">fichier</label>
-                                <input class="privileges" type="checkbox" value="2" name="fichier" id="checkbox-2" >
+                                <input class="privileges" type="checkbox" value="2" id="checkbox-2" >
                                 <label for="checkbox-3">admin</label>
-                                <input class="privileges" type="checkbox" value="3" name="admin" id="checkbox-3" >
+                                <input class="privileges" type="checkbox" value="3" id="checkbox-3" >
                             </div>
                         </div>
                     </div>
             </div>
-            <footer class="w3-container w3-light-gray  w3-padding-bottom w3-padding-top ">
+                 <footer class="w3-container w3-light-gray  w3-padding-bottom w3-padding-top ">
                 <div class="w3-right">
                     <a class="w3-light-gray w3-padding-right w3-text-teal" id="chargement" style="display:none;"> <i class="fa fa-spinner fa-pulse"></i> </a>
                     <button class="w3-btn w3-teal"><i class="fa fa-plus-square"></i> ajouter </button>
                 </div>
             </footer>
-            <input type="hidden" value="add_user" name="action" >
+                 <input type="hidden" value="add_user" name="action" >
             </form>
         </div>
     </div>
 </div>
 
 <script>
+    function verbose(color, txt ){
+        return  "<div class='w3-panel w3-animate-fade "+color+" '> " +
+                "<span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span>"+
+                "<p>"+txt+"</p></div>" ;
+    }
+
     $(document).ready( function() {
         $( "#selectable" ).selectable({
             selected: function( event, ui ){
                 $("input[name='avatar']").val($(ui.selected).attr("value"));
             }
         });
-        $( "input[type='checkbox']" ).checkboxradio();
+        $("input[type='checkbox']").checkboxradio();
         $(".privileges").on( "change" , handlePrivChange );
     });
     $("#add_user").submit( function ( event ){
@@ -128,11 +138,22 @@
             type: "POST", data: new FormData(this),
             contentType: false, cache: false, processData:false
         }).done(function( data ){
-            console.log(data);
+           if(parseInt(data) == 0)
+               $("#rsl").html(verbose("w3-red" , "Cet utilisateur existe déjà." ));
+           else if(parseInt(data) > 0)
+               $("#rsl").html(verbose("w3-teal" , "Utilisateur ajouté avec succès." ));
+
+           document.getElementById("chargement").style.display = "none" ;
         });
     });
-
+    
     function handlePrivChange( e ){
+
+        var val = $("input[name='privileges']").val(),
+            targetVal = e.target.value ;
+
+        if( parseInt(targetVal) > parseInt(val) )
+            $("input[name='privileges']").val(targetVal);
 
     }
 </script>
