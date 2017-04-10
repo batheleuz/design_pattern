@@ -31,14 +31,14 @@
                 <thead class="w3-center"><th>Avatar</th><th>Prénom Nom</th><th>Login</th><th>Privilèges</th> <th>action</th> </thead>
                 <tbody>
                    <?php  foreach ( Database::getDb()->all('user' , "service" , $_SESSION['service']['id'] ) as $user ): ?>
-                    <tr style="cursor: pointer;">
+                    <tr  id="<?= $user['id']; ?>" style="cursor: pointer;">
                         <td><img src="<?= URL."/image/avatar/".$user['icon']; ?>" class="w3-circle" style="height:50px;"></td>
                         <td><?= $user['prenom']." ".$user['nom']; ?></td>
                         <td><?= $user['login'];  ?></td>
                         <td><?= privilege($user['privileges']); ?></td>
                         <td>
-                            <a class="w3-hover-text-blue  w3-xlarge"> <i class="fa fa-edit"></i> </a>
-                            <a class="w3-hover-text-red w3-xlarge"> <i class="fa fa-trash"></i> </a>
+                            <a class="w3-hover-text-blue modif w3-xlarge"> <i class="fa fa-edit"></i> </a>
+                            <a class="w3-hover-text-red suppr w3-xlarge"> <i class="fa fa-trash"></i> </a>
                         </td>
                     </tr>
                    <?php endforeach; ?>
@@ -113,7 +113,6 @@
         </div>
     </div>
 </div>
-
 <script>
     function verbose(color, txt ){
         return  "<div class='w3-panel w3-animate-fade "+color+" '> " +
@@ -130,6 +129,7 @@
         $("input[type='checkbox']").checkboxradio();
         $(".privileges").on( "change" , handlePrivChange );
     });
+
     $("#add_user").submit( function ( event ){
         event.preventDefault();
         document.getElementById("chargement").style.display = "inline" ;
@@ -140,13 +140,22 @@
         }).done(function( data ){
            if(parseInt(data) == 0)
                $("#rsl").html(verbose("w3-red" , "Cet utilisateur existe déjà." ));
+
            else if(parseInt(data) > 0)
                $("#rsl").html(verbose("w3-teal" , "Utilisateur ajouté avec succès." ));
 
            document.getElementById("chargement").style.display = "none" ;
         });
     });
-    
+
+    $(".modif").click(function () {
+
+    });
+
+    $(".suppr").click(function () {
+
+    });
+
     function handlePrivChange( e ){
 
         var val = $("input[name='privileges']").val(),
@@ -154,6 +163,5 @@
 
         if( parseInt(targetVal) > parseInt(val) )
             $("input[name='privileges']").val(targetVal);
-
     }
 </script>

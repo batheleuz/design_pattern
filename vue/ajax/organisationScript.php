@@ -162,7 +162,7 @@
 
                 $("#gi_rsl").html(verbose( "w3-teal", " Création du groupe réussis."));
                 document.getElementById('modal_add_gi').style.display='none';
-                $("#list_gi").append("<tr><td><i class='fa fa-spin fa-pulse'></i></td><td><td></tr>");
+                $("#list_gi").append("<tr><td><i class='fa fa-spinner fa-pulse'></i></td><td><td></tr>");
                 window.setTimeout( function(){
                     $.post("<?= URL ?>ajax/config" , { action : "list_table" , table : "groupe_intervention" })
                         .done(function(data){
@@ -199,7 +199,7 @@
 
                 $("#ui_rsl").html(verbose( "w3-teal", " Création de l'ui réussis."));
                 document.getElementById('modal_add_ui').style.display='none';
-                $("#list_ui").append("<i class='fa fa-spin fa-2x fa-pulse'></i>");
+                $("#list_ui").append("<i class='fa fa-spinner fa-2x fa-pulse'></i>");
 
                 window.setTimeout( function(){
                     $.post("<?= URL; ?>/ajax/config" , { action : "list_table" , table : "ui" })
@@ -242,7 +242,7 @@
 
                 $("#ui_rsl").html(verbose( "w3-teal", " Modifications enregistrées."));
                 document.getElementById('modal_add_existant_ui').style.display='none';
-                $("#list_ui").append("<i class='fa fa-spin fa-2x fa-pulse'></i>");
+                $("#list_ui").append("<i class='fa fa-spinner fa-2x fa-pulse'></i>");
 
                 window.setTimeout( function(){
                     $.post("<?= URL; ?>/ajax/config" , { action : "list_table" , table : "groupe_intervention" })
