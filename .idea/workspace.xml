@@ -4,7 +4,6 @@
     <list default="true" id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Database.php" afterPath="$PROJECT_DIR$/classes/Database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/dec.php" afterPath="$PROJECT_DIR$/controller/dec.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/css/bootstrap-theme.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" />
@@ -23,9 +22,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dataTables.jquery-ui.min.js" afterPath="$PROJECT_DIR$/js/dataTables.jquery-ui.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dataTables.responsive.min.js" afterPath="$PROJECT_DIR$/js/dataTables.responsive.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/daterange.js" afterPath="$PROJECT_DIR$/js/daterange.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/users.php" afterPath="$PROJECT_DIR$/modele/users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/configuration.php" afterPath="$PROJECT_DIR$/vue/app/configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/utilisateur.php" afterPath="$PROJECT_DIR$/vue/app/utilisateur.php" />
     </list>
     <ignored path="snt_drgt_reporting.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -388,7 +385,7 @@
       <workItem from="1491390003956" duration="201000" />
       <workItem from="1491390230396" duration="25813000" />
       <workItem from="1491473445648" duration="7785000" />
-      <workItem from="1491826854207" duration="6602000" />
+      <workItem from="1491826854207" duration="6648000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1491391617895</created>
@@ -453,11 +450,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491826996986</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="function suppr user">
+      <created>1491837491453</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1491837491453</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40495000" />
+    <option name="totallyTimeSpent" value="40541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1280" height="1024" extended-state="6" />
@@ -502,7 +506,8 @@
     <MESSAGE value="Formulaire d'ajout d'utilisateur ( En dev )" />
     <MESSAGE value="Formulaire d'ajout d'utilisateur ( finilisé )" />
     <MESSAGE value="10 / 04 / 2017" />
-    <option name="LAST_COMMIT_MESSAGE" value="10 / 04 / 2017" />
+    <MESSAGE value="function suppr user" />
+    <option name="LAST_COMMIT_MESSAGE" value="function suppr user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
