@@ -74,11 +74,11 @@
                         </div>
                         <div class="w3-row">
                             <div class="w3-quarter"> <p><label><b>NOM</b></label> </div>
-                            <div class="w3-threequarter"><input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Entrer le nom" name="nom" required></div>
+                            <div class="w3-threequarter"><input onkeyup="generateLogin()" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Entrer le nom" name="nom" required></div>
                         </div>
                         <div class="w3-row">
                             <div class="w3-quarter"><p><label><b>PRENOM</b></label> </div>
-                            <div class="w3-threequarter"><input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Entrer le prenom" name="prenom" required></div>
+                            <div class="w3-threequarter"><input onkeyup="generateLogin()" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Entrer le prenom" name="prenom" required></div>
                         </div>
                         <div class="w3-row">
                             <div class="w3-quarter"><p><label><b>EMAIL</b></label> </div>
@@ -149,12 +149,48 @@
     });
 
     $(".modif").click(function () {
-
+       var  id =  $(this).parents("tr").attr("id");
+       /* $.ajax("<?= URL ?>ajax/users", { action:"modUser" , id:'id' })
+            .done(function( data ){
+            console.log(data);
+        }); */
     });
 
     $(".suppr").click(function () {
-
+        var dialogBox = $("#dialog-confirm") ;
+        var  id =  $(this).parents("tr").attr("id");
+        dialogBox.html("<h4 class='w3-center w3-text-red'>Voulez vrémment supprimer cet utilisateur?</h4>");
+        dialogBox.dialog({
+            resizable:false,modal:true , title: "Suppression",
+            position: { my: "center center", at: "center center", of: $('body') },
+            show: { effect: "fade", duration: 1000 },
+            buttons: {
+                "Supprimer": function () {
+                    dialogBox.html("<h4 class='w3-center'><i class='fa fa-2w fa-spinner fa-pulse'></i></h4>");
+                    $.post( "<?= URL ?>ajax/users", { action:"supprUser", id:id })
+                        .done(function( data ){
+                            console.log(data);
+                           if( data == "1" ){
+                               window.setTimeout(function () {
+                                 dialogBox.html(verbose("w3-teal" , "Suppression réussi." ));
+                               } , 1000 );
+                           }else
+                               dialogBox.html(verbose("w3-red" , "Suppression impossible." ));
+                           
+                        });
+                } ,
+                "Annuler" : function(){
+                    $(this).dialog("close");
+                }
+            }
+        })
     });
+
+    function generateLogin(){
+        var nom = $("input[name='nom']").val().toLowerCase() ,
+            prenom = $("input[name='prenom']").val().toLowerCase();
+        $("input[name='login']").val( nom.replace(/ /g, "_")+"_"+prenom.replace(/ /g, "_") );
+    }
 
     function handlePrivChange( e ){
 
@@ -164,4 +200,5 @@
         if( parseInt(targetVal) > parseInt(val) )
             $("input[name='privileges']").val(targetVal);
     }
+
 </script>

@@ -71,7 +71,6 @@ class Database{
          $stmt->bindParam(':id', $id, PDO::PARAM_STR);
          $stmt->execute();
          return true;
-
     }
 
      /**

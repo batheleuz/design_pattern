@@ -10,7 +10,7 @@ if( $_GET['controller'] ==  "ajax.php" ){
 
    extract($_POST);
 
-   if( $action  ==  "add_user" ){
+   if( $action  ==  "add_user" ) {
 
        $us = Database::getDb()->rqt("SELECT * FROM user WHERE  login='$login' ");
 
@@ -25,11 +25,21 @@ if( $_GET['controller'] ==  "ajax.php" ){
            echo $id_us;
        endif;
    }
+   else if( $action  == "supprUser" ) {
+
+       if( $_SESSION['user']['id'] != $id  ){
+           Database::getDb()->suppr("user" ,"id" , $id);
+           echo 1 ;
+
+       } else
+           echo 0 ;
+
+   }
 
 }else {
 
-    function tag($text, $color)
-    {
+    function tag($text, $color){
+
         return "<div class='w3-tag  $color ' style='padding:2px;margin:2px;'>
             <div class='w3-tag $color w3-border w3-border-white' style='min-width:96px;'>" .
         "<span class='w3-small'>" . $text . " </span>" .
