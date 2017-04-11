@@ -4,8 +4,8 @@ function page (){
     ob_start();
 
     ?>
-        <link rel="stylesheet" href="<?= URL; ?>css/dataTables/dataTables.min.css">
-        <link rel="stylesheet" href="<?= URL; ?>css/dataTables/dataTables.jquery-ui.min.css">
+        <link rel="stylesheet" href="<?= ASSETS; ?>css/dataTables/dataTables.min.css">
+        <link rel="stylesheet" href="<?= ASSETS; ?>css/dataTables/dataTables.jquery-ui.min.css">
         <div class="w3-card w3-animate-left" id="reporting-view">
             <div class="w3-container">
                 <h1><i class="fa fa-calendar"></i> Reportings du Service. </h1>
@@ -86,9 +86,9 @@ function page (){
 
         </div>
 
-     <script type="text/javascript" src="<?= URL; ?>js/dataTables.min.js"></script>
-     <script type="text/javascript" src="<?= URL; ?>js/dataTables.jquery-ui.min.js"></script>
-     <script type="text/javascript" src="<?= URL; ?>js/dt.js"></script>
+     <script type="text/javascript" src="<?= ASSETS; ?>js/dataTables.min.js"></script>
+     <script type="text/javascript" src="<?= ASSETS; ?>js/dataTables.jquery-ui.min.js"></script>
+     <script type="text/javascript" src="<?= ASSETS; ?>js/dt.js"></script>
 
     <?php
 

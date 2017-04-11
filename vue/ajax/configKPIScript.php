@@ -1,7 +1,7 @@
 <script>
     $(document).ready( function() {
     var loader ="<div class='loader'>"+
-    "<img src='<?= URL ?>image/squares.gif' class='w3-round img-loader' /> "+
+    "<img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader' /> "+
     "</div>";
 
     $("body").append(loader);

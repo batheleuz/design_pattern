@@ -1463,14 +1463,14 @@ var jsPDF = (function(global) {
 
 		/**
 		 * Object exposing internal API to plugins
-		 * @public
+		 * @assets
 		 */
 		API.internal = {
 			'pdfEscape' : pdfEscape,
 			'getStyle' : getStyle,
 			/**
 			 * Returns {FontObject} describing a particular font.
-			 * @public
+			 * @assets
 			 * @function
 			 * @param {String} fontName (Optional) Font's family name
 			 * @param {String} fontStyle (Optional) Font's style variation name (Example:"Italic")
@@ -2577,7 +2577,7 @@ var jsPDF = (function(global) {
 		 * Returns an object - a tree of fontName to fontStyle relationships available to
 		 * active PDF document.
 		 *
-		 * @public
+		 * @assets
 		 * @function
 		 * @returns {Object} Like {'times':['normal', 'italic', ... ], 'arial':['normal', 'bold', ... ], ... }
 		 * @methodOf jsPDF#
@@ -3001,7 +3001,7 @@ var jsPDF = (function(global) {
 	 * jsPDF.API.events['addFont'] = function(added_font_object){ 'this' is API object }
 	 *
 	 * @static
-	 * @public
+	 * @assets
 	 * @memberOf jsPDF
 	 * @name API
 	 *

@@ -5,18 +5,18 @@
 <title> REPORTING </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?= URL ?>css/w3css.min.css">
-<link rel="stylesheet" href="<?= URL ?>css/app.css">
-<link rel="stylesheet" href="<?= URL ?>js/jquery-ui/jquery-ui.min.css">
-<link rel="stylesheet" href="<?= URL ?>js/jquery-ui/jquery-ui.structure.min.css">
-<link rel="stylesheet" href="<?= URL ?>js/jquery-ui/jquery-ui.theme.min.css">
-<link rel="stylesheet" href="<?= URL ?>/css/chosen.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>css/w3css.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>css/app.css">
+<link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.theme.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>/assets/css/chosen.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="<?= URL; ?>js/jquery.js"></script>
-<script type="text/javascript" src="<?= URL; ?>js/app.js"></script>
-<script type="text/javascript" src="<?= URL; ?>js/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?= URL; ?>js/jquery.table2excel.js"></script>
-<script type="text/javascript" src="<?= URL ?>js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="<?= ASSETS; ?>js/jquery.js"></script>
+<script type="text/javascript" src="<?= ASSETS; ?>js/app.js"></script>
+<script type="text/javascript" src="<?= ASSETS; ?>js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?= ASSETS; ?>js/jquery.table2excel.js"></script>
+<script type="text/javascript" src="<?= ASSETS ?>js/chosen.jquery.min.js"></script>
 <body class="w3-light-grey">
 <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
     <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i> Menu
@@ -25,7 +25,7 @@
 </div>
 <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidenav"><br>
     <div class="w3-container w3-row-margin">
-        <div class="w3-col s4 w3-center"><img src="<?= URL ?>image/avatar/<?= $_SESSION['user']['icon'] ?>" alt=""
+        <div class="w3-col s4 w3-center"><img src="<?= ASSETS ?>image/avatar/<?= $_SESSION['user']['icon'] ?>" alt=""
                                               class="w3-circle" style="width:80%">
             <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3 )
                 echo " <h6 class=' w3-text-red '> [ Admin ] </h6>";

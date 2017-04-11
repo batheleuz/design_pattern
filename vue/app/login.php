@@ -3,17 +3,17 @@
 <title> CONNEXION </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?= URL ?>css/w3css.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>css/w3css.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     body{
-        background-image: url("<?= URL ?>image/12.png");
+        background-image: url("<?= ASSETS ?>image/12.png");
         background-repeat: no-repeat;
         background-size: auto, 100%;
     }
 </style>
 <body>
- <!-- img class="w3-image" src="<?= URL ?>image/12.jpg" alt="" style="min-width:500px;width:100%;height:100%;"  -->
+ <!-- img class="w3-image" src="<?= ASSETS ?>image/12.jpg" alt="" style="min-width:500px;width:100%;height:100%;"  -->
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
         <div class="w3-white w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
             <h1 class="w3-xlarge">Connexion</h1>

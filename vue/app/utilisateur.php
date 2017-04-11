@@ -32,7 +32,7 @@
                 <tbody>
                    <?php  foreach ( Database::getDb()->all('user' , "service" , $_SESSION['service']['id'] ) as $user ): ?>
                     <tr  id="<?= $user['id']; ?>" style="cursor: pointer;">
-                        <td><img src="<?= URL."/image/avatar/".$user['icon']; ?>" class="w3-circle" style="height:50px;"></td>
+                        <td><img src="<?= ASSETS."/image/avatar/".$user['icon']; ?>" class="w3-circle" style="height:50px;"></td>
                         <td><?= $user['prenom']." ".$user['nom']; ?></td>
                         <td><?= $user['login'];  ?></td>
                         <td><?= privilege($user['privileges']); ?></td>
@@ -66,7 +66,7 @@
                                 <ol id="selectable">
                                     <?php for($i = 1 ; $i <= 6 ; $i++  ): ?>
                                         <li style="width:50px;height:50px;" class="w3-col ui-state-default w3-border" value ="<?= 'avatar'.$i.'.png'; ?>" >
-                                            <img src="<?= URL.'image/avatar/avatar'.$i.'.png'?>"  class="w3-circle" style="height:100%;">
+                                            <img src="<?= ASSETS.'image/avatar/avatar'.$i.'.png'?>"  class="w3-circle" style="height:100%;">
                                         </li>
                                     <?php endfor; ?>
                                 </ol>
@@ -114,6 +114,7 @@
     </div>
 </div>
 <script>
+    
     function verbose(color, txt ){
         return  "<div class='w3-panel w3-animate-fade "+color+" '> " +
                 "<span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span>"+

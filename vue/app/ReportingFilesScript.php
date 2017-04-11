@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="<?= URL ?>js/Highcharts/code/css/highcharts.css">
-<script src="<?= URL ?>js/Highcharts/code/js/highcharts.js"></script>
-<script src="<?= URL ?>js/Highcharts/code/js/highcharts-more.js"></script>
-<script src="<?= URL ?>js/Highcharts/code/js/modules/data.js"></script>
-<script src="<?= URL ?>js/Highcharts/code/js/modules/exporting.js"></script>
+    <link rel="stylesheet" href="<?= ASSETS ?>js/Highcharts/code/css/highcharts.css">
+<script src="<?= ASSETS ?>js/Highcharts/code/js/highcharts.js"></script>
+<script src="<?= ASSETS ?>js/Highcharts/code/js/highcharts-more.js"></script>
+<script src="<?= ASSETS ?>js/Highcharts/code/js/modules/data.js"></script>
+<script src="<?= ASSETS ?>js/Highcharts/code/js/modules/exporting.js"></script>
 <script>
-    var loader = "<div class='loader'> <img src='<?= URL; ?>image/squares.gif' class='w3-round img-loader' /></div>",
+    var loader = "<div class='loader'> <img src='<?= ASSETS; ?>image/squares.gif' class='w3-round img-loader' /></div>",
         liste_gi = <?= json_encode($_SESSION['groupe_intervention']) ?>,
         chartsTypeActive , projectActive , reportingActive ;
 

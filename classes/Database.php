@@ -166,30 +166,6 @@ class Database{
     }
 
 
-    public static function compress_html($compress) {
-        $search = array(
-            '/\n/',                 // replace end of line by a space
-            '/\>[^\S ]+/s',         // strip whitespaces after tags, except space
-            '/[^\S ]+\</s',         // strip whitespaces before tags, except space
-            '/\> \</s',
-            '/(\s)+/s',             // shorten multiple whitespace sequences
-            '/<!--(.|\s)*?-->/', // supprime les commentaires html
-            '!/\*[^*]*\*+([^/][^*]*\*+)*/!' // supprime les commentaires css
-        );
-
-        $replace = array(
-            ' ',
-            '>',
-            '<',
-            '><',
-            '\\1',
-            '',
-            ''
-        );
-        return preg_replace($search, $replace, $compress);
-    }
-    
-
 } //Fin Database
 
 

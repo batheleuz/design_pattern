@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-    var loader ="<div class='loader'><img src='<?= URL ?>image/squares.gif' class='w3-round img-loader' /></div>";
+    var loader ="<div class='loader'><img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader' /></div>";
     
     function verbose(color, txt ){
         return "<div class='w3-panel w3-leftbar "+color+" '> <span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span>"+

@@ -138,7 +138,7 @@ function page  ($pageTitle )
 <?php endif; ?>
     <div id="result" class=" w3-card-4 w3-animate-right" style="display:none;"></div>
 
-    <script src="<?= URL ?>js/jquery.table2excel.js"></script>
+    <script src="<?= ASSETS ?>js/jquery.table2excel.js"></script>
 
     <?php
     return ob_get_clean();

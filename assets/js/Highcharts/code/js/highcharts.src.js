@@ -13915,7 +13915,7 @@
             },
 
             /**
-             * Set the public chart properties. This is done before and after the pre-render
+             * Set the assets chart properties. This is done before and after the pre-render
              * to determine margin sizes
              */
             setChartSize: function(skipAxes) {

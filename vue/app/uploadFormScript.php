@@ -15,7 +15,7 @@
 
     e.preventDefault();
 
-      var loader = "<div class='loader'><img src='<?= URL ?>image/squares.gif' class='w3-round img-loader' /></div>";
+      var loader = "<div class='loader'><img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader' /></div>";
 
    if ( $("input[name='fichier_encours']").val().length === 0  && $("input[name='fichier_releves']").val().length === 0 ){
 

@@ -14,15 +14,17 @@ Autoloader::register();
 
 /* * FIN ************************************ */
 
-define ("ADD_BD" , "localhost");  //ADRESSE DU SERVER DE LA BASE DE DONNÉES
+define ("ADD_BD" , "localhost");
 
-define ("NOM_BD" , "reporting" ); //NOM DE LA BASE DE DONNÉES
+define ("NOM_BD" , "reporting" );
 
-define ("USER_BD" , "root" );     //NOM_UTILISATEUR
+define ("USER_BD" , "root" );
 
-define ("PASS_BD" , "root" );     //MOT DE PASSE
+define ("PASS_BD" , "root" );
 
-define ("URL" , "http://localhost/design_pattern/"); //ADDRESSE INDEX DE L'APPLICATION
+define ("URL" , "http://localhost/design_pattern/");
+
+define ("ASSETS" , URL."assets/");
 
 $_GLOBALS['vr'] = Database::getDb()->all("formVrByDir");
 

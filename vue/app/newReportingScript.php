@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-    var loader ="<div class='loader'><img src='<?= URL ?>image/squares.gif' class='w3-round img-loader'/></div>";
+    var loader ="<div class='loader'><img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader'/></div>";
     
     var selected_col = null;
     
@@ -196,7 +196,7 @@
     
     $("#form").submit(function( event ) {
         event.preventDefault();
-        var loader = "<div class='loader'><img src='<?= URL ?>image/hourglass.gif' class='w3-round img-loader' /></div>";
+        var loader = "<div class='loader'><img src='<?= ASSETS ?>image/hourglass.gif' class='w3-round img-loader' /></div>";
 
         if( formValidator () ){
 
