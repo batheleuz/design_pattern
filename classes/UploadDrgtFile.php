@@ -131,7 +131,7 @@ class UploadDrgtFile {
 
                     $entete[$i] = $champ;
 
-                    var_dump($entete);
+                    //var_dump($entete);
 
                 }
 
@@ -262,16 +262,17 @@ class UploadDrgtFile {
     
     public function feedback(){
 
-       if( $this->nbre_doublon != 0 or $this->nbre_enrg != 0  ){
+       if( $this->nbre_doublon != 0 || $this->nbre_enrg != 0  )
+           $txte = "Enregistrement du fichier ".$this->fichier. " réussi";
+       else
+           $txte = "Une erreur s'est produit lors du chargement du fichier";
 
-        return array( 
-                'code' => 1, 
-                'texte' =>"Enregistrement du fichier ".$this->fichier. " réussi",
-                'doublon' => $this->nbre_doublon , 
-                'enrg' => $this->nbre_enrg 
-                );
-       }
-       // else do nothing     
+        return array(
+            'code' => 1,
+            'texte' =>$txte,
+            'doublon' => $this->nbre_doublon ,
+            'enrg' => $this->nbre_enrg
+        );
     }
     
 }

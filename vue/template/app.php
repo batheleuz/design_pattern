@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.structure.min.css">
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.theme.min.css">
-<link rel="stylesheet" href="<?= ASSETS ?>/assets/css/chosen.min.css">
+<link rel="stylesheet" href="<?= ASSETS ?>css/chosen.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="<?= ASSETS; ?>js/jquery.js"></script>
 <script type="text/javascript" src="<?= ASSETS; ?>js/app.js"></script>

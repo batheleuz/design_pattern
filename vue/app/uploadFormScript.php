@@ -1,13 +1,15 @@
 <script type="text/javascript">
    function verbose(color, txt ){
-       var rt= "<div class='w3-panel w3-round w3-leftbar w3-animate-zoom "+color+" '> <span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span>"+
+       var rt= "<div class='w3-panel w3-round w3-leftbar w3-animate-fading "+color+" '> " +
+           "<span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span>"+
                "<p>"+txt+"</p></div>"  ;
        return rt;
    }
 
   var feedback = $( "#feedback" ).dialog({
       modal: true,  autoOpen:false,
-      width : 600,  height : 400, 
+      width : 600,  height : 400,
+      title : "Chargement de fichier" ,
       buttons: {  Fermer: function() {  $( this ).dialog( "close" ); }  }
   });
 
@@ -34,15 +36,15 @@
               cache: false,
               processData:false
             })
-
             .done(function(data){
-                
+                console.log(data);
                 var result = $.parseJSON(data);
                 $("#alert_rsl").html("");  $("#feedback").html(""); var openDialog  = "close" ;
 
                 $.each( result  , function( key, value ) {
                   if( value.code ==  "0" )  
                       $("#alert_rsl").append(verbose( "w3-red", value.texte ) );
+
                   else if ( value.code ==  "1" ){
                       openDialog = "open";
 
