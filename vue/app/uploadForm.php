@@ -53,10 +53,15 @@
 
 }
 
-$page = page();
+if( $_SESSION['user']['privileges'] > 2 ):
 
-echo CodeCompressor::compress_html($page);
+    echo CodeCompressor::compress_html(page());
 
-CodeCompressor::importer('vue/app/uploadFormScript.php' ,  "js" );
+    CodeCompressor::importer('vue/app/uploadFormScript.php' ,  "js" );
 
+else:
+
+    echo "<div class='w3-container w3-padding-jumbo w3-white'> vous n'avez pas le privilège de charger des fichiers. </div>";
+
+endif;
 ?>

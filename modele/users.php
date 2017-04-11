@@ -6,7 +6,7 @@
  * Time: 10:52
  */
 
-if( $_GET['controller'] ==  "ajax.php" ){
+if( $_GET['controller'] ==  "ajax.php" ) {
 
    extract($_POST);
 
@@ -17,22 +17,25 @@ if( $_GET['controller'] ==  "ajax.php" ){
        if (!empty($us)):
            echo 0;
        else:
-            $valeur = array(
-                 "nom" => $nom , "prenom" => $prenom ,  "login"=>strtolower($login) , "icon"=>$avatar ,
-                 "service"=>$_SESSION['service']['id'], "email"=>$email , "privileges" => $privileges
-            );
-           $id_us = Database::getDb()->add("user", $valeur);
-           echo $id_us;
+            $valeur = array("nom" => $nom , "prenom" => $prenom ,  "login"=>strtolower($login) , "icon"=>$avatar ,
+                            "service"=>$_SESSION['service']['id'], "email"=>$email , "privileges" => $privileges  );
+            echo $id_us = Database::getDb()->add("user", $valeur);
+
        endif;
    }
+   
    else if( $action  == "supprUser" ) {
 
-       if( $_SESSION['user']['id'] != $id  ){
+       if( $_SESSION['user']['id'] != $id && $_SESSION['service']['id_admin'] != $id ){
            Database::getDb()->suppr("user" ,"id" , $id);
            echo 1 ;
 
        } else
            echo 0 ;
+
+   }
+
+   else if( $action  == "modUser" ){
 
    }
 

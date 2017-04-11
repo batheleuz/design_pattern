@@ -27,7 +27,7 @@
     <div class="w3-container w3-row-margin">
         <div class="w3-col s4 w3-center"><img src="<?= URL ?>image/avatar/<?= $_SESSION['user']['icon'] ?>" alt=""
                                               class="w3-circle" style="width:80%">
-            <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'])
+            <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3 )
                 echo " <h6 class=' w3-text-red '> [ Admin ] </h6>";
             ?>
             <h6 class=" w3-tiny "><b><?= $_SESSION['service']['direction'] . "/" . $_SESSION['service']['nom']; ?> </b>
@@ -40,7 +40,7 @@
             <b><?= $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ?> </b>
             <hr style="margin:10px">
 
-            <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id']): ?>
+            <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3): ?>
                 <a href="<?= URL ?>app/users" class="w3-hover-none w3-hover-text-green w3-show-inline-block"><i
                         class="fa fa-2x fa-users"></i></a>
                 <a href="<?= URL ?>app/config"

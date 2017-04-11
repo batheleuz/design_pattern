@@ -129,7 +129,7 @@ else if( $_GET['controller'] == "ajax.php" ){
 
    $menu_n = null ; $menu_l = null ; $menu_conf = "w3-text-blue";
 
-     if( $_SESSION['service']['id_admin'] == $_SESSION['user']['id'] )
+     if( $_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3 )
          include "vue/app/configuration.php";
 
      else
