@@ -4,7 +4,7 @@ if( $_SESSION['user'] != null ) {
 
   if (isset($_GET['page']) ){
 
-    include 'modele/' . $_GET['page'];
+    include 'modele/app/' . $_GET['page'];
 
   }
 
