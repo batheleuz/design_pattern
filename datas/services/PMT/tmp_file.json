@@ -1,5 +1,5 @@
 {
-    "name": "global 2 semaines",
+    "name": "reporting journaliere",
     "direction": "SONATEL",
     "column_kpi": [
         {
@@ -41,18 +41,32 @@
             "abreviation": "VR3J ADSL",
             "type_kpi": "pourcentage",
             "id_indicateur": "7"
+        },
+        {
+            "id": "8",
+            "delai": "24",
+            "type_drgt": "adsl",
+            "delai_time": "HOUR",
+            "nom": "",
+            "abreviation": "VR24H ADSL",
+            "type_kpi": "pourcentage",
+            "id_indicateur": "8"
+        },
+        {
+            "id": "11",
+            "delai": "5",
+            "type_drgt": "tvo",
+            "delai_time": "DAY",
+            "nom": "",
+            "abreviation": "VR5J  TVO",
+            "type_kpi": "pourcentage",
+            "id_indicateur": "11"
         }
     ],
     "dates": {
-        "start": "2017-01-31",
-        "end": "2017-02-14"
+        "start": "2017-01-01",
+        "end": "2017-01-31"
     },
-    "par": "week",
-    "groupe_intervention": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-    ]
+    "par": "day",
+    "groupe_intervention": null
 }

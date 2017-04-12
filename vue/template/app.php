@@ -11,6 +11,19 @@
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.structure.min.css">
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.theme.min.css">
 <link rel="stylesheet" href="<?= ASSETS ?>css/chosen.min.css">
+<link rel="apple-touch-icon" sizes="57x57" href="<?= ASSETS ?>image/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="<?= ASSETS ?>image/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="<?= ASSETS ?>image/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSETS ?>image/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?= ASSETS ?>image/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="<?= ASSETS ?>image/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="<?= ASSETS ?>image/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="<?= ASSETS ?>image/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="<?= ASSETS ?>image/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="<?= ASSETS ?>image/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?= ASSETS ?>image/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSETS ?>image/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?= ASSETS ?>image/favicon/favicon-16x16.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="<?= ASSETS; ?>js/jquery.js"></script>
 <script type="text/javascript" src="<?= ASSETS; ?>js/app.js"></script>
@@ -21,7 +34,9 @@
 <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
     <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i> Menu
     </button>
-    <span class="w3-right">Logo</span>
+    <span class="w3-right">
+        <img src="<?= ASSETS ?>image/snt.png" height="30" alt="LOGO" >
+    </span>
 </div>
 <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidenav"><br>
     <div class="w3-container w3-row-margin">

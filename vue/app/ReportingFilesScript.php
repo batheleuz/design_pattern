@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="<?= ASSETS ?>js/Highcharts/code/css/highcharts.css">
+<link rel="stylesheet" href="<?= ASSETS ?>js/Highcharts/code/css/highcharts.css">
 <script src="<?= ASSETS ?>js/Highcharts/code/js/highcharts.js"></script>
 <script src="<?= ASSETS ?>js/Highcharts/code/js/highcharts-more.js"></script>
 <script src="<?= ASSETS ?>js/Highcharts/code/js/modules/data.js"></script>
