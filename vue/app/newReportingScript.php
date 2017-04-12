@@ -36,7 +36,8 @@
         }
         if(kpi.children(":selected").length  == 0 ){
             kpi.addClass("w3-pale-red") ;
-            kpi.parent().append("<span class='w3-feedback w3-text-red w3-right-align'><i class='fa fa-times'></i> Veillez choisir les KPI à calculer.</span>") ;
+            kpi.parent()
+                .append("<span class='w3-feedback w3-text-red w3-right-align'><i class='fa fa-times'></i> Veillez choisir les KPI à calculer.</span>") ;
             return false;
         }
         return true;

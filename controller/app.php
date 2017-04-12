@@ -10,7 +10,7 @@
 
      ob_start();
 
-         include "modele/".$_GET['page'];
+         include "modele/app/".$_GET['page'];
 
      $content = ob_get_clean();
       
