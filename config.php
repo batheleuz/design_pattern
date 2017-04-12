@@ -26,6 +26,8 @@ define ("URL" , "http://localhost/design_pattern/");
 
 define ("ASSETS" , URL."assets/");
 
+define ("PATH" , __DIR__ );
+
 $_GLOBALS['vr'] = Database::getDb()->all("formVrByDir");
 
 $_GLOBALS['groupe_intervention'] = Database::getDb()->all("groupe_intervention");
