@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="" />
-    <list id="479d1c5e-58dc-4196-8172-e15a3bb839c6" name="New changelist" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/code/readme.txt" afterPath="$PROJECT_DIR$/assets/js/Highcharts/code/readme.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/gfx/vml-radial-gradient.png" afterPath="$PROJECT_DIR$/assets/js/Highcharts/gfx/vml-radial-gradient.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/graphics/earth.svg" afterPath="$PROJECT_DIR$/assets/js/Highcharts/graphics/earth.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/graphics/meteogram-symbols-30px.png" afterPath="$PROJECT_DIR$/assets/js/Highcharts/graphics/meteogram-symbols-30px.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/graphics/search.png" afterPath="$PROJECT_DIR$/assets/js/Highcharts/graphics/search.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/graphics/skies.jpg" afterPath="$PROJECT_DIR$/assets/js/Highcharts/graphics/skies.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/graphics/snow.png" afterPath="$PROJECT_DIR$/assets/js/Highcharts/graphics/snow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Highcharts/graphics/sun.png" afterPath="$PROJECT_DIR$/assets/js/Highcharts/graphics/sun.png" />
+    <list default="true" id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/dec.php" afterPath="$PROJECT_DIR$/controller/dec.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/services/PMT/tmp_file.json" afterPath="$PROJECT_DIR$/datas/services/PMT/tmp_file.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/agent_ori.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/agent_ori.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/categorie.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/categorie.csv" />
@@ -23,10 +15,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/releve.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/releve.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/ui.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/ui.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt encours HPE .csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt encours HPE .csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S04.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S04.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/admin/services.php" afterPath="$PROJECT_DIR$/modele/admin/services.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/config.php" afterPath="$PROJECT_DIR$/modele/app/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/admin/liste-service.php" afterPath="$PROJECT_DIR$/vue/admin/liste-service.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/template/admin.php" afterPath="$PROJECT_DIR$/vue/template/admin.php" />
     </list>
     <list id="1e22ac67-7079-4bec-a9b7-0972d45a19c9" name="Failed commit: New changelist" comment="handling difference">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/configuration.php" afterPath="$PROJECT_DIR$/vue/app/configuration.php" />
@@ -35,7 +30,6 @@
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,24 +53,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="configuration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/app/configuration.php">
+      <file leaf-file-name="services.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/admin/services.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-240">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <folding>
+                <element signature="e#352#1139#0#PHP" expanded="false" />
+                <marker date="1492100202000" expanded="true" signature="570:614" placeholder="SELECT * FRO... service" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modele/admin/services.php">
+      <file leaf-file-name="nouveau-service.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/admin/nouveau-service.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="821">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+            <state relative-caret-position="96">
+              <caret line="4" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <element signature="e#6#88#0#PHP" expanded="true" />
-                <marker date="1492095392000" expanded="true" signature="307:351" placeholder="SELECT * FRO... service" />
+                <marker date="1492097048000" expanded="true" signature="2322:2648" placeholder="..." />
+                <marker date="1492097048000" expanded="true" signature="2431:2513" placeholder="..." />
+                <marker date="1492097048000" expanded="true" signature="2515:2648" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liste-service.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue/admin/liste-service.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,6 +98,19 @@
             <state relative-caret-position="120">
               <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporting.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/app/reporting.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+              <folding>
+                <marker date="1490797094000" expanded="true" signature="413:506" placeholder="SELECT DISTI... drgt_releves" />
+                <marker date="1490797094000" expanded="true" signature="3592:3613" placeholder="SELECT * FRO... fichier" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,15 +155,17 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/vue/app/login.php" />
         <option value="$PROJECT_DIR$/vue/template/app.php" />
-        <option value="$PROJECT_DIR$/modele/app/config.php" />
         <option value="$PROJECT_DIR$/controller/admin.php" />
-        <option value="$PROJECT_DIR$/vue/admin/liste-service.php" />
-        <option value="$PROJECT_DIR$/vue/template/admin.php" />
         <option value="$PROJECT_DIR$/controller/ajax.php" />
         <option value="$PROJECT_DIR$/classes/ReportingCRUD.php" />
         <option value="$PROJECT_DIR$/config.php" />
-        <option value="$PROJECT_DIR$/modele/admin/services.php" />
         <option value="$PROJECT_DIR$/vue/admin/nouveau-service.php" />
+        <option value="$PROJECT_DIR$/modele/app/config.php" />
+        <option value="$PROJECT_DIR$/modele/app/reporting.php" />
+        <option value="$PROJECT_DIR$/classes/GlobalReportingBuilder.php" />
+        <option value="$PROJECT_DIR$/modele/admin/services.php" />
+        <option value="$PROJECT_DIR$/vue/template/admin.php" />
+        <option value="$PROJECT_DIR$/vue/admin/liste-service.php" />
       </list>
     </option>
   </component>
@@ -199,6 +224,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,7 +353,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="" />
-      <changelist id="479d1c5e-58dc-4196-8172-e15a3bb839c6" name="New changelist" comment="" />
+      <changelist id="" name="New changelist" comment="" />
       <created>1491389858723</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -311,7 +368,7 @@
       <workItem from="1491918914970" duration="3478000" />
       <workItem from="1491993236701" duration="7044000" />
       <workItem from="1492000783560" duration="6418000" />
-      <workItem from="1492079375356" duration="16666000" />
+      <workItem from="1492079375356" duration="21034000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1491391617895</created>
@@ -453,11 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492097149089</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Admin Part / Form Add Service">
+      <created>1492097207250</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1492097207250</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82028000" />
+    <option name="totallyTimeSpent" value="86396000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -539,7 +603,9 @@
     <MESSAGE value="Admin templating &amp; Refactoring." />
     <MESSAGE value="handling difference" />
     <MESSAGE value="Admin part / Add Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin part / Add Service" />
+    <MESSAGE value="New changelist" />
+    <MESSAGE value="Admin Part / Form Add Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Part / Form Add Service" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -638,13 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/GlobalReportingBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -781,17 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/reporting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
-          <folding>
-            <marker date="1490797094000" expanded="true" signature="413:506" placeholder="SELECT DISTI... drgt_releves" />
-            <marker date="1490797094000" expanded="true" signature="3592:3613" placeholder="SELECT * FRO... fichier" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modele/app/date_functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -837,6 +885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -859,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/admin/liste-service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/app/newReporting.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -880,18 +921,6 @@
         <state relative-caret-position="216">
           <caret line="9" column="74" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/template/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,22 +945,6 @@
         <state relative-caret-position="357">
           <caret line="90" column="51" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="70" selection-end-column="14" />
-          <folding>
-            <marker date="1492009253000" expanded="true" signature="145:159" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1492009253000" expanded="true" signature="337:392" placeholder="select count... code" />
-            <marker date="1492009253000" expanded="true" signature="913:974" placeholder="SELECT * FRO... kpi" />
-            <marker date="1492009253000" expanded="true" signature="1575:1658" placeholder="SELECT * FRO... groupe_intervention" />
-            <marker date="1492009253000" expanded="true" signature="2025:2062" placeholder="SELECT * FRO... ui" />
-            <marker date="1492009253000" expanded="true" signature="3901:4065" placeholder="..." />
-            <marker date="1492009253000" expanded="true" signature="3921:4043" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -968,22 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/admin/nouveau-service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="53" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#script#0;n#!!top" expanded="false" />
-            <marker date="1492097048000" expanded="true" signature="2322:2648" placeholder="..." />
-            <marker date="1492097048000" expanded="true" signature="2431:2513" placeholder="..." />
-            <marker date="1492097048000" expanded="true" signature="2515:2648" placeholder="..." />
-            <marker date="1492097048000" expanded="true" signature="2906:3262" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1014,6 +1011,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/GlobalReportingBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+          <folding>
+            <element signature="n#getMonth#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#getFromGlobal#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#getGI#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#trimestre#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#enteteTab#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#toArray#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#tableForChart#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#serialize#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#unserialize#0;n#GlobalReportingBuilder#0;n#!!top" expanded="false" />
+            <marker date="1492098617000" expanded="true" signature="6711:6756" placeholder="SELECT COUNT... drgt_releves" />
+            <marker date="1492098617000" expanded="true" signature="11181:11200" placeholder="..." />
+            <marker date="1492098617000" expanded="true" signature="13121:13135" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/reporting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+          <folding>
+            <marker date="1490797094000" expanded="true" signature="413:506" placeholder="SELECT DISTI... drgt_releves" />
+            <marker date="1490797094000" expanded="true" signature="3592:3613" placeholder="SELECT * FRO... fichier" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="127" column="43" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
+          <folding>
+            <marker date="1492097410000" expanded="true" signature="145:159" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1492097410000" expanded="true" signature="337:392" placeholder="select count... code" />
+            <marker date="1492097410000" expanded="true" signature="912:973" placeholder="SELECT * FRO... kpi" />
+            <marker date="1492097410000" expanded="true" signature="1574:1657" placeholder="SELECT * FRO... groupe_intervention" />
+            <marker date="1492097410000" expanded="true" signature="2024:2061" placeholder="SELECT * FRO... ui" />
+            <marker date="1492097410000" expanded="true" signature="3940:4104" placeholder="..." />
+            <marker date="1492097410000" expanded="true" signature="3960:4082" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1030,13 +1075,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue/admin/nouveau-service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <marker date="1492097048000" expanded="true" signature="2322:2648" placeholder="..." />
+            <marker date="1492097048000" expanded="true" signature="2431:2513" placeholder="..." />
+            <marker date="1492097048000" expanded="true" signature="2515:2648" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modele/admin/services.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        <state relative-caret-position="-240">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
           <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-            <marker date="1492095392000" expanded="true" signature="307:351" placeholder="SELECT * FRO... service" />
+            <element signature="e#352#1139#0#PHP" expanded="false" />
+            <marker date="1492100202000" expanded="true" signature="570:614" placeholder="SELECT * FRO... service" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/template/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/admin/liste-service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -31,7 +31,6 @@ if( $_GET['page'] == "config.php" and isset ($_GET['param1'] ) ){
 
     include 'vue/ajax/'.$_GET['param1'].'.php';
 }
-
 else if( $_GET['controller'] == "ajax.php" ){
      
     extract($_POST);
@@ -124,7 +123,9 @@ else if( $_GET['controller'] == "ajax.php" ){
         
     }
 
- }else{
+ }
+
+else if($_GET['controller'] == "app.php" ){
 
    $menu_n = null ; $menu_l = null ; $menu_conf = "w3-text-blue";
 
@@ -137,4 +138,5 @@ else if( $_GET['controller'] == "ajax.php" ){
                 <i>Vous ne disposer pas de privilèges pour entrer dans cette partie.</i></p>
                </div>     
               ";
+    
  }

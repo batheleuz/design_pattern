@@ -25,13 +25,12 @@
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
         <a class="w3-bar-item w3-theme-l1">
-            <img src="<?= ASSETS ?>image/snt.png" height="25" alt="LOGO">
+            <img src="<?= ASSETS ?>image/snt.png" height="23" alt="LOGO">
         </a>
         <a href="<?= URL ?>admin/services" class="w3-bar-item w3-button w3-hide-small w3-hover-white <?= $services ?>">Services</a>
-        <a href="<?= URL ?>admin/users" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Users</a>
-        <a href="<?= URL ?>admin/logs" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Logs</a>
-        <a href="<?= URL ?>admin/informations" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Informations</a>
-        <a href="<?= URL ?>admin/utilisations" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Utilisations</a>
+        <a href="<?= URL ?>admin/users" class="w3-bar-item w3-button w3-hide-small w3-hover-white <?= $utilisateurs ?>">Utilisateurs</a>
+        <a href="<?= URL ?>admin/logs" class="w3-bar-item w3-button w3-hide-small w3-hover-white <?= $logs ?>">Logs</a>
+
     </div>
 </div>
 

@@ -5,6 +5,18 @@
  * Date: 12/04/2017
  * Time: 14:53
  */
+
+function getAdmin( $idAdmin ){
+   $admin =  Database::getDb()->all("user" , "id" , $idAdmin );
+
+    if(!empty($admin)){
+        return $admin[0]['prenom']." ".$admin[0]['nom'];
+    }else{
+        return "<span class='w3-text-red'>Pas d'admin</span> ";
+    }
+
+}
+
 if( $_GET['controller'] == "ajax.php"){
     extract($_POST);
 
@@ -26,6 +38,7 @@ if( $_GET['controller'] == "ajax.php"){
          }
      }
 }
+
 if( $_GET['controller'] == "admin.php" ){
 
     $menu = array (
