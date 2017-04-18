@@ -13,10 +13,10 @@
                        <td> <?= $service['nom']  ?> </td>
                        <td> <?= $service['direction']  ?> </td>
                        <td> <?= getAdmin($service['id_admin']) ?> </td>
-                       <td> <button class="w3-button w3-circle  w3-hover-text-blue  w3-theme-action ">
+                       <td> <button class="w3-button w3-round-large  w3-hover-text-blue  w3-theme-action ">
                                <i class="fa fa-edit"></i>
                            </button>
-                       <button class="w3-button w3-circle w3-hover-text-red w3-theme-action ">
+                       <button class="w3-button w3-round-large w3-hover-text-red w3-theme-action ">
                                <i class="fa fa-trash-o"></i>
                            </button>
                        </td>
@@ -26,3 +26,16 @@
         </table>
     </div>
 </div>
+
+--------------------------------- Test Evenement ----------------------------------<br>
+
+<?php
+
+$emiter = EventEmitter::getInstance();
+
+$emiter->on("userCreated");
+
+$emiter->emit( "userCreated" , "moussa " , "ndiaye" );
+
+
+?>

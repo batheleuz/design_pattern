@@ -1,6 +1,10 @@
 {
-    "name": "global 2 semaines",
-    "direction": "SONATEL",
+    "name": "autre par 2 semaines",
+    "direction": "DINT",
+    "column": {
+        "acces_adsl": "LIGADSL10M ",
+        "segment": "ESN "
+    },
     "column_kpi": [
         {
             "id": "2",
@@ -44,15 +48,8 @@
         }
     ],
     "dates": {
-        "start": "2017-01-16",
-        "end": "2017-01-30"
+        "start": "2017-03-17",
+        "end": "2017-03-31"
     },
-    "par": "week",
-    "groupe_intervention": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-    ]
+    "par": "week"
 }

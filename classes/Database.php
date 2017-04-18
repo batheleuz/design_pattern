@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Ouz Deville , MASS_DABOSS
+ * @author MASS_DABOSS
  */
 
 class Database{
