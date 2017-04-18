@@ -5,22 +5,21 @@
  * Date: 18/04/2017
  * Time: 13:14
  */
-class ActionHandler {
+class EventHandler {
 
     private static $_instance;
 
     public static function  getInstance () {
 
-        if( ! self::$_instance ){
-            self::$_instance = new ActionHandler();
+        if( !self::$_instance ){
+              self::$_instance = new EventHandler();
         }
         return self::$_instance;
     }
 
+    static function userCreated () {
 
-    static function userCreated(){
-
-      return function ( $firstname ,$lastname ){
+      return function ($firstname, $lastname ){
 
           echo $firstname ." ". $lastname ." a posté quelque chose ";
 

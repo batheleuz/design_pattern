@@ -1,2 +1,3 @@
-/vendor/
 /datas/elements/
+/datas/services/
+*.docx

@@ -9,7 +9,10 @@
 class EventEmitter{
 
     private static $_instance ;
-    private $listenners  = [];  // Enregistre la liste des listenner
+    /**
+     * @var array contents listeners and there function. 
+     */
+    private $listenners  = [];
 
     public static function  getInstance ( ){
 
@@ -20,27 +23,28 @@ class EventEmitter{
     }
 
     /**
+     * @call function ( function witch name is  $event )
      * @param $event
      * @param array ...$args
      */
-    public function emit ( $event , ... $args  ){
-            if(array_key_exists( $event , $this->listenners )){
-                var_dump($this->listenners[$event][1]);
+    public function emit ( $event, ... $args  ){
+            if(array_key_exists( $event , $this->listenners )) {
                 foreach ($this->listenners[$event] as $action )
                      call_user_func_array( $action , $args );
             }
     }
 
     /**
+     * save the function from  @class EventHandler ( Closure or Callable) in $listenners with $event Key.
      * @param $event
-     * @param $callable
      */
     public function on ( $event ){
 
         if(!array_key_exists($event , $this->listenners ))
              $this->listenners[$event][] = [] ;
 
-        $this->listenners[$event][] = ActionHandler::getInstance()->userCreated();
+        $this->listenners[$event][] = EventHandler::getInstance()->$event();
+
     }
 
     

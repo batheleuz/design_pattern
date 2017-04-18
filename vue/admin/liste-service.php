@@ -35,7 +35,7 @@ $emiter = EventEmitter::getInstance();
 
 $emiter->on("userCreated");
 
-$emiter->emit( "userCreated" , "moussa " , "ndiaye" );
+$emiter->emit ( "userCreated" , "moussa " , "ndiaye" );
 
 
 ?>
