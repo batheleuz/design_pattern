@@ -6,7 +6,7 @@
  * Time: 11:18
  */
 
-class AutreReportingBuilder extends GlobalReportingBuilder {
+class ReportingAutreBuilder extends ReportingGlobalBuilder {
 
     private $column;
 

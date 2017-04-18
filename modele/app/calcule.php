@@ -27,11 +27,11 @@ if( $_GET['controller']  == "ajax.php" ){
         $rep['contenue'] =  unserialize( $rep['contenue']);
         $lr = $rep['contenue'];
 
-       if ($rep['type'] == "GlobalReportingBuilder")
-            $reporting = new GlobalReportingBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
+       if ($rep['type'] == "ReportingGlobalBuilder")
+            $reporting = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 
-       else if ($rep['type']== "AutreReportingBuilder") //$nom_reporting , $direction , $column, $column_kpi, $dates, $par , $_SESSION
-            $reporting = new AutreReportingBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates,$lr['par'], $_GLOBALS);
+       else if ($rep['type']== "ReportingAutreBuilder") //$nom_reporting , $direction , $column, $column_kpi, $dates, $par , $_SESSION
+            $reporting = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates,$lr['par'], $_GLOBALS);
     }
 
     else {
@@ -49,7 +49,7 @@ if( $_GET['controller']  == "ajax.php" ){
             if( !isset( $groupe_intervention) )
                 $groupe_intervention = null;
 
-            $reporting = new GlobalReportingBuilder($nom_reporting , $direction  , $groupe_intervention, $column_kpi, $dates, $par , $_GLOBALS);
+            $reporting = new ReportingGlobalBuilder($nom_reporting , $direction  , $groupe_intervention, $column_kpi, $dates, $par , $_GLOBALS);
         }
         else if( $action == "autre_reporting"){
             if( isset($colonnes_selected) ){
@@ -59,7 +59,7 @@ if( $_GET['controller']  == "ajax.php" ){
                     $column[$col] = $arr;
                 }
             }
-            $reporting = new AutreReportingBuilder($nom_reporting , $direction , $column, $column_kpi, $dates, $par , $_GLOBALS);
+            $reporting = new ReportingAutreBuilder($nom_reporting , $direction , $column, $column_kpi, $dates, $par , $_GLOBALS);
         }
         $serial =  $reporting->serialize();
     }

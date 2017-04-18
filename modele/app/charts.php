@@ -16,11 +16,11 @@ if( $_GET['controller']  == "ajax.php" ){
 
     $lr = $repCharts['contenue'];
 
-    if ($repCharts['type'] == "GlobalReportingBuilder")
-        $reportingCharts = new GlobalReportingBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
+    if ($repCharts['type'] == "ReportingGlobalBuilder")
+        $reportingCharts = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 
-    else if ($repCharts['type']== "AutreReportingBuilder")
-        $reportingCharts = new AutreReportingBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates,$lr['par'], $_GLOBALS);
+    else if ($repCharts['type']== "ReportingAutreBuilder")
+        $reportingCharts = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates,$lr['par'], $_GLOBALS);
 
     $reportingCharts->tableForChart();
 

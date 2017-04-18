@@ -25,10 +25,10 @@ if ( $_GET['controller']=="ajax.php" ){
         $lr = json_decode($last_reporting, TRUE );
         fclose($monfichier);
 
-        if (trim($classe) == "GlobalReportingBuilder")
-            $rep = new GlobalReportingBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $lr['dates'], $lr['par'], $_SESSION);
-        else if (trim($classe) == "AutreReportingBuilder")
-            $rep = new AutreReportingBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $lr['dates'], $lr['par'], $_SESSION);
+        if (trim($classe) == "ReportingGlobalBuilder")
+            $rep = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $lr['dates'], $lr['par'], $_SESSION);
+        else if (trim($classe) == "ReportingAutreBuilder")
+            $rep = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $lr['dates'], $lr['par'], $_SESSION);
 
         if( ReportingCRUD::isExistant($_SESSION['service']['nom'] , $lr['name'] ,  $lr['par'] )  == TRUE )  echo -1;
             

@@ -7,7 +7,7 @@
  * Time: 16:38
  */
 
-class GlobalReportingBuilder implements Serializable {
+class ReportingGlobalBuilder implements Serializable {
 
     protected $name ,$direction ,$column_kpi ,$dates ,$par ,$groupe_intervention ;
     protected $_GLOBALS;
