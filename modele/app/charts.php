@@ -1,6 +1,6 @@
 <?php
 
-if( $_GET['controller']  == "ajax.php" ){
+if ($_GET['controller'] == "ajax.php") {
 
     extract($_POST);
 
@@ -8,23 +8,23 @@ if( $_GET['controller']  == "ajax.php" ){
     $_GLOBALS['kpi'] = $_SESSION['kpi'];
     $_GLOBALS['service'] = $_SESSION['service'];
 
-    $dates = array( "start" => $start ,  "end" =>  $end    );
+    $dates = array("start" => $start, "end" => $end);
 
-    $repCharts = ReportingCRUD::getReportingByName($_SESSION['service']['nom'] , $name);
+    $repCharts = ReportingCRUD::getReportingByName($_SESSION['service']['nom'], $name);
 
-    $repCharts['contenue'] = unserialize( $repCharts['contenue']);
+    $repCharts['contenue'] = unserialize($repCharts['contenue']);
 
     $lr = $repCharts['contenue'];
 
     if ($repCharts['type'] == "ReportingGlobalBuilder")
         $reportingCharts = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 
-    else if ($repCharts['type']== "ReportingAutreBuilder")
-        $reportingCharts = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates,$lr['par'], $_GLOBALS);
+    else if ($repCharts['type'] == "ReportingAutreBuilder")
+        $reportingCharts = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 
     $reportingCharts->tableForChart();
 
-    if( $type == "area"){
+    if ($type == "area") {
         $options = "plotOptions:{
                             area: {
                                 pointStart: 1940,
@@ -40,8 +40,8 @@ if( $_GET['controller']  == "ajax.php" ){
                                 }
                             }
                        },";
-    }else if($type == "line"){
-        $type = "spline" ;
+    } else if ($type == "line") {
+        $type = "spline";
         $options = "plotOptions: {
                         spline: {
                             marker: {
@@ -50,10 +50,10 @@ if( $_GET['controller']  == "ajax.php" ){
                             }
                         }
                     }, ";
-    }else{
+    } else {
         $options = null;
     }
 
-    include_once ("vue/app/createChartsScript.php");
+    include_once("vue/app/createChartsScript.php");
 
 }

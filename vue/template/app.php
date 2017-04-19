@@ -1,4 +1,4 @@
-<?php ob_start() ; ?>
+<?php ob_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.structure.min.css">
 <link rel="stylesheet" href="<?= ASSETS ?>js/jquery-ui/jquery-ui.theme.min.css">
 <link rel="stylesheet" href="<?= ASSETS ?>css/chosen.min.css">
-<link rel="icon" type="image/png" sizes="192x192"  href="<?= ASSETS ?>image/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="<?= ASSETS ?>image/favicon/android-icon-192x192.png">
 <link rel="icon" type="image/png" sizes="32x32" href="<?= ASSETS ?>image/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="<?= ASSETS ?>image/favicon/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?= ASSETS ?>image/favicon/favicon-16x16.png">
@@ -26,14 +26,14 @@
     <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i> Menu
     </button>
     <span class="w3-right">
-        <img src="<?= ASSETS ?>image/snt.png" height="30" alt="LOGO" >
+        <img src="<?= ASSETS ?>image/snt.png" height="30" alt="LOGO">
     </span>
 </div>
 <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidenav"><br>
     <div class="w3-container w3-row-margin">
         <div class="w3-col s4 w3-center"><img src="<?= ASSETS ?>image/avatar/<?= $_SESSION['user']['icon'] ?>" alt=""
                                               class="w3-circle" style="width:80%">
-            <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3 )
+            <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3)
                 echo " <h6 class=' w3-text-red '> [ Admin ] </h6>";
             ?>
             <h6 class=" w3-tiny "><b><?= $_SESSION['service']['direction'] . "/" . $_SESSION['service']['nom']; ?> </b>
@@ -72,70 +72,72 @@
         Déconnexion </a>
 </nav>
 
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"  title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+     title="close side menu" id="myOverlay"></div>
 
 <div class="w3-main" style="margin-left:250px;margin-top:43px;">
     <div class="w3-container w3-padding-32">
         <div id='dialog-confirm'></div>
         <?php
         $buffer = ob_get_clean();
-        echo CodeCompressor::compress_html($buffer) ;
+        echo CodeCompressor::compress_html($buffer);
         echo $content;
         ob_start();
         ?>
     </div>
-    <footer class="w3-container w3-padding-16 w3-dark-grey"><h4> </h4></footer>
+    <footer class="w3-container w3-padding-16 w3-dark-grey"><h4></h4></footer>
 </div>
 <?php
 
 $buffer = ob_get_clean();
 
-echo CodeCompressor::compress_html($buffer) ;
+echo CodeCompressor::compress_html($buffer);
 
 ob_start();
-    ?>
-     <script>
-         var mySidenav = document.getElementById("mySidenav"),
-             overlayBg = document.getElementById("myOverlay");
+?>
+<script>
+    var mySidenav = document.getElementById("mySidenav"),
+        overlayBg = document.getElementById("myOverlay");
 
-         function w3_open() {
-             if (mySidenav.style.display === 'block') {
-                 mySidenav.style.display = 'none';
-                 overlayBg.style.display = "none";
-             } else {
-                 mySidenav.style.display = 'block';
-                 overlayBg.style.display = "block";
-             }
-         }
+    function w3_open() {
+        if (mySidenav.style.display === 'block') {
+            mySidenav.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidenav.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
+    }
 
-         function w3_close() {
-             mySidenav.style.display = "none";
-             overlayBg.style.display = "none";
-         }
+    function w3_close() {
+        mySidenav.style.display = "none";
+        overlayBg.style.display = "none";
+    }
 
-         function deconnexion() {
-             $("#dialog-confirm").html("<h4 class='w3-center w3-text-red'>Voulez vrémment vous déconnecter ? </h4>");
-             $("#dialog-confirm").dialog({
-                 resizable:false,modal:true , title: "Déconnexion",
-                 position: { my: "center top", at: "center top", of: $('body') },
-                 show: { effect: "fade", duration: 1000 },
-                 buttons: {
-                     "Continuer": function () {
-                         document.location.href= "<?= URL ?>dec/logout" ;
-                     } ,
-                     "Annuler" : function(){
-                         $(this).dialog("close");
-                     }
-                 }
-             })
-         }
-     </script>
+    function deconnexion() {
+        $("#dialog-confirm").html("<h4 class='w3-center w3-text-red'>Voulez vrémment vous déconnecter ? </h4>");
+        $("#dialog-confirm").dialog({
+            resizable: false, modal: true, title: "Déconnexion",
+            position: {my: "center top", at: "center top", of: $('body')},
+            show: {effect: "fade", duration: 1000},
+            buttons: {
+                "Continuer": function () {
+                    document.location.href = "<?= URL ?>dec/logout";
+                },
+                "Annuler": function () {
+                    $(this).dialog("close");
+                }
+            }
+        })
+    }
+</script>
 
- <?php
+<?php
 
 $script = ob_get_clean();
- 
-echo CodeCompressor::compress_js( $script ) ;
- 
+
+echo CodeCompressor::compress_js($script);
+
 ?>
-</body></html>
+</body>
+</html>

@@ -6,18 +6,20 @@
  * Date: 18/04/2017
  * Time: 11:36
  */
-class EventEmitter{
+class EventEmitter
+{
 
-    private static $_instance ;
+    private static $_instance;
     /**
-     * @var array contents listeners and there function. 
+     * @var array contents listeners and there function.
      */
-    private $listenners  = [];
+    private $listenners = [];
 
-    public static function  getInstance ( ){
+    public static function getInstance()
+    {
 
-        if( ! self::$_instance ){
-          self::$_instance = new EventEmitter();
+        if (!self::$_instance) {
+            self::$_instance = new EventEmitter();
         }
         return self::$_instance;
     }
@@ -27,25 +29,27 @@ class EventEmitter{
      * @param $event
      * @param array ...$args
      */
-    public function emit ( $event, ... $args  ){
-            if(array_key_exists( $event , $this->listenners )) {
-                foreach ($this->listenners[$event] as $action )
-                     call_user_func_array( $action , $args );
-            }
+    public function emit($event, ... $args)
+    {
+        if (array_key_exists($event, $this->listenners)) {
+            foreach ($this->listenners[$event] as $action)
+                call_user_func_array($action, $args);
+        }
     }
 
     /**
      * save the function from  @class EventHandler ( Closure or Callable) in $listenners with $event Key.
      * @param $event
      */
-    public function on ( $event ){
+    public function on($event)
+    {
 
-        if(!array_key_exists($event , $this->listenners ))
-             $this->listenners[$event][] = [] ;
+        if (!array_key_exists($event, $this->listenners))
+            $this->listenners[$event][] = [];
 
         $this->listenners[$event][] = EventHandler::getInstance()->$event();
 
     }
 
-    
+
 }

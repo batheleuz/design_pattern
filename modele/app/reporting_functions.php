@@ -6,13 +6,15 @@
  * Time: 11:27
  */
 
-function formate_fr($date){
-    return preg_replace("#^([0-9]{4})-([0-9]{2})-([0-9]{2})$#", "$3/$2/$1", $date );
+function formate_fr($date)
+{
+    return preg_replace("#^([0-9]{4})-([0-9]{2})-([0-9]{2})$#", "$3/$2/$1", $date);
 }
 
-function getMonth($index){
-    $monthNames= array( "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Julliet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" );
-    return $monthNames[$index-1];
+function getMonth($index)
+{
+    $monthNames = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Julliet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+    return $monthNames[$index - 1];
 }
 
 /**
@@ -20,12 +22,13 @@ function getMonth($index){
  * @param null $where
  * @return mixed array qui contient les données demandées
  */
-function  all( $table , $where = null ){
+function all($table, $where = null)
+{
 
-    $rqt = "SELECT * FROM $table" ;
+    $rqt = "SELECT * FROM $table";
 
-    if( $where != null )
-        $rqt .= " WHERE $where" ;
+    if ($where != null)
+        $rqt .= " WHERE $where";
 
     return Database::getDb()->rqt($rqt);
 }

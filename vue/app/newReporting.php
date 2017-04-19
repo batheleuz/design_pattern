@@ -1,5 +1,5 @@
 <?php
-function page  ($pageTitle )
+function page($pageTitle)
 {
 
     ob_start();
@@ -52,7 +52,7 @@ function page  ($pageTitle )
 
                                 <select data-placeholder="Sous traitant , Services , ...." name='groupe_intervention[]'
                                         multiple class="chosen-select">
-                                    <?php foreach (all("groupe_intervention") as $gi): ?>
+                                    <?php foreach( all("groupe_intervention", "id_service='{$_SESSION['service']['id']}' OR is_modifiable=0")  as $gi ): ?>
                                         <option value="<?= $gi['id'] ?>"> <?= $gi['nom'] ?>  </option>
                                     <?php endforeach; ?>
                                 </select>
@@ -77,7 +77,7 @@ function page  ($pageTitle )
                             <span class="w3-padding" style="display:inline-block;width:180px"> <b> KPI à calculer: </b></span>
                             <select data-placeholder="Choisir vos kpi" id="multi" name='kpi[]' multiple
                                     class="chosen-select">
-                                <?php foreach (all("kpi") as $kpi): ?>
+                                <?php foreach (all("kpi", "id_service='{$_SESSION['service']['id']}' ") as $kpi): ?>
                                     <option value="<?= $kpi['id'] ?>"> <?= $kpi['abreviation'] ?>  </option>
                                 <?php endforeach; ?>
                             </select>
@@ -143,10 +143,11 @@ function page  ($pageTitle )
     <?php
     return ob_get_clean();
 }
-$page = page( $pageTitle );
 
-echo CodeCompressor::compress_html( $page ) ;
+$page = page($pageTitle);
 
-CodeCompressor::importer( 'vue/app/newReportingScript.php' , "js" ) ;
+echo CodeCompressor::compress_html($page);
+
+CodeCompressor::importer(PATH . '/vue/app/newReportingScript.php', "js");
 
 ?>

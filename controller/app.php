@@ -6,19 +6,19 @@
  * Time: 11:15
  */
 
-  if( $_SESSION['user'] != null ){
+if ($_SESSION['user'] != null) {
 
-     ob_start();
+    ob_start();
 
-         include "modele/app/".$_GET['page'];
+    include "modele/app/" . $_GET['page'];
 
-     $content = ob_get_clean();
-      
-     include 'vue/template/app.php';
+    $content = ob_get_clean();
 
-  }else{
+    include 'vue/template/app.php';
 
-     include "vue/app/login.php";
+} else {
 
-  }
+    include "vue/app/login.php";
+
+}
 

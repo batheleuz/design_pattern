@@ -82,6 +82,6 @@ function page()
     return ob_get_clean();
 }
 
-echo CodeCompressor::compress_html( page() );
+echo CodeCompressor::compress_html(page());
 
-CodeCompressor::importer( "vue/ajax/codificationScript.php" , "js" );
+CodeCompressor::importer(PATH . "/vue/ajax/codificationScript.php", "js");

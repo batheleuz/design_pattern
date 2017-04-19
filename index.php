@@ -5,25 +5,25 @@
  * Date: 09/12/2016
  */
 
-require_once  "config.php" ;
+require_once "config.php";
 session_start();
 
-if( isset($_SESSION['user']) ){
+if (isset($_SESSION['user'])) {
 
-    if(isset($_GET['controller'])){
+    if (isset($_GET['controller'])) {
 
-        include 'controller/'.$_GET['controller'];
+        include 'controller/' . $_GET['controller'];
 
-    }else if (isset($_GET['page'])){
+    } else if (isset($_GET['page'])) {
 
-        include 'vue/'.$_GET['page'];
+        include 'vue/' . $_GET['page'];
 
-    }else{
+    } else {
 
-         header  ("Location:app/reporting/nouveau/global");
+        header("Location:app/reporting/nouveau/global");
     }
-    
-}else{
+
+} else {
 
     include "vue/app/login.php";
 

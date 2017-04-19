@@ -1,19 +1,21 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Daboss
  * Date: 09/12/2016
  *
  */
-
-class Autoloader{
+class Autoloader
+{
 
     /**
      *  Enregistre notre autoloader
      *  C'est la fonction à appeler pour demarrer l'uploads automatique
      */
 
-    static function register(){
+    static function register()
+    {
         spl_autoload_register(array(__CLASS__, 'autoload'));
     }
 
@@ -22,7 +24,8 @@ class Autoloader{
      * @param $class string Le nom de la classe à charger
      */
 
-    static function autoload($class){
+    static function autoload($class)
+    {
         require '' . $class . '.php';
     }
 

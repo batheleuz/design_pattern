@@ -1,3 +1,4 @@
-/datas/elements/
-/datas/services/
+/datas/elements/*
+/datas/services/*
 *.docx
+*.log

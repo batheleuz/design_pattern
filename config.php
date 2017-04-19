@@ -9,41 +9,25 @@
 
 /* * CHARGEMENT DE NOTRE AUTOLOADER ********* */
 
-require  "classes/Autoloader.php";
+require "classes/Autoloader.php";
 Autoloader::register();
 
 /* * FIN ************************************ */
 
-define ("ADD_BD" , "localhost");
+define("ADD_BD", "localhost");
 
-define ("NOM_BD" , "reporting" );
+define("NOM_BD", "reporting");
 
-define ("USER_BD" , "root" );
+define("USER_BD", "root");
 
-define ("PASS_BD" , "root" );
+define("PASS_BD", "root");
 
-define ("URL" , "http://localhost/design_pattern/");
+define("URL", "http://localhost/design_pattern/");
 
-define ("ASSETS" , URL."assets/");
+define("ASSETS", URL . "assets/");
 
-define ("PATH" , __DIR__ );
+define("PATH", __DIR__);
 
-$_GLOBALS['vr'] = Database::getDb()->all("formVrByDir");
+ini_set("log_errors", 1);
+ini_set("error_log", PATH . "/datas/__errors.log");
 
-$_GLOBALS['groupe_intervention'] = Database::getDb()->all("groupe_intervention");
-
-$_GLOBALS['ui'] = Database::getDb()->all("ui");
-
-$_GLOBALS['colonnes_encours']  =  Database::getDb()->all("colonnes" , "encours" , 1);
-
-$_GLOBALS['colonnes_releves']  =  Database::getDb()->all("colonnes" , "releves" , 1);
-
-foreach ($_GLOBALS['colonnes_encours'] as $col )
-    $buffer[] = $col['col_label'];
-
-$_GLOBALS['entete_encours'] = $buffer;
-
-foreach ($_GLOBALS['colonnes_releves'] as $col )
-    $buffer[] = $col['col_label'];
-
-$_GLOBALS['entete_releves'] = $buffer;
