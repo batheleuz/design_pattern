@@ -2,3 +2,4 @@
 /datas/services/*
 *.docx
 *.log
+.idea
