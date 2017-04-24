@@ -1,9 +1,9 @@
-function verbose( color , txt){  // Function pour alerter prend en argument le texte a écrire
+function verbose_popup( color , txt){  // Function pour alerter prend en argument le texte a écrire
 
   return "<div class='w3-panel "+ color +" w3-round popupunder alert '> " +
          "<span onclick=\"this.parentElement.style.display='none'\" class='w3-closebtn'>&times;</span> "+
          "<h3><u></u></h3>"+
-         "<p>"+ txt +"</p></div>" ;
+         "<p>"+ txt +"</p></div>";
 }
 
 function myFunction() {

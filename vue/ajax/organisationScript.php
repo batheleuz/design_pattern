@@ -3,8 +3,8 @@
     $liste_gi = json_encode($_SESSION['groupe_intervention']);
     $liste_ui = json_encode($_SESSION['ui']);  ?>
 
-    var lgi = <?= $liste_gi; ?> ,
-        lui = <?= $liste_ui; ?> ,
+    var lgi = <?= $liste_gi; ?>,
+        lui = <?= $liste_ui; ?>,
         categorie_active = null,
         gi_active = null,
         loader = "<div class='loader'><img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader'/></div>";

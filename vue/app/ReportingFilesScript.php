@@ -58,7 +58,7 @@
         $.each(data.kpi, function (k, v) {
             $("#kpi_report").append(" <span class='w3-tag w3-round-large w3-teal' style='display:inline-block;margin-top:5px;margin-bottom:5px;'> " + v.abreviation + " </span> ");
         });
-        if (data.gi){
+        if (data.gi) {
             console.log(data.gi);
             console.log( liste_gi ) ;
             $.each(data.gi, function (k, v) {
@@ -144,7 +144,7 @@
     $("body").append(loader);
 
     $(document).ready(function () {
-        
+
         window.setTimeout(function () {
             $("div.loader").remove();
         }, 500);
