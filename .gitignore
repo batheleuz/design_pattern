@@ -1,5 +1,6 @@
-/datas/elements/*
-/datas/services/*
+/datas/elements/
+/datas/services/
+/datas/uploads/
 *.docx
 *.log
 .idea
