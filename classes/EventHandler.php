@@ -24,19 +24,20 @@ class EventHandler{
         };
     }
 
-    static function serviceNotify(){
+    static function notifyToService(){
         return function( $id_service  , $title , $content , $link="#",  $fa_icon = "bell-o" ){
             $db = Database::getDb();
-            $users=$db->all("user" , "service" , $id_service);
+            $users=$db->all("user" , "service" , $id_service );
             foreach ( $users as $user )
                 $db->add("notification" , array(
-                "titre" => $title ,
-                "contenu" => $content ,
+                "titre" => $title,
+                "contenu" => $content,
                 "for_user" => $user["id"],
-                "id_service" => $id_service ,
-                "href" => $link ,
+                "id_service" => $id_service,
+                "href" => $link,
                 "fa_icon" => $fa_icon
             ));
         };
     }
+    
 }

@@ -6,7 +6,7 @@
  * Time: 14:53
  */
 
-function getNotifications( $idService , $idUser = null , $state = null ){
+function getNotifications( $idService , $idUser = null , $state = null ) {
 
     $rqt = "SELECT * FROM  notification WHERE id_service = '$idService' " ;
 
@@ -28,7 +28,7 @@ if( $_GET['controller'] == "ajax.php"){
     }
     else if ($action === "viewNotification" ){
         if (Database::getDb()->modif( "notification", "state" , 1 , "id"  , $notifID ) )
-            echo 1 ;
+            echo 1;
     }
 
 }

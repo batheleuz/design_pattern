@@ -236,10 +236,7 @@ $script = ob_get_clean();
 echo CodeCompressor::compress_js($script);
 
 ?>
-</body>
-</html>
-
-
+</body></html>
 
 <?php
 

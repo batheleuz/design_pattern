@@ -6,8 +6,7 @@
  * Date: 18/04/2017
  * Time: 11:36
  */
-class EventEmitter
-{
+class EventEmitter{
 
     private static $_instance;
     /**
@@ -15,8 +14,7 @@ class EventEmitter
      */
     private $listenners = [];
 
-    public static function getInstance()
-    {
+    public static function getInstance(){
 
         if (!self::$_instance) {
             self::$_instance = new EventEmitter();
@@ -25,12 +23,12 @@ class EventEmitter
     }
 
     /**
-     * @call function ( function witch name is  $event )
-     * @param $event
+     * @call function depuis notre pool evennement  $listenners.
+     * @param $event Le nom de l'evennement
      * @param array ...$args
      */
-    public function emit($event, ... $args)
-    {
+    public function emit($event, ...$args){
+
         if (array_key_exists($event, $this->listenners)) {
             foreach ($this->listenners[$event] as $action)
                 call_user_func_array($action, $args);
@@ -38,16 +36,19 @@ class EventEmitter
     }
 
     /**
-     * save the function from  @class EventHandler ( Closure or Callable) in $listenners with $event Key.
-     * @param $event
+     * @param $event: Le nom de l'evenement.
+     * @param $callback_Func null by default : le code de la function appeler.
+     ******** On recupere la function $event () dans EventHandler si @param $callback_Func n'est pas renseigné.
      */
-    public function on($event)
-    {
+    public function on($event , $callback_Func = null ){
 
         if (!array_key_exists($event, $this->listenners))
             $this->listenners[$event][] = [];
-
-        $this->listenners[$event][] = EventHandler::getInstance()->$event();
+        if( is_null($callback_Func) )
+            $this->listenners[$event][] = EventHandler::getInstance()->$event();
+        else{
+            $this->listenners[$event][] = $callback_Func ;
+        }
 
     }
 

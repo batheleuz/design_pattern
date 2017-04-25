@@ -64,8 +64,8 @@
         }
     ],
     "dates": {
-        "start": "2017-02-01",
-        "end": "2017-03-03"
+        "start": "2017-01-01",
+        "end": "2017-01-31"
     },
     "par": "day",
     "groupe_intervention": null
