@@ -1,14 +1,11 @@
+<link rel="stylesheet" href="<?= ASSETS."css/dataTables/dataTables.jquery-ui.min.css" ?>">
 <div class="w3-container" style="padding:32px 64px">
     <div class="w3-row">
         <h3 class="w3-text-blue-gray"><i class="fa fa-asterisk"></i> Listes des Services </h3>
         <hr>
-
         <table class="w3-table-all">
             <thead>
-            <th>Service</th>
-            <th>Direction</th>
-            <th>Admin</th>
-            <th>Action</th>
+               <th>Service</th> <th>Direction</th> <th>Admin</th> <th>Action</th>
             </thead>
             <tbody>
             <?php foreach (Database::getDb()->all("service") as $service): ?>
@@ -30,6 +27,9 @@
         </table>
     </div>
 </div>
+<script src="<?= ASSETS."js/dataTables.min.js" ?>"></script>
+<script src="<?= ASSETS."js/dataTables.jquery-ui.min.js" ?>"></script>
+<script src="<?= ASSETS."js/dt.js" ?>"></script>
 
 --------------------------------- Test Evenement ----------------------------------<br>
 
@@ -39,7 +39,6 @@ $emiter = EventEmitter::getInstance();
 
 $emiter->on("userCreated");
 
-$emiter->emit("userCreated", "moussa ", "ndiaye");
-
+$emiter->emit("userCreated", "moussa", "ndiaye");
 
 ?>

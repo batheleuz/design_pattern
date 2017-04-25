@@ -10,15 +10,16 @@ if ($_SESSION['user'] != null) {
 
     ob_start();
 
-    include "modele/app/" . $_GET['page'];
+    require_once PATH."/modele/app/notifications.php";
+    require_once PATH."/modele/app/". $_GET['page'];
 
     $content = ob_get_clean();
 
-    include 'vue/template/app.php';
+    include PATH.'/vue/template/app.php';
 
 } else {
 
-    include "vue/app/login.php";
+    include PATH."/vue/app/login.php";
 
 }
 

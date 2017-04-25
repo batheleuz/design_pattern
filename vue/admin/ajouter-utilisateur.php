@@ -4,10 +4,8 @@
         <hr>
         <form  method="POST" class="w3-container w3-padding-16">
             <div class="w3-section">
-
                 <label>Rechercher</label><br>
                 <input class="w3-border w3-input w3-padding" type="text" name="cn" value="<?= $_POST['cn'] ?>" placeholder="Nom Prenom">
-
             </div>
             <button class="w3-button w3-theme-action"><i class="fa fa-search"></i> Rechercher </button>
         </form>

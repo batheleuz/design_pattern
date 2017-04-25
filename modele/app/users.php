@@ -5,7 +5,7 @@
  * Date: 05/04/2017
  * Time: 10:52
  */
-
+$menu_conf_user = "w3-text-green";
 if ($_GET['controller'] == "ajax.php") {
 
     extract($_POST);
