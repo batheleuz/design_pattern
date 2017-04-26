@@ -178,7 +178,7 @@ ob_start();
                             }else{
                                 $(that).fadeOut();
                             }
-                        } , 1000 ) ;
+                        } , 600 ) ;
                 });
         }
     }
@@ -200,7 +200,7 @@ ob_start();
                             "<span class='w3-badge w3-right w3-small w3-deep-orange w3-animate-left' id='notifNumber'>"+notifNumber+"</span>"
                         );
                         $.each( notifs , function(key , value){
-                            notifications.prepend (
+                            notifications.append(
                                 notificationWrite( value.fa_icon , value.titre , value.contenu , value.id  , value.href )
                             );
                         });
@@ -218,7 +218,7 @@ ob_start();
         else {
             notifications.html("");
             $.each( notifList , function(key , value ) {
-                notifications.prepend( notificationWrite( value.fa_icon , value.titre , value.contenu , value.id , value.href ));
+                notifications.append( notificationWrite( value.fa_icon , value.titre , value.contenu , value.id , value.href ));
             });
         }
 

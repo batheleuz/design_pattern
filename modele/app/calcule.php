@@ -72,6 +72,7 @@ if ($_GET['controller'] == "ajax.php") {
     fclose($monfichier);
     $lreporting = new ReportingBuilder($lr['name'],$lr['direction'], $lr['groupe_intervention'] , $lr['column_kpi'], $lr['dates'] , $lr['par'], $_SESSION );
     $lreporting->designTab();
+
  */
 
 // Rwr::append( $_SESSION['service']['nom'] , $nom_reporting ,  "90" , $serial );

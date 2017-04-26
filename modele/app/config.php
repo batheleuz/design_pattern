@@ -7,8 +7,7 @@
  */
 
 
-function all($table, $where = null)
-{
+function all($table, $where = null){
 
     $rqt = "SELECT * FROM $table";
 
@@ -18,8 +17,7 @@ function all($table, $where = null)
     return Database::getDb()->rqt($rqt);
 }
 
-function count_code($colone)
-{
+function count_code($colone){
 
     $n = Database::getDb()->rqt("select count(*) as n from code where colonne ='$colone'");
     return $n[0]['n'];
@@ -33,6 +31,7 @@ function count_code($colone)
 if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
     include 'vue/ajax/' . $_GET['param1'] . '.php';
+
 } else if ($_GET['controller'] == "ajax.php") {
 
     extract($_POST);
@@ -51,15 +50,20 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
             $id_ind = Database::getDb()->add("pourcentage", array('delai' => $delai, 'type_drgt' => trim(strtolower($type_drgt)), 'delai_time' => $delai_time));
 
-            if ($id_ind >= 1)
+            if ( $id_ind > 0 ){
+                EventEmitter::getInstance()->on("notifyToService");
 
-                echo $id = Database::getDb()->add("kpi", array(
-                    'abreviation' => $abreviation,
+                echo $id = Database::getDb()->add("kpi", array('abreviation' => $abreviation,
                     'type_kpi' => 'pourcentage',
                     'id_indicateur' => $id_ind,
-                    'id_service' => $_SESSION['service']['id']
-                ));
+                    'id_service' => $_SESSION['service']['id'])
+                );
 
+                EventEmitter::getInstance()->emit(
+                    "notifyToService" ,  $_SESSION['service']['id'] , "Nouveau KPI" ,
+                    "Le KPI <span class='w3-text-teal'><b>$abreviation</b></span> vient d'être créé" , URL."app/reporting/nouveau/global" ,
+                    "plus-square" );
+            }
         endif;
 
     } else if ($action == "add_gi") {
@@ -70,22 +74,25 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
         if (!empty($gi)):
             echo 0;
         else:
+            EventEmitter::getInstance()->on("notifyToService");
+
             echo $id_gi = Database::getDb()->add("groupe_intervention",
                 array("nom" => strtoupper($nom_gi), "categorie" => $categorie, "id_service" => $_SESSION['service']['id']));
 
+            EventEmitter::getInstance()->emit (
+                "notifyToService" ,  $_SESSION['service']['id'] , "Nouveau GI" ,
+                "Le groupe d'intervention <span class='w3-text-teal'><b>".strtoupper($nom_gi)."</b></span> vient d'être créé" , URL."app/reporting/nouveau/global" ,
+                "plus-square");
         endif;
 
     } else if ($action == "add_ui") {
 
         $ui = Database::getDb()->rqt("SELECT * FROM ui WHERE  nom='$nom_ui' ");
         if (!empty($ui)):
-
             echo 0;
-        else:
 
-            $arr = array('nom' => strtoupper($nom_ui), 'id_groupe' => implode(';', $groupes));
-            $id_ui = Database::getDb()->add("ui", $arr);
-            echo $id_ui;
+        else:
+            echo $id_ui = Database::getDb()->add("ui", array('nom' => strtoupper($nom_ui), 'id_groupe' => implode(';', $groupes)) );
 
         endif;
 
@@ -128,27 +135,23 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
     } else if ($action == "list_files") {
 
         foreach (all("colonnes", "codification = 1 ") as $file) {
-
             $file_list[] = array('col' => $file['col_label'], 'nbre' => count_code($file['col_label']));
         }
-
         echo json_encode($file_list);
-
     }
+    
 } else if ($_GET['controller'] == "app.php") {
 
-    $menu_n = null;
-    $menu_l = null;
+    $menu_n = $menu_l  = null;
     $menu_conf = "w3-text-blue";
 
     if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3)
-        include "vue/app/configuration.php";
+        include PATH."/vue/app/configuration.php";
 
     else
         print "<div class='w3-panel w3-pale-red w3-leftbar w3-sand w3-xxlarge w3-serif '>
                 <p><i class='fa fa-warning'></i>
                 <i>Vous ne disposer pas de privilèges pour entrer dans cette partie.</i></p>
-               </div>     
-              ";
+               </div>";
 
 }
