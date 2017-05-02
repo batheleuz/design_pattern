@@ -154,15 +154,20 @@ ob_start();
             }
         })
     }
-
+    /**
+     * Template des notifications
+     */
     function notificationWrite( fa_icon , titre , contenu , id = 0 , href = "#"  ) {
+
         return  "<a style='cursor:pointer;' data-href='"+href+"' data-id='"+id+"' onclick='notificationRedirect(this)' >"  +
-                "<li class='w3-padding-4'> " +
-                "<div class='w3-row'> <div class='w3-col m2'>"+
-                "<span class='w3-left w3-circle w3-margin-right w3-text-deep-orange'><i class='fa fa-2x fa-"+fa_icon+" '></i></span>" +
-                "</div> <div class='w3-col m9'>" +
-                "<span class='w3-text-deep-orange'><b>"+titre+"</b></span><hr class='w3-margin-0'>" +
-                "<span class='w3-tiny w3-text-grey'> "+contenu+" </span> </div> </div></li></a>"
+                "<li class='w3-padding-0'>" +
+                "<div class='w3-row'> <div class='w3-col s2'>"+
+                "<span class='w3-left w3-circle w3-center w3-margin-top w3-text-deep-orange'><i class='fa fa-"+fa_icon+"' " +
+                "style='font-size:25px'></i></span>" +
+                "</div> <div class='w3-col s9' style='margin-top:0;'>" +
+                "<span class='w3-small w3-text-deep-orange'><b>"+titre + "</b></span><hr class='w3-margin-0'>" +
+                "<span class='w3-small w3-text-grey'> "+ contenu +" </span> </div> </div></li></a>"
+
     }
 
     function notificationRedirect(that){

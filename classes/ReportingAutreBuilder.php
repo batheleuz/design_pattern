@@ -11,7 +11,7 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
 
     private $column;
 
-    private $color = array('w3-pale-green', 'w3-pale-yellow', 'w3-pale-red', 'w3-pale-blue', 'w3-light-grey', 'w3-white');
+    private $color = array('w3-light-grey', 'w3-white');
 
     public function __construct($name = null, $direction = null, $column, $column_kpi = null, $dates = null, $par = null, $_GLOBALS = null)
     {
@@ -24,8 +24,7 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
             exit ("Vous devez choisir des colonnes ");
     }
 
-    public function designTab()
-    {
+    public function designTab(){
 
         $this->enteteTab();
 
@@ -35,15 +34,15 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
 
         $datas = $this->collector();
 
+        $ind = 1;
         foreach ($this->date_column() as $day) {
-
-            $color = $this->color[array_rand($this->color)];
+            $color = $this->color[$ind];
 
             for ($i = 0; $i < count($datas); $i++) {
 
                 $arr = explode(";", $datas[$i]);
 
-                print "<tr class=' $color w3-hover-light-gray'>";
+                print "<tr class=' $color w3-hover-gray'>";
                 print "<th>" . $this->formate_fr($day['column']) . "</th>";
 
                 foreach ($arr as $col)
@@ -58,6 +57,7 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
                 }
                 print "</tr>";
             }
+            $ind = ($ind+1) % 2 ;
         }
         print "</table></div>";
 

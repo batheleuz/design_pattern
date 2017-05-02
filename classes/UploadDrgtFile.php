@@ -10,30 +10,28 @@ require_once 'Database.php';
 
 class UploadDrgtFile
 {
-
-
     private $fichier;
     private $table;
     private $nbre_doublon = 0; //  nombre de doublons
     private $nbre_enrg = 0;     //  nombre de lignes enregistrées
     private $id_fic;
-    private $entete = array("nd", "nom_du_client", "nd_contact", "commentaire_contact", "segment",
+    private $entete = array(
+        "nd", "nom_du_client", "nd_contact", "commentaire_contact", "segment",
         "categorie", "acces_reseau", "acces_adsl", "acces_tv", "etat", "origine", "csig",
         "commentaire_signalisation", "agent_sig", "date_sig", "hsi", "date_ess", "h_date_ess",
         "defaut", "commentaire_essai", "agent_ess", "date_ori", "h_date_ori", "agent_ori", "ui",
         "equipe", "date_plan", "h_date_plan", "date_rel", "h_date_rel", "releve", "locali", "cause",
-        "commentaire_releve", "agent_rel");
+        "commentaire_releve", "agent_rel"
+    );
 
-    public function __construct($fichier, $table)
-    {
+    public function __construct($fichier, $table){
 
         $this->fichier = $fichier;
         $this->table = $table;
 
     }
 
-    public function enrg($extension)
-    {
+    public function enrg($extension){
 
         ini_set("auto_detect_line_endings", true);
 
@@ -53,12 +51,10 @@ class UploadDrgtFile
         return $res;
     }
 
-    private function checkCode()
-    {
+    private function checkCode(){
     }
 
-    private function notExist()
-    {
+    private function notExist(){
 
         $rqt = " SELECT * FROM fichier WHERE nom_fichier='$this->fichier' AND etat_fin=1 ";
         $fic = Database::getDb()->rqt($rqt);
@@ -69,8 +65,7 @@ class UploadDrgtFile
 
     }
 
-    private function enrglis()
-    {
+    private function enrglis(){
 
         $handle = fopen("datas/uploads/drgt/" . $this->fichier, "r") or die("Impossible d'ouvrir le fichier ");
 
@@ -88,8 +83,7 @@ class UploadDrgtFile
                 $row++;
             }
             fclose($handle);
-        } else
-            $txt = " Le fichier ne peut pas être ouvert ";
+        }
 
         if ($rowNum != 0) {
 
@@ -126,6 +120,7 @@ class UploadDrgtFile
 
             } else
                 $txt = " L'entête du fichier est incorrect ";
+
         } else
             $txt = " Veillez vérifier si le fichier contient une entête ";
 
@@ -133,117 +128,7 @@ class UploadDrgtFile
         return array('code' => 0, 'texte' => $txt);
     }
 
-    private function compare($arr)
-    {
-
-        return true;
-    }
-
-    private function add_drgt($entete, $line)
-    {
-
-        for ($i = 0; $i < count($entete); $i++) {
-
-            $valeurs[$entete[$i]] = trim($line[$i]);
-
-        }
-
-
-        if ($valeurs['nd'] != "ND") {
-
-            $valeurs['h_date_ess'] = $this->formate_hour($valeurs['h_date_ess'], $valeurs['date_ess']);
-            $valeurs['h_date_sig'] = $this->formate_hour($valeurs['h_date_sig'], $valeurs['date_sig']);
-            $valeurs['h_date_ori'] = $this->formate_hour($valeurs['h_date_ori'], $valeurs['date_ori']);
-            $valeurs['h_date_plan'] = $this->formate_hour($valeurs['h_date_plan'], $valeurs['date_plan']);
-            $valeurs['h_date_rel'] = $this->formate_hour($valeurs['h_date_rel'], $valeurs['date_rel']);
-
-            $valeurs['date_ess'] = $this->formate_date($valeurs['date_ess']);
-            $valeurs['date_sig'] = $this->formate_date($valeurs['date_sig']);
-            $valeurs['date_ori'] = $this->formate_date($valeurs['date_ori']);
-            $valeurs['date_plan'] = $this->formate_date($valeurs['date_plan']);
-            $valeurs['date_rel'] = $this->formate_date($valeurs['date_rel']);
-
-            $valeurs['id_fichier'] = $this->id_fic;
-
-
-            if ($this->checkDoublon($valeurs['nd'], $valeurs['date_sig'], $valeurs['date_ori'], $valeurs['date_rel']) == true) {
-
-                if (Database::getDb()->add($this->table, $valeurs) > 0)
-                    $this->nbre_enrg++;
-
-            } else
-                $this->nbre_doublon++;
-        }
-
-    }
-
-    private function formate_hour($hour, $date)
-    {
-
-        if ($hour == null)
-            if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", $date))
-                return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", "$4", $date);
-
-        if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{2}) ([0-9:]+)$#", $date))
-            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{2}) ([0-9:]+)$#", "$4", $date);
-
-        return $hour;
-    }
-
-    private function formate_date($date)
-    {
-
-        if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", $date))
-            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", "$3-$2-$1", $date);
-
-        else if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", $date))
-            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", "$3-$2-$1", $date);
-
-        else
-            return "0000-00-00";
-    }
-
-    private function checkDoublon($nd, $date_sig, $date_ori, $date_rel)
-    {
-
-        $rqt = " SELECT nd FROM " . $this->table . " WHERE nd = '$nd' " .
-            " AND date_sig ='$date_sig' AND date_ori ='$date_ori' AND date_rel ='$date_rel'  ";
-
-        $line = Database::getDb()->rqt($rqt);
-
-        if (isset($line[0]['nd']))
-            return false;
-
-        return true;
-
-    }
-
-    public function feedback()
-    {
-
-        if ($this->nbre_doublon != 0 || $this->nbre_enrg != 0)
-            $txte = "Enregistrement du fichier " . $this->fichier . " réussi";
-        else
-            $txte = "Une erreur s'est produit lors du chargement du fichier";
-
-        return array(
-            'code' => 1,
-            'texte' => $txte,
-            'doublon' => $this->nbre_doublon,
-            'enrg' => $this->nbre_enrg
-        );
-    }
-
-    private function interrupt()
-    {
-
-        Database::getDb()->suppr("fichier", "id", $this->id_fic);
-        Database::getDb()->suppr($this->table, "id_fichier", $this->id_fic);
-
-    }
-
-    private function enrgcsv()
-    {
+    private function enrgcsv(){
 
         if (($handle = fopen("datas/uploads/drgt/" . $this->fichier, "r")) !== FALSE) {
 
@@ -289,4 +174,105 @@ class UploadDrgtFile
         return array('code' => 0, 'texte' => $txt);
     }
 
+    private function compare($arr){
+
+        return true;
+    }
+
+    private function add_drgt($entete, $line){
+
+        for ($i = 0; $i < count($entete); $i++) {
+
+            $valeurs[$entete[$i]] = trim($line[$i]);
+
+        }
+
+
+        if ($valeurs['nd'] != "ND") {
+
+            $valeurs['h_date_ess'] = $this->formate_hour($valeurs['h_date_ess'], $valeurs['date_ess']);
+            $valeurs['h_date_sig'] = $this->formate_hour($valeurs['h_date_sig'], $valeurs['date_sig']);
+            $valeurs['h_date_ori'] = $this->formate_hour($valeurs['h_date_ori'], $valeurs['date_ori']);
+            $valeurs['h_date_plan'] = $this->formate_hour($valeurs['h_date_plan'], $valeurs['date_plan']);
+            $valeurs['h_date_rel'] = $this->formate_hour($valeurs['h_date_rel'], $valeurs['date_rel']);
+
+            $valeurs['date_ess'] = $this->formate_date($valeurs['date_ess']);
+            $valeurs['date_sig'] = $this->formate_date($valeurs['date_sig']);
+            $valeurs['date_ori'] = $this->formate_date($valeurs['date_ori']);
+            $valeurs['date_plan'] = $this->formate_date($valeurs['date_plan']);
+            $valeurs['date_rel'] = $this->formate_date($valeurs['date_rel']);
+
+            $valeurs['id_fichier'] = $this->id_fic;
+
+
+            if ($this->checkDoublon($valeurs['nd'], $valeurs['date_sig'], $valeurs['date_ori'], $valeurs['date_rel']) == true) {
+
+                if (Database::getDb()->add($this->table, $valeurs) > 0)
+                    $this->nbre_enrg++;
+
+            } else
+                $this->nbre_doublon++;
+        }
+
+    }
+
+    private function formate_hour($hour, $date){
+
+        if ($hour == null)
+            if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", $date))
+                return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", "$4", $date);
+
+        if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{2}) ([0-9:]+)$#", $date))
+            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{2}) ([0-9:]+)$#", "$4", $date);
+
+        return $hour;
+    }
+
+    private function formate_date($date){
+
+        if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", $date))
+            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", "$3-$2-$1", $date);
+
+        else if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", $date))
+            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", "$3-$2-$1", $date);
+
+        else
+            return "0000-00-00";
+    }
+
+    private function checkDoublon($nd, $date_sig, $date_ori, $date_rel){
+
+        $rqt = " SELECT nd FROM " . $this->table . " WHERE nd = '$nd' " .
+            " AND date_sig ='$date_sig' AND date_ori ='$date_ori' AND date_rel ='$date_rel'  ";
+
+        $line = Database::getDb()->rqt($rqt);
+
+        if (isset($line[0]['nd']))
+            return false;
+
+        return true;
+
+    }
+
+    public function feedback(){
+
+        if ($this->nbre_doublon != 0 || $this->nbre_enrg != 0)
+            $txte = "Enregistrement du fichier " . $this->fichier . " réussi";
+        else
+            $txte = "Une erreur s'est produit lors du chargement du fichier";
+
+        return array(
+            'code' => 1,
+            'texte' => $txte,
+            'doublon' => $this->nbre_doublon,
+            'enrg' => $this->nbre_enrg
+        );
+    }
+
+    private function interrupt(){
+
+        Database::getDb()->suppr("fichier", "id", $this->id_fic);
+        Database::getDb()->suppr($this->table, "id_fichier", $this->id_fic);
+
+    }
 }
