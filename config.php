@@ -6,7 +6,6 @@
  * Time: 19:45
  */
 
-
 /* * CHARGEMENT DE NOTRE AUTOLOADER ********* */
 
 require "classes/Autoloader.php";
@@ -28,6 +27,4 @@ define("ASSETS", URL . "assets/");
 
 define("PATH", __DIR__);
 
-ini_set("log_errors", 1);
-ini_set("error_log", PATH . "/datas/__errors.log");
 
