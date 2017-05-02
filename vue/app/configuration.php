@@ -8,9 +8,8 @@
 ob_start();
 ?>
 
-<h3 class="w3-padding-0 w3-text-grey"><i class="fa fa-cog"></i> CONFIGURATION
-    <hr style='border-top:solid 1px #ccc;'>
-</h3>
+<h3 class="w3-padding-0 w3-text-grey"><i class="fa fa-cog"></i> CONFIGURATION </h3>
+<hr style='border-top:solid 1px #ccc;'>
 <div id="data"></div>
 <div id="tabs">
     <ul>
@@ -25,7 +24,7 @@ ob_start();
         $html = ob_get_clean();
         echo CodeCompressor::compress_html($html);
 
-        include 'vue/ajax/ConfigKPI.php';
+        include PATH.'/vue/ajax/configKPI.php';
 
         ob_start();
         ?>

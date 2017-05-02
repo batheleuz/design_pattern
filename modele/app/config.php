@@ -11,7 +11,7 @@ function all($table, $where = null){
 
     $rqt = "SELECT * FROM $table";
 
-    if ($where != null)
+    if ($where != null) 
         $rqt .= " WHERE $where ";
 
     return Database::getDb()->rqt($rqt);
@@ -40,7 +40,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
         if ($delai_time == "J") $delai_time = "DAY";
         if ($delai_time == "H") $delai_time = "HOUR";
 
-        $kpi = Database::getDb()->rqt("SELECT *  FROM kpi WHERE abreviation='" . trim($abreviation) . "' AND id_service='{$_SESSION['service']['id']}' ");
+        $kpi = all("kpi", "abreviation='" . trim($abreviation) . "' AND id_service='{$_SESSION['service']['id']}' ");
 
         if (!empty($kpi)):
 
@@ -50,26 +50,25 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
             $id_ind = Database::getDb()->add("pourcentage", array('delai' => $delai, 'type_drgt' => trim(strtolower($type_drgt)), 'delai_time' => $delai_time));
 
-            if ( $id_ind > 0 ){
+            if ($id_ind > 0) {
                 EventEmitter::getInstance()->on("notifyToService");
 
                 echo $id = Database::getDb()->add("kpi", array('abreviation' => $abreviation,
-                    'type_kpi' => 'pourcentage',
-                    'id_indicateur' => $id_ind,
-                    'id_service' => $_SESSION['service']['id'])
+                        'type_kpi' => 'pourcentage',
+                        'id_indicateur' => $id_ind,
+                        'id_service' => $_SESSION['service']['id'])
                 );
 
                 EventEmitter::getInstance()->emit(
-                    "notifyToService" ,  $_SESSION['service']['id'] , "Nouveau KPI" ,
-                    "Le KPI <span class='w3-text-teal'><b>$abreviation</b></span> vient d'être créé" , URL."app/reporting/nouveau/global" ,
-                    "plus-square" );
+                    "notifyToService", $_SESSION['service']['id'], "Nouveau KPI",
+                    "Le KPI <span class='w3-text-teal'><b>$abreviation</b></span> vient d'être créé", URL . "app/reporting/nouveau/global",
+                    "plus-square");
             }
         endif;
 
     } else if ($action == "add_gi") {
 
-        $gi = Database::getDb()->rqt("SELECT * FROM groupe_intervention WHERE  nom ='$nom_gi' 
-                                      AND categorie ='$categorie' AND id_service='{$_SESSION['service']['id']}' ");
+        $gi = all("nom ='$nom_gi'AND categorie ='$categorie' AND id_service='{$_SESSION['service']['id']}' ");
 
         if (!empty($gi)):
             echo 0;
@@ -79,15 +78,23 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
             echo $id_gi = Database::getDb()->add("groupe_intervention",
                 array("nom" => strtoupper($nom_gi), "categorie" => $categorie, "id_service" => $_SESSION['service']['id']));
 
-            EventEmitter::getInstance()->emit (
-                "notifyToService" ,  $_SESSION['service']['id'] , "Nouveau GI" ,
-                "Le groupe d'intervention <span class='w3-text-teal'><b>".strtoupper($nom_gi)."</b></span> vient d'être créé" , URL."app/reporting/nouveau/global" ,
+            EventEmitter::getInstance()->emit(
+                "notifyToService", $_SESSION['service']['id'], "Nouveau GI",
+                "Le groupe d'intervention <span class='w3-text-teal'><b>" . strtoupper($nom_gi) . "</b></span> vient d'être créé", URL . "app/reporting/nouveau/global",
                 "plus-square");
         endif;
 
-    } else if ($action == "add_ui") {
+    }else if ($action == "suppr_gi"){
+        
+        if( Database::getDb()->modif("groupe_intervention" , "deleted" , 1 , "id" , $id_gi ) ){
+            $_SESSION['groupe_intervention'] = all("groupe_intervention" , "deleted=0  AND ( is_modifiable=0 OR id_service={$_SESSION['service']['id']} ) ");
+            echo 1;
+        }
+        else echo 0 ;
 
-        $ui = Database::getDb()->rqt("SELECT * FROM ui WHERE  nom='$nom_ui' ");
+    }else if ($action == "add_ui") {
+
+        $ui = all( "ui" , "nom='$nom_ui' ");
         if (!empty($ui)):
             echo 0;
 
@@ -103,7 +110,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
     } else if ($action == "suppr_kpi") {
 
-        $kpi = all("kpi", "id ='$id' AND id_service ='{$_SESSION['service']['id']}' ");
+        $kpi = all("kpi", "id = '$id' AND id_service ='{$_SESSION['service']['id']}' ");
 
         if (Database::getDb()->suppr($kpi[0]['type_kpi'], "id", $kpi[0]['id']) == true) {
 
@@ -124,8 +131,11 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
     } else if ($action == "getGIList") {
 
-        $_SESSION['groupe_intervention'] = all("groupe_intervention", " id_service='{$_SESSION['service']['id']}' ");
-        echo json_encode($_SESSION['groupe_intervention']);
+        echo json_encode( all(
+            "groupe_intervention" ,
+            "deleted=0  AND ( is_modifiable=0 OR id_service={$_SESSION['service']['id']} ) "
+            )
+        );
 
     } else if ($action == "getKpiList") {
 

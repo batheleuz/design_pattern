@@ -13,7 +13,7 @@
         return "<div class='w3-panel w3-leftbar " + color + " '><span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span><p>" + txt + "</p></div>";
     }
 
-    function refreshListGI(categorie = null) {
+    function refreshListGI(categorie = null){
 
         $("#list_gi").html("");
         $.each(lgi, function (key, value) {
@@ -101,8 +101,23 @@
 
     function supprGI(id_gi) {
 
-        console.log(id_gi);
+        $.post("<?= URL ?>ajax/config" , {action : "suppr_gi", id_gi : id_gi})
+            .done(function(data){
+               if(data == "1"){
+                   $("#list_gi").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
+                   window.setTimeout(function () {
+                       $.post("<?= URL ?>ajax/config", {action: "getGIList"})
+                           .done(function (liste) {
+                               console.log(liste);
+                               lgi = $.parseJSON(liste);
+                               refreshListGI(categorie_active);
+                           });
+                   }, 2500);
 
+               }else{
+                    console.log('not ok') ;
+               }
+            });
     }
 
     function refreshListUI() {
@@ -168,7 +183,7 @@
 
                     $("#gi_rsl").html(verbose("w3-teal", " Création du groupe réussis."));
                     document.getElementById('modal_add_gi').style.display = 'none';
-                    $("#list_gi").append("<tr><td><i class='fa fa-spinner fa-pulse'></i></td><td><td></tr>");
+                    $("#list_gi").append("<tr><td><h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4></td><td><td></tr>");
                     window.setTimeout(function () {
                         $.post("<?= URL ?>ajax/config", {action: "getGIList"})
                             .done(function (data) {

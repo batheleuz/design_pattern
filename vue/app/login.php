@@ -45,7 +45,7 @@
                 $_SESSION['service'] = $service[0];
                 $_SESSION['vr'] = Database::getDb()->all("formVrByDir");
                 $_SESSION['ui'] = Database::getDb()->all("ui");
-                $_SESSION['groupe_intervention'] = Database::getDb()->rqt("SELECT * FROM groupe_intervention WHERE is_modifiable = 0 or id_service = '{$service[0]['id']}' ");
+                $_SESSION['groupe_intervention'] = Database::getDb()->rqt("SELECT * FROM groupe_intervention WHERE deleted=0  AND (is_modifiable = 0 or id_service = '{$service[0]['id']}') ");
                 $_SESSION['kpi'] = Database::getDb()->all("kpi", "id_service", $service[0]['id']);
 
                 ?>

@@ -52,7 +52,7 @@ function page($pageTitle)
 
                                 <select data-placeholder="Sous traitant , Services , ...." name='groupe_intervention[]'
                                         multiple class="chosen-select">
-                                    <?php foreach( all("groupe_intervention", "id_service='{$_SESSION['service']['id']}' OR is_modifiable=0")  as $gi ): ?>
+                                    <?php foreach( all("groupe_intervention", " deleted=0 AND (id_service='{$_SESSION['service']['id']}' OR is_modifiable=0) ")  as $gi ): ?>
                                         <option value="<?= $gi['id'] ?>"> <?= $gi['nom'] ?>  </option>
                                     <?php endforeach; ?>
                                 </select>

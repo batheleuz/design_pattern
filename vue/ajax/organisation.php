@@ -48,7 +48,6 @@ function page()
                 </div>
                 <table class="w3-table w3-striped w3-bordered w3-responsive w3-hoverable " id="list_gi">
                     <?php
-
                     foreach ($_SESSION['groupe_intervention'] as $li): ?>
                         <tr class="gi" onclick="afficherGI(this)" id="<?= $li['id'] ?>" style="cursor: pointer;">
                             <td><b><?= $li['nom'] ?></b></td>
@@ -58,13 +57,30 @@ function page()
             </div>
         </div>
         <div class="w3-col m5">
-            <div class="w3-container w3-border w3-padding"><h5 id="gi_title"> Groupe : </h5></div>
+            <div class="w3-container w3-border w3-padding"><h5 id="gi_title"> Groupe  </h5></div>
             <div class="w3-container w3-border w3-padding w3-pale-green "
                  style="height:550px;overflow-x:wrap;overflow-y:scroll">
                 <div class="w3-row w3-margin-bottom">
                     <div id="ui_rsl"></div>
                 </div>
-                <ul class="w3-ul" id="list_ui"></ul>
+                <ul class="w3-ul" id="list_ui">
+                   <div class="w3-border w3-padding w3-white w3-animate-fading">
+                       <h3>Groupe d'intervention</h3>
+                       <hr class='w3-border w3-border-teal'>
+                       <table class='w3-table w3-striped  w3-bordered'>
+                           <tr><th>Catégorie : </th><td> </td></tr>
+                           <tr><th>Nom Groupe :</th><td> </td></tr>
+                           <tr><th>Liste des UI</th><td> </td></tr>
+                           <tr><td colspan='2'>
+                                   <div class='w3-row w3-padding'>
+                                       <?php for ($i = 1 ; $i <= 5 ; $i ++ ): ?>
+                                            <div class='w3-half'><li><b><span class='w3-label'> <?= $i ?>. _____ </span></b></li></div>
+                                       <?php endfor; ?>
+                                   </div>
+                           </tr>
+                        </table>
+                   </div>
+                </ul>
             </div>
         </div>
     </div>
