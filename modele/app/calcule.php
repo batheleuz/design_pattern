@@ -13,6 +13,7 @@ if ($_GET['controller'] == "ajax.php") {
 
     extract($_POST);
     $_GLOBALS['vr'] = $_SESSION['vr'];
+    $_GLOBALS['ui'] =  $_SESSION['ui'];
     $_GLOBALS['kpi'] = $_SESSION['kpi'];
     $_GLOBALS['service'] = $_SESSION['service'];
     $_GLOBALS['groupe_intervention'] =  $_SESSION['groupe_intervention'] ;

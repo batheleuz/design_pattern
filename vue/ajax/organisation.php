@@ -64,14 +64,14 @@ function page()
                     <div id="ui_rsl"></div>
                 </div>
                 <ul class="w3-ul" id="list_ui">
-                   <div class="w3-border w3-padding w3-white w3-animate-fading">
-                       <h3>Groupe d'intervention</h3>
+                   <div class="w3-border w3-padding w3-white">
+                       <h3 class="w3-animate-fading" >Groupe d'intervention</h3>
                        <hr class='w3-border w3-border-teal'>
                        <table class='w3-table w3-striped  w3-bordered'>
-                           <tr><th>Catégorie : </th><td> </td></tr>
-                           <tr><th>Nom Groupe :</th><td> </td></tr>
-                           <tr><th>Liste des UI</th><td> </td></tr>
-                           <tr><td colspan='2'>
+                           <tr class="w3-animate-fading"><th>Catégorie : </th><td>__________</td></tr>
+                           <tr class="w3-animate-fading"><th>Nom Groupe :</th><td>__________</td></tr>
+                           <tr class="w3-animate-fading"><th>Liste des UI</th><td>__________</td></tr>
+                           <tr class="w3-animate-fading"><td colspan='2'>
                                    <div class='w3-row w3-padding'>
                                        <?php for ($i = 1 ; $i <= 5 ; $i ++ ): ?>
                                             <div class='w3-half'><li><b><span class='w3-label'> <?= $i ?>. _____ </span></b></li></div>

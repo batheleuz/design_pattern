@@ -68,7 +68,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
     } else if ($action == "add_gi") {
 
-        $gi = all("nom ='$nom_gi'AND categorie ='$categorie' AND id_service='{$_SESSION['service']['id']}' ");
+        $gi = all("groupe_intervention" ,  "nom ='$nom_gi' AND categorie ='$categorie' AND id_service='{$_SESSION['service']['id']}' AND deleted = 0 ");
 
         if (!empty($gi)):
             echo 0;
@@ -84,10 +84,10 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
                 "plus-square");
         endif;
 
-    }else if ($action == "suppr_gi"){
+    } else if ($action == "suppr_gi"){
         
         if( Database::getDb()->modif("groupe_intervention" , "deleted" , 1 , "id" , $id_gi ) ){
-            $_SESSION['groupe_intervention'] = all("groupe_intervention" , "deleted=0  AND ( is_modifiable=0 OR id_service={$_SESSION['service']['id']} ) ");
+            $_SESSION['groupe_intervention'] = all("groupe_intervention", "deleted=0 AND ( is_modifiable=0 OR id_service={$_SESSION['service']['id']} ) ");
             echo 1;
         }
         else echo 0 ;
@@ -97,10 +97,9 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
         $ui = all( "ui" , "nom='$nom_ui' ");
         if (!empty($ui)):
             echo 0;
-
         else:
-            echo $id_ui = Database::getDb()->add("ui", array('nom' => strtoupper($nom_ui), 'id_groupe' => implode(';', $groupes)) );
-
+            echo $id_ui = Database::getDb()->add("ui", array('nom' => strtoupper($nom_ui)));
+            $_SESSION['ui'] =  all("ui");
         endif;
 
     } else if ($action == "update_ui") {

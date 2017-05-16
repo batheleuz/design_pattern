@@ -16,17 +16,17 @@
 <link rel="icon" type="image/png" sizes="96x96" href="<?= ASSETS ?>image/favicon/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?= ASSETS ?>image/favicon/favicon-16x16.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="<?= ASSETS; ?>js/jquery.js"></script>
-<script type="text/javascript" src="<?= ASSETS; ?>js/app.js"></script>
-<script type="text/javascript" src="<?= ASSETS; ?>js/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?= ASSETS; ?>js/jquery.table2excel.js"></script>
+<script type="text/javascript" src="<?= ASSETS ?>js/jquery.js"></script>
+<script type="text/javascript" src="<?= ASSETS ?>js/app.js"></script>
+<script type="text/javascript" src="<?= ASSETS ?>js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?= ASSETS ?>js/jquery.table2excel.js"></script>
 <script type="text/javascript" src="<?= ASSETS ?>js/chosen.jquery.min.js"></script>
 <body class="w3-light-grey">
 <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
-    <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i> Menu
-    </button>
     <span class="w3-left">
-        <img src="<?= ASSETS ?>image/snt.png" height="30" alt="LOGO">
+         <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i> 
+         </button>
+        <img src="<?= ASSETS ?>image/snt.png"  class="w3-hide-small" height="30" alt="LOGO">
     </span>
     <span class="w3-right">
         <?php $notifs = getNotifications($_SESSION['user']['service'], $_SESSION['user']['id'] , 0 ); ?>
@@ -80,7 +80,7 @@
     <a href="#" class="w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu">
         <i class="fa fa-remove fa-fw"></i>Fermer
     </a>
-    <a class="w3-padding-16  w3-grey w3-margin-bottom "> Reporting </a>
+    <a class="w3-padding-16  w3-grey w3-margin-bottom "> Reporting Dérangement</a>
     <a href="<?= URL ?>app/reporting/upload" class="w3-padding <?= $menu_up ?>"><i class="fa fa-upload fa-fw"></i>
         Charger Fichier </a>
     <a href="<?= URL ?>app/reporting/nouveau/global" class="w3-padding <?= $menu_ng ?>"><i
@@ -89,7 +89,8 @@
             class="fa fa-plus-circle fa-fw"></i> Autre Reporting </a>
     <a href="<?= URL ?>app/reporting/liste/fichier" class="w3-padding <?= $menu_lf ?>"> <i
             class="fa fa-calendar fa-fw"></i> Mes reportings </a>
-    <a href="#" class="w3-padding w3-hover-red" onclick="deconnexion()"> <i class="fa fa-sign-out fa-fw"></i>
+    <hr>
+    <a href="#" class="w3-padding w3-hover-white w3-hover-text-red" onclick="deconnexion()"> <i class="fa fa-sign-out fa-fw"></i>
         Déconnexion </a>
 </nav>
 

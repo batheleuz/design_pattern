@@ -88,36 +88,48 @@
 
         if (__get(lgi, gi_active)['is_modifiable'] == 1)
             content = content +
-                "<button class='w3-btn w3-margin w3-btn w3-hover-border-white w3-teal w3-border w3-large' " +
+                "<button class='w3-button w3-margin w3-hover-white w3-teal w3-border w3-padding w3-border-teal' " +
                 "style='cursor:pointer;' " +
                 "onclick=\"document.getElementById('modal_add_existant_ui').style.display='block'\">" +
-                "<i class='fa fa-cog'></i> ui </button>" +
-                "<button class='w3-btn w3-hover-border-white w3-border w3-red w3-padding' onclick='supprGI(" + gi_active + ");' >" +
-                "<i class='fa fa-trash'></i> suppr </button> ";
+                "<i class='fa fa-wrench'></i></button>" +
+                "<button class='w3-button w3-hover-white w3-border w3-red w3-padding w3-border-red'" +
+                "style='cursor:pointer;' " +
+                " onclick='supprGI(" + gi_active + ");' >" +
+                "<i class='fa fa-trash'></i></button> ";
 
         content = content + "</div>";
         $("#list_ui").html(content);
     }
 
     function supprGI(id_gi) {
-
-        $.post("<?= URL ?>ajax/config" , {action : "suppr_gi", id_gi : id_gi})
-            .done(function(data){
-               if(data == "1"){
-                   $("#list_gi").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
-                   window.setTimeout(function () {
-                       $.post("<?= URL ?>ajax/config", {action: "getGIList"})
-                           .done(function (liste) {
-                               console.log(liste);
-                               lgi = $.parseJSON(liste);
-                               refreshListGI(categorie_active);
-                           });
-                   }, 2500);
-
-               }else{
-                    console.log('not ok') ;
-               }
-            });
+        $("#dialog-confirm").html(" <h5 class='w3-padding w3-center'>Le groupe d'intervention <span class='w3-text-red'> "+
+            __get(lgi, gi_active)['nom']+"</span> sera supprimé </h5> ");
+        $("#dialog-confirm").dialog({
+            resizable: false, height: 200, modal: true, width: 400, title: "Suppression",
+            buttons: {
+                "Supprimer": function () {
+                    $.post("<?= URL ?>ajax/config" , {action : "suppr_gi", id_gi : id_gi})
+                        .done(function(data){
+                            if(data == "1"){
+                                $("#list_gi").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
+                                window.setTimeout(function () {
+                                    $.post("<?= URL ?>ajax/config", {action: "getGIList"})
+                                        .done(function (liste) {
+                                            console.log(liste);
+                                            lgi = $.parseJSON(liste);
+                                            refreshListGI(categorie_active);
+                                        });
+                                }, 2500);
+                            }else{
+                                console.log('not ok') ;
+                            }
+                        });
+                },
+                "Annuler": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
     }
 
     function refreshListUI() {
@@ -224,7 +236,7 @@
 
                     $("#ui_rsl").html(verbose("w3-teal", " Création de l'ui réussis."));
                     document.getElementById('modal_add_ui').style.display = 'none';
-                    $("#list_ui").append("<i class='fa fa-spinner fa-2x fa-pulse'></i>");
+                    $("#list_ui").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
 
                     window.setTimeout(function () {
                         $.post("<?= URL; ?>/ajax/config", {action: "list_table", table: "ui"})
@@ -273,7 +285,7 @@
 
                     $("#ui_rsl").html(verbose("w3-teal", " Modifications enregistrées."));
                     document.getElementById('modal_add_existant_ui').style.display = 'none';
-                    $("#list_ui").append("<i class='fa fa-spinner fa-2x fa-pulse'></i>");
+                    $("#list_ui").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
 
                     window.setTimeout(function () {
                         $.post("<?= URL; ?>/ajax/config", {action: "list_table", table: "groupe_intervention"})

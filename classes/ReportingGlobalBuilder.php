@@ -331,20 +331,15 @@ class ReportingGlobalBuilder implements Serializable
 
     protected function ndrByGI($id_gi = null)
     {
-
         $gi = $this->getFromGlobal("groupe_intervention", "id", $id_gi);
-
         $uis = explode(";", $gi['id_uis']);
-        $rqt = null;
-
+        $rqt = "";
         foreach ($uis as $ui) {
             $mui = $this->getFromGlobal("ui", "id", $ui);
             $rqt .= "OR ui='" . $mui['nom'] . "' ";
         }
 
-
         return "(" . substr($rqt, 2) . ")";
-
     }
 
     protected function getGI($id_gi)
@@ -382,7 +377,7 @@ class ReportingGlobalBuilder implements Serializable
         foreach ($this->date_column() as $day) {
             if ($this->groupe_intervention == null):
                 print '<tr>';
-                print '<th>' . $this->formate_fr($day['column']) . '</th>';
+                print '<th>' . $day['column']. '</th>';
                 foreach ($this->column_kpi as $kpi) {
                     $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
                     $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
@@ -393,7 +388,7 @@ class ReportingGlobalBuilder implements Serializable
                 print '</tr>';
             else:
                 foreach ($this->groupe_intervention as $gi):
-                    print "<tr><th > " . $this->getGI($gi)['nom'] . " " . $this->formate_fr($day['column']) . " </th>";
+                    print "<tr><th > " . $this->getGI($gi)['nom'] . " " . $day['column'] . " </th>";
                     foreach ($this->column_kpi as $kpi) {
                         $ndr = 1 * (int)$this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
                         $total = 1 * (int)$this->ndr($day['rel'], $kpi['type_drgt'], $gi);

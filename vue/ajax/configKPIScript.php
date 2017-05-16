@@ -96,8 +96,8 @@
                 modal: true,
                 autoOpen: true,
                 title: titre,
-                height: 500,
-                width: 600,
+                height: 400,
+                width: 700,
                 modal: true,
             });
         });
@@ -168,15 +168,15 @@
         $("#dialog-confirm").dialog({
             resizable: false, height: 200, modal: true, width: 400, title: "Suppression",
             buttons: {
-                "Continuer": function () {
+                "Supprimer": function () {
                     $(this).dialog("close");
-                    $.post("<?= URL ?>ajax/config", {action: "suppr_kpi", id: that.getAttribute("data-id")})
+                    $.post("<?= URL ?>ajax/config", { action: "suppr_kpi", id: that.getAttribute("data-id")})
                         .done(function (data) {
                             $("#rsl").html(verbose("w3-red", "Vous avez supprimé le KPI " + data));
                             refreshList();
                         })
                 },
-                "Fermer": function () {
+                "Annuler": function () {
                     $(this).dialog("close");
                 },
             },
