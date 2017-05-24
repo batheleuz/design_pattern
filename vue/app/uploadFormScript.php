@@ -1,7 +1,6 @@
 <script type="text/javascript">
     function verbose(color, txt) {
-        var rt = "<div class='w3-panel w3-round w3-leftbar w3-animate-fading " + color + " '> " +
-            "<span class='w3-closebtn' onclick=\"this.parentElement.style.display='none'\"> x </span>" +
+        var rt = "<div class='w3-panel w3-round w3-leftbar w3-animate-zoom " + color + " '> " +
             "<p>" + txt + "</p></div>";
         return rt;
     }

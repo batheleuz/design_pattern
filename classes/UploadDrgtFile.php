@@ -10,7 +10,7 @@ require_once 'Database.php';
 
 class UploadDrgtFile
 {
-    private $fichier;
+    public $fichier;
     private $table;
     private $nbre_doublon = 0; //  nombre de doublons
     private $nbre_enrg = 0;     //  nombre de lignes enregistrées
@@ -256,10 +256,12 @@ class UploadDrgtFile
 
     public function feedback(){
 
-        if ($this->nbre_doublon != 0 || $this->nbre_enrg != 0)
+        if ($this->nbre_doublon != 0 || $this->nbre_enrg != 0){
             $txte = "Enregistrement du fichier " . $this->fichier . " réussi";
+            EventEmitter::getInstance()->on("notifyToService");
+        }
         else
-            $txte = "Une erreur s'est produit lors du chargement du fichier";
+            $txte = "Une erreur s'est produite lors de l'enregistrement.";
 
         return array(
             'code' => 1,

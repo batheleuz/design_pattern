@@ -214,10 +214,10 @@
                             console.log(data);
                             if (data == "1") {
                                 window.setTimeout(function () {
-                                    dialogBox.html(verbose("w3-teal", "Suppression réussi."));
+                                    dialogBox.html("<h3 class='w3-center w3-teal'> <i class='fa fa-check'></i>  Suppression réussi. </h3>");
                                 }, 1000);
                             } else
-                                dialogBox.html(verbose("w3-red", "Suppression impossible."));
+                                dialogBox.html("<h3 class='w3-center'> <i class='fa fa-remove'></i> Suppression impossible. </h3>" );
 
                         });
                 },

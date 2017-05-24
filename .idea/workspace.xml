@@ -5,8 +5,10 @@
     <list default="true" id="1e22ac67-7079-4bec-a9b7-0972d45a19c9" name="Failed commit: New changelist" comment="Notification System. Ready.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" afterPath="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/EventHandler.php" afterPath="$PROJECT_DIR$/classes/EventHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/UploadDrgtFile.php" afterPath="$PROJECT_DIR$/classes/UploadDrgtFile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/dec.php" afterPath="$PROJECT_DIR$/controller/dec.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/services/PMT/reportings.xml" afterPath="$PROJECT_DIR$/datas/services/PMT/reportings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/services/PMT/tmp_file.json" afterPath="$PROJECT_DIR$/datas/services/PMT/tmp_file.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/agent_ori.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/agent_ori.csv" />
@@ -20,14 +22,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/calcule.php" afterPath="$PROJECT_DIR$/modele/app/calcule.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/config.php" afterPath="$PROJECT_DIR$/modele/app/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/reporting.php" afterPath="$PROJECT_DIR$/modele/app/reporting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/ajax/configKPIScript.php" afterPath="$PROJECT_DIR$/vue/ajax/configKPIScript.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/ajax/organisation.php" afterPath="$PROJECT_DIR$/vue/ajax/organisation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/ajax/organisationScript.php" afterPath="$PROJECT_DIR$/vue/ajax/organisationScript.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/uploader.php" afterPath="$PROJECT_DIR$/modele/app/uploader.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/configuration.php" afterPath="$PROJECT_DIR$/vue/app/configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/template/app.php" afterPath="$PROJECT_DIR$/vue/template/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/uploadFormScript.php" afterPath="$PROJECT_DIR$/vue/app/uploadFormScript.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/utilisateur.php" afterPath="$PROJECT_DIR$/vue/app/utilisateur.php" />
     </list>
     <ignored path="snt_drgt_reporting.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +58,7 @@
       <file leaf-file-name="organisationScript.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/ajax/organisationScript.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
+            <state relative-caret-position="-408">
               <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
               <folding>
                 <marker date="1494950010000" expanded="true" signature="828:843" placeholder="..." />
@@ -74,13 +73,13 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modele/app/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="70" column="148" selection-start-line="70" selection-start-column="148" selection-end-line="70" selection-end-column="148" />
+            <state relative-caret-position="250">
+              <caret line="131" column="35" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="35" />
               <folding>
-                <marker date="1494950286000" expanded="true" signature="141:155" placeholder="SELECT * FRO... ${$table}" />
-                <marker date="1494950286000" expanded="true" signature="333:388" placeholder="select count... code" />
-                <marker date="1494950286000" expanded="true" signature="5340:5504" placeholder="..." />
-                <marker date="1494950286000" expanded="true" signature="5360:5482" placeholder="..." />
+                <marker date="1495622558000" expanded="true" signature="141:155" placeholder="SELECT * FRO... ${$table}" />
+                <marker date="1495622558000" expanded="true" signature="333:388" placeholder="select count... code" />
+                <marker date="1495622558000" expanded="true" signature="5239:5403" placeholder="..." />
+                <marker date="1495622558000" expanded="true" signature="5259:5381" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -89,14 +88,59 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue/template/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="109" column="75" selection-start-line="109" selection-start-column="75" selection-end-line="109" selection-end-column="75" />
+            <state relative-caret-position="-3830">
+              <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
               <folding>
-                <element signature="e#6301#11156#0#HTML" expanded="false" />
-                <marker date="1494951037000" expanded="true" signature="7739:7754" placeholder="..." />
-                <marker date="1494951037000" expanded="true" signature="8097:8111" placeholder="..." />
-                <marker date="1494951037000" expanded="true" signature="8182:8195" placeholder="..." />
+                <element signature="e#2518#2598#0#HTML" expanded="true" />
+                <element signature="e#3816#3835#0#HTML" expanded="true" />
+                <element signature="e#3941#3960#0#HTML" expanded="true" />
+                <marker date="1495623367000" expanded="true" signature="7739:7754" placeholder="..." />
+                <marker date="1495623367000" expanded="true" signature="8097:8111" placeholder="..." />
+                <marker date="1495623367000" expanded="true" signature="8182:8195" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/app/uploader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="802">
+              <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadDrgtFile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/UploadDrgtFile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="260" column="63" selection-start-line="260" selection-start-column="63" selection-end-line="260" selection-end-column="63" />
+              <folding>
+                <marker date="1495622145000" expanded="true" signature="1610:1681" placeholder="SELECT * FRO... fichier" />
+                <marker date="1495622145000" expanded="true" signature="7792:7940" placeholder="SELECT nd FR... ${$this-&gt;table}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventHandler.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/EventHandler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventEmitter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/EventEmitter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classes/Autoloader.php" />
         <option value="$PROJECT_DIR$/classes/Database.php" />
         <option value="$PROJECT_DIR$/classes/CodeCompressor.php" />
         <option value="$PROJECT_DIR$/classes/EventListener.php" />
@@ -154,10 +197,8 @@
         <option value="$PROJECT_DIR$/vue/app/notifications.php" />
         <option value="$PROJECT_DIR$/controller/app.php" />
         <option value="$PROJECT_DIR$/classes/EventEmitter.php" />
-        <option value="$PROJECT_DIR$/classes/EventHandler.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/modele/app/notifications.php" />
-        <option value="$PROJECT_DIR$/classes/UploadDrgtFile.php" />
         <option value="$PROJECT_DIR$/classes/ReportingAutreBuilder.php" />
         <option value="$PROJECT_DIR$/vue/ajax/organisation.php" />
         <option value="$PROJECT_DIR$/modele/app/calcule.php" />
@@ -165,6 +206,9 @@
         <option value="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" />
         <option value="$PROJECT_DIR$/vue/ajax/configKPIScript.php" />
         <option value="$PROJECT_DIR$/vue/ajax/organisationScript.php" />
+        <option value="$PROJECT_DIR$/classes/EventHandler.php" />
+        <option value="$PROJECT_DIR$/classes/UploadDrgtFile.php" />
+        <option value="$PROJECT_DIR$/modele/app/uploader.php" />
         <option value="$PROJECT_DIR$/modele/app/config.php" />
         <option value="$PROJECT_DIR$/vue/template/app.php" />
       </list>
@@ -208,6 +252,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,24 +303,6 @@
               <option name="myItemId" value="vue" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design_pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design_pattern" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -305,20 +333,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modele" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design_pattern" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reportingPPP" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="140" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
@@ -446,7 +486,9 @@
       <workItem from="1493908510471" duration="266000" />
       <workItem from="1493988138790" duration="197000" />
       <workItem from="1494844498256" duration="2280000" />
-      <workItem from="1494866131706" duration="2305000" />
+      <workItem from="1494866131706" duration="2421000" />
+      <workItem from="1495034695259" duration="21000" />
+      <workItem from="1495551060356" duration="3642000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1491391617895</created>
@@ -700,11 +742,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493727298350</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Notification System. Ready.">
+      <created>1494962717440</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1494962717440</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182908000" />
+    <option name="totallyTimeSpent" value="186687000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -719,24 +768,24 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2274678" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23319027" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771084" sideWeight="0.50572246" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2067239" sideWeight="0.5048193" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -796,10 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1176">
           <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-          <folding>
-            <marker date="1493906476000" expanded="true" signature="1485:1520" placeholder="SELECT * FRO... kpi" />
-            <marker date="1493906476000" expanded="true" signature="1598:1680" placeholder="SELECT * FRO... ${$_kpi['type_kpi']}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,18 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="n#thead#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#date_column#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByTime#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByProd#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByDir#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#getFromGlobal#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByGI#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <marker date="1494845460000" expanded="true" signature="3657:3676" placeholder="..." />
-            <marker date="1494845460000" expanded="true" signature="10233:10278" placeholder="SELECT COUNT... drgt_releves" />
-            <marker date="1494845460000" expanded="true" signature="12946:12960" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,20 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/EventEmitter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
-          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/EventHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="27" column="91" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modele/app/notifications.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1041,24 +1060,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/uploader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/UploadCodiFile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/UploadDrgtFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1094,11 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
           <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
-          <folding>
-            <marker date="1493723342000" expanded="true" signature="2367:2479" placeholder="SELECT * FRO... groupe_intervention" />
-            <marker date="1493723342000" expanded="true" signature="3233:3247" placeholder="..." />
-            <marker date="1493723342000" expanded="true" signature="3875:3889" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,10 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="18" column="74" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1493906476000" expanded="true" signature="1485:1520" placeholder="SELECT * FRO... kpi" />
-            <marker date="1493906476000" expanded="true" signature="1598:1680" placeholder="SELECT * FRO... ${$_kpi['type_kpi']}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,18 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="390" column="88" selection-start-line="390" selection-start-column="88" selection-end-line="390" selection-end-column="88" />
-          <folding>
-            <element signature="n#thead#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#date_column#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByTime#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByProd#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByDir#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#getFromGlobal#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByGI#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <marker date="1494845460000" expanded="true" signature="3657:3676" placeholder="..." />
-            <marker date="1494845460000" expanded="true" signature="10233:10278" placeholder="SELECT COUNT... drgt_releves" />
-            <marker date="1494845460000" expanded="true" signature="12946:12960" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1136,10 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
           <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-          <folding>
-            <marker date="1493906567000" expanded="true" signature="655:750" placeholder="SELECT DISTI... drgt_releves" />
-            <marker date="1493906567000" expanded="true" signature="3786:3807" placeholder="SELECT * FRO... fichier" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,13 +1135,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4440">
           <caret line="185" column="27" selection-start-line="185" selection-start-column="27" selection-end-line="185" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/ajax/organisationScript.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
+        <state relative-caret-position="-408">
           <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
           <folding>
             <marker date="1494950010000" expanded="true" signature="828:843" placeholder="..." />
@@ -1172,28 +1151,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/config.php">
+    <entry file="file://$PROJECT_DIR$/classes/EventEmitter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/UploadDrgtFile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
-          <caret line="70" column="148" selection-start-line="70" selection-start-column="148" selection-end-line="70" selection-end-column="148" />
+          <caret line="260" column="63" selection-start-line="260" selection-start-column="63" selection-end-line="260" selection-end-column="63" />
           <folding>
-            <marker date="1494950286000" expanded="true" signature="141:155" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1494950286000" expanded="true" signature="333:388" placeholder="select count... code" />
-            <marker date="1494950286000" expanded="true" signature="5340:5504" placeholder="..." />
-            <marker date="1494950286000" expanded="true" signature="5360:5482" placeholder="..." />
+            <marker date="1495622145000" expanded="true" signature="1610:1681" placeholder="SELECT * FRO... fichier" />
+            <marker date="1495622145000" expanded="true" signature="7792:7940" placeholder="SELECT nd FR... ${$this-&gt;table}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/EventHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/uploader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="802">
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="131" column="35" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="35" />
+          <folding>
+            <marker date="1495622558000" expanded="true" signature="141:155" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1495622558000" expanded="true" signature="333:388" placeholder="select count... code" />
+            <marker date="1495622558000" expanded="true" signature="5239:5403" placeholder="..." />
+            <marker date="1495622558000" expanded="true" signature="5259:5381" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/template/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="109" column="75" selection-start-line="109" selection-start-column="75" selection-end-line="109" selection-end-column="75" />
+        <state relative-caret-position="-3830">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
           <folding>
-            <element signature="e#6301#11156#0#HTML" expanded="false" />
-            <marker date="1494951037000" expanded="true" signature="7739:7754" placeholder="..." />
-            <marker date="1494951037000" expanded="true" signature="8097:8111" placeholder="..." />
-            <marker date="1494951037000" expanded="true" signature="8182:8195" placeholder="..." />
+            <element signature="e#2518#2598#0#HTML" expanded="true" />
+            <element signature="e#3816#3835#0#HTML" expanded="true" />
+            <element signature="e#3941#3960#0#HTML" expanded="true" />
+            <marker date="1495623367000" expanded="true" signature="7739:7754" placeholder="..." />
+            <marker date="1495623367000" expanded="true" signature="8097:8111" placeholder="..." />
+            <marker date="1495623367000" expanded="true" signature="8182:8195" placeholder="..." />
           </folding>
         </state>
       </provider>

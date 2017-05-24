@@ -30,7 +30,6 @@ if ($_POST['action'] == "upload_codif") {
 
     $file_r = $_FILES['fichier_releves'];
     $inf_file_r = pathinfo($file_r['name']);
-
     $file_c = $_FILES['fichier_encours'];
     $inf_file_c = pathinfo($file_c['name']);
 
@@ -58,7 +57,6 @@ if ($_POST['action'] == "upload_codif") {
             if (move_uploaded_file($file_c['tmp_name'], "datas/uploads/drgt/" . $file_c['name'])) {
                 $upload = new UploadDrgtFile ($file_c['name'], "drgt_encours");
                 $res_c = $upload->enrg($inf_file_c['extension']);
-
             } else
                 $res_c = array('code' => 0, 'texte' => "'" . $file_c['name'] . "'ne peut pas être enregistré. Veillez réessez! ");
 
@@ -78,6 +76,11 @@ if ($_POST['action'] == "upload_codif") {
 
     else
         echo json_encode(array('r' => array('code' => 0, 'texte' => 'Le fichier est trop lourd pour être chargé.')));
+
+
+    EventEmitter::getInstance()->emit(
+        "notifyToService", $_SESSION['service']['id'], "Chargement Fichier",
+        "Le fichier {$upload->fichier} enregistrée ", "#"  ,"file-o" );
 
     unset($upload);
 

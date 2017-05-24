@@ -23,7 +23,7 @@ class EventHandler{
             echo $firstname . " " . $lastname . " a posté quelque chose ";
         };
     }
-
+    
     static function notifyToService(){
         return function( $id_service  , $title , $content , $link="#",  $fa_icon = "bell-o" ){
             $db = Database::getDb();

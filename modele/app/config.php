@@ -61,8 +61,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
                 EventEmitter::getInstance()->emit(
                     "notifyToService", $_SESSION['service']['id'], "Nouveau KPI",
-                    "Le KPI <span class='w3-text-teal'><b>$abreviation</b></span> vient d'être créé", URL . "app/reporting/nouveau/global",
-                    "plus-square");
+                    "Le KPI <span class='w3-text-teal'><b>$abreviation</b></span> vient d'être créé", "#",  "plus-square");
             }
         endif;
 
@@ -80,8 +79,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
             EventEmitter::getInstance()->emit(
                 "notifyToService", $_SESSION['service']['id'], "Nouveau GI",
-                "Le groupe d'intervention <span class='w3-text-teal'><b>" . strtoupper($nom_gi) . "</b></span> vient d'être créé", URL . "app/reporting/nouveau/global",
-                "plus-square");
+                "Le groupe d'intervention <span class='w3-text-teal'><b>" . strtoupper($nom_gi) . "</b></span> vient d'être créé", "#", "plus-square");
         endif;
 
     } else if ($action == "suppr_gi"){

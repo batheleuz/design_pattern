@@ -1,17 +1,12 @@
 {
-    "name": "reporting journaliere",
-    "direction": "SONATEL",
+    "name": "m",
+    "direction": "DINT",
+    "column": {
+        "segment": "ESN ",
+        "acces_tv": "KG_TV_SILV,KG_TV_GOLD ",
+        "agent_rel": "t_ic8123,t_at8079,t_pd3403,t_hg8124,t_sf3410,t_mf4547,ps7277,t_mt3404,t_bo4638,t_as3519 "
+    },
     "column_kpi": [
-        {
-            "id": "2",
-            "delai": "2",
-            "type_drgt": "adsl",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR2J ADSL",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "2"
-        },
         {
             "id": "3",
             "delai": "2",
@@ -20,7 +15,8 @@
             "nom": "",
             "abreviation": "VR2J TVO",
             "type_kpi": "pourcentage",
-            "id_indicateur": "3"
+            "id_indicateur": "3",
+            "id_service": "1"
         },
         {
             "id": "4",
@@ -30,43 +26,35 @@
             "nom": "",
             "abreviation": "VR1J TVO",
             "type_kpi": "pourcentage",
-            "id_indicateur": "4"
+            "id_indicateur": "4",
+            "id_service": "1"
         },
         {
-            "id": "7",
+            "id": "16",
+            "delai": "3",
+            "type_drgt": "tvo",
+            "delai_time": "DAY",
+            "nom": "",
+            "abreviation": "VR3J  TVO",
+            "type_kpi": "pourcentage",
+            "id_indicateur": "16",
+            "id_service": "1"
+        },
+        {
+            "id": "30",
             "delai": "3",
             "type_drgt": "adsl",
             "delai_time": "DAY",
             "nom": "",
-            "abreviation": "VR3J ADSL",
+            "abreviation": "VR3J  ADSL",
             "type_kpi": "pourcentage",
-            "id_indicateur": "7"
-        },
-        {
-            "id": "8",
-            "delai": "24",
-            "type_drgt": "adsl",
-            "delai_time": "HOUR",
-            "nom": "",
-            "abreviation": "VR24H ADSL",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "8"
-        },
-        {
-            "id": "11",
-            "delai": "5",
-            "type_drgt": "tvo",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR5J  TVO",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "11"
+            "id_indicateur": "30",
+            "id_service": "1"
         }
     ],
     "dates": {
-        "start": "2017-01-01",
-        "end": "2017-01-31"
+        "start": "2017-01-09",
+        "end": "2017-01-15"
     },
-    "par": "day",
-    "groupe_intervention": null
+    "par": "week"
 }
