@@ -1,11 +1,8 @@
 <script type="text/javascript">
 
     var loader = "<div class='loader'><img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader'/></div>";
-
     var selected_col = null;
-
     var selecteds_cols = Array();
-
     $("body").append(loader);
 
     function formValidator() {

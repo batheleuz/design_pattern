@@ -30,13 +30,13 @@
     </span>
     <span class="w3-right">
         <?php $notifs = getNotifications($_SESSION['user']['service'], $_SESSION['user']['id'] , 0 ); ?>
-            <div class="w3-dropdown-hover w3-right">
-                <button class="w3-btn w3-black " id="notifBtn" title="Notifications"> <i class="fa fa-bell"></i>
+            <div class="w3-dropdown-click w3-right">
+                <button onclick="openNotification()" class="w3-btn w3-black w3-hover-text-teal" id="notifBtn" title="Notifications"> <i class="fa fa-bell"></i>
                     <?php if ( count($notifs) > 0  ): ?>
                         <span class="w3-badge w3-right w3-small w3-deep-orange" id="notifNumber"><?= count($notifs) ?></span>
                     <?php endif; ?>
                 </button>
-                <div class="w3-dropdown-content w3-bar-block w3-border" style="width:400px;max-height:400px;overflow-x:hidden;overflow-y:scroll;right:0">
+                <div class="w3-dropdown-content w3-bar-block w3-border" id="notif_content" style="width:400px;max-height:400px;overflow-x:hidden;overflow-y:scroll;right:0">
                     <ul class="w3-ul w3-hoverable w3-card-4 w3-white notifications ">
                           <li>
                               <div class="w3-row-padding">
@@ -162,7 +162,7 @@ ob_start();
 
         return  "<a style='cursor:pointer;' data-href='"+href+"' data-id='"+id+"' onclick='notificationRedirect(this)' >"  +
                 "<li class='w3-padding-0'>" +
-                "<div class='w3-row'> <div class='w3-col s2'>"+
+                "<div class='w3-row'> <div class='w3-col s2'>" +
                 "<span class='w3-left w3-circle w3-center w3-margin-top w3-text-deep-orange'><i class='fa fa-"+fa_icon+"' " +
                 "style='font-size:25px'></i></span>" +
                 "</div> <div class='w3-col s9' style='margin-top:0;'>" +
@@ -215,6 +215,15 @@ ob_start();
             });
     }
 
+    function openNotification() {
+        var x = document.getElementById("notif_content");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
     $(document).ready(function(){
         notifList = <?= json_encode($notifs) ?>;
 
@@ -243,11 +252,3 @@ echo CodeCompressor::compress_js($script);
 
 ?>
 </body></html>
-
-<?php
-
-//EventEmitter::getInstance()->on("serviceNotify");
-
-//EventEmitter::getInstance()->emit("serviceNotify"  , 2 , "bonjour "   ,  "bonjour tout le monde" );
-
-?>

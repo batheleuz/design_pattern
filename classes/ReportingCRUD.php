@@ -102,8 +102,7 @@ class ReportingCRUD
      * @function créé le fichier de reporing pour un nouveau service.
      * @param $service
      */
-    public static function createFile($service)
-    {
+    public static function createFile($service){
 
         $doc = new DOMDocument();
         $doc->formatOutput = true;
@@ -176,8 +175,7 @@ class ReportingCRUD
      * @param null $id_reporting
      * @return mixed
      */
-    public static function getReportingById($service, $id_reporting = null)
-    {
+    public static function getReportingById($service, $id_reporting = null){
 
         $doc = new DOMDocument();
         $doc->load(self::PATH . $service . "/reportings.xml");
@@ -212,8 +210,7 @@ class ReportingCRUD
      * @param $per
      * @return bool
      */
-    public static function isExistant($service, $name, $per)
-    {
+    public static function isExistant($service, $name, $per){
 
         foreach (self::getReportings($service) as $rep) {
             if (trim(strtolower($rep['name'])) == trim(strtolower($name)) and $rep['periodicite'] == self::periodicite($per)) {
