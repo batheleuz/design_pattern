@@ -230,7 +230,17 @@
 
         $("select.uniq").selectmenu({width: 450}).selectmenu("menuWidget");
 
-        $(".datepicker").datepicker({regional: "fr", firstDay: 1});
+        $(".datepicker").datepicker({
+            altField: "#datepicker",
+            closeText: 'Fermer',
+            prevText: 'Précédent',
+            nextText: 'Suivant',
+            firstDay:1,
+            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            weekHeader: 'Sem.',
+            dateFormat: 'yy-mm-dd'
+            });
 
         $("input[type='checkbox'], input[type='radio']").checkboxradio();
 

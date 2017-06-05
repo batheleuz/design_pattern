@@ -31,7 +31,7 @@ if ($_GET['controller'] == "ajax.php") {
         if ($rep['type'] == "ReportingGlobalBuilder")
             $reporting = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 
-        else if ($rep['type'] == "ReportingAutreBuilder") //$nom_reporting , $direction , $column, $column_kpi, $dates, $par , $_SESSION
+        else if ($rep['type'] == "ReportingAutreBuilder")
             $reporting = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
     } else {
         foreach ($kpi as $key) {
@@ -64,7 +64,6 @@ if ($_GET['controller'] == "ajax.php") {
     }
 
     $reporting->designTab();
-
 }
 /*
     $monfichier = fopen("datas/services/PMT/tmp_file", 'r');

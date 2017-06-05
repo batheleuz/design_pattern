@@ -73,8 +73,7 @@ class ReportingGlobalBuilder implements Serializable
         return $tab;
     }
 
-    protected function enteteTab()
-    {
+    protected function enteteTab(){
 
         print "<div class='w3-container w3-border w3-padding w3-white'>"
             . "<div class='w3-row'>"
@@ -253,8 +252,9 @@ class ReportingGlobalBuilder implements Serializable
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
 
-        //echo $rqt ;
-        //echo "<br>" ;
+        if ( $produit == "tvo")  echo "<span class='w3-codespan'>". $rqt."<br></span>";
+
+        echo "$rqt <br>";
         $n = Database::getDb()->rqt($rqt);
         return $n[0]['n'];
     }

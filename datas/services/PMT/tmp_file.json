@@ -1,9 +1,6 @@
 {
-    "name": "v",
-    "direction": "SONATEL",
-    "column": {
-        "origine": "PREIT,CLI,DIG,USSD,AGENC,AVS,MAIL,PBCL,ARC,RESD,COU,WELL,OMS,CSMS "
-    },
+    "name": "semestre dint",
+    "direction": "DINT",
     "column_kpi": [
         {
             "id": "21",
@@ -41,7 +38,8 @@
     ],
     "dates": {
         "start": "2017-01-01",
-        "end": "2017-01-31"
+        "end": "2017-06-30"
     },
-    "par": "month"
+    "par": "month",
+    "groupe_intervention": null
 }
