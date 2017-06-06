@@ -8,8 +8,8 @@
 
 require_once 'Database.php';
 
-class UploadDrgtFile
-{
+class UploadDrgtFile {
+
     public $fichier;
     private $table;
     private $nbre_doublon = 0; //  nombre de doublons

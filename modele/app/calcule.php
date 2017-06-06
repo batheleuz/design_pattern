@@ -6,7 +6,6 @@
  * Time: 10:40
  */
 
-require_once 'date_functions.php';
 require_once 'calcul_functions.php';
 
 if ($_GET['controller'] == "ajax.php") {
@@ -50,6 +49,7 @@ if ($_GET['controller'] == "ajax.php") {
                 $groupe_intervention = null;
 
             $reporting = new ReportingGlobalBuilder($nom_reporting, $direction, $groupe_intervention, $column_kpi, $dates, $par, $_GLOBALS);
+
         } else if ($action == "autre_reporting") {
             if (isset($colonnes_selected)) {
                 $column = array();
@@ -58,6 +58,7 @@ if ($_GET['controller'] == "ajax.php") {
                     $column[$col] = $arr;
                 }
             }
+            
             $reporting = new ReportingAutreBuilder($nom_reporting, $direction, $column, $column_kpi, $dates, $par, $_GLOBALS);
         }
         $serial = $reporting->serialize();
