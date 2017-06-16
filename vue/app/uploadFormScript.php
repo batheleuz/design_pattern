@@ -63,6 +63,8 @@
                                 value.enrg + "</td></tr></table>";
 
                             $("#feedback").append(txt);
+
+                            console.log(data);
                         }
                     });
 

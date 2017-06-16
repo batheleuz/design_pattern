@@ -6,16 +6,18 @@ if ($_GET['controller'] == "ajax.php") {
 
     $_GLOBALS['vr'] = $_SESSION['vr'];
     $_GLOBALS['kpi'] = $_SESSION['kpi'];
+    $_GLOBALS['ui'] =  $_SESSION['ui'];
     $_GLOBALS['service'] = $_SESSION['service'];
+    $_GLOBALS['groupe_intervention'] =  $_SESSION['groupe_intervention'] ;
 
-    $dates = array("start" => $start, "end" => $end);
+    $dates = ["start" => $start, "end" => $end];
 
     $repCharts = ReportingCRUD::getReportingByName($_SESSION['service']['nom'], $name);
 
     $repCharts['contenue'] = unserialize($repCharts['contenue']);
 
     $lr = $repCharts['contenue'];
-
+    var_dump( $lr['groupe_intervention']) ;
     if ($repCharts['type'] == "ReportingGlobalBuilder")
         $reportingCharts = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 
@@ -45,7 +47,6 @@ if ($_GET['controller'] == "ajax.php") {
         $options = "plotOptions: {
                         spline: {
                             marker: {
-                                enabled: false,
                                 lineWidth: 10,
                             }
                         }

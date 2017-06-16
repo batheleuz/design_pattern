@@ -15,7 +15,6 @@ class ReportingGlobalBuilder implements Serializable
 
     public function __construct($name = null, $direction = null, $gi = null, $column_kpi = null, $dates = null, $par = null, $_GLOBALS = null)
     {
-
         $this->name = $name;
         $this->direction = strtoupper($direction);
         $this->groupe_intervention = $gi;
@@ -23,7 +22,6 @@ class ReportingGlobalBuilder implements Serializable
         $this->dates = $dates;
         $this->par = $par;
         $this->_GLOBALS = $_GLOBALS;
-
     }
 
     public function designTab()
@@ -38,7 +36,7 @@ class ReportingGlobalBuilder implements Serializable
             print "<th style='vertical-align:middle;' rowspan='" . (count($this->groupe_intervention) + 1) . "' >" . $this->formate_fr($day['column']) . " </th> ";
 
             if ($this->groupe_intervention == null):
-                foreach ($this->column_kpi as $kpi) {
+                foreach ($this->column_kpi as $kpi ) {
                     $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
                     $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
                     $result = floatval(round(100 * ($ndr / $total), 2));
@@ -73,6 +71,9 @@ class ReportingGlobalBuilder implements Serializable
         return $tab;
     }
 
+    protected function compute ($date_releve, $produit, $gi = null, $tmpInd = null, $valueTmpInd = null){
+        return $this->ndr($date_releve, $produit, $gi, $tmpInd , $valueTmpInd);
+    }
     protected function enteteTab(){
 
         print "<div class='w3-container w3-border w3-padding w3-white'>"
@@ -252,9 +253,8 @@ class ReportingGlobalBuilder implements Serializable
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
 
-        if ( $produit == "tvo")  echo "<span class='w3-codespan'>". $rqt."<br></span>";
+        //echo "$rqt <br>";
 
-        echo "$rqt <br>";
         $n = Database::getDb()->rqt($rqt);
         return $n[0]['n'];
     }
@@ -270,7 +270,7 @@ class ReportingGlobalBuilder implements Serializable
 
         } else if ($par == "week") {
 
-            $rqt .= "WEEK( drgt_releves.date_rel ) ='$value' AND YEAR (drgt_releves.date_rel) = '$year' ";
+            $rqt .= "WEEK( drgt_releves.date_rel , 1 ) ='$value' AND YEAR (drgt_releves.date_rel) = '$year' ";
 
         } else if ($par == "month") {
 
@@ -368,38 +368,41 @@ class ReportingGlobalBuilder implements Serializable
 
     public function tableForChart()
     {
-        print "<table id='table_charts' style='display: none;' >";
+        print "<table id='table_charts' style='display:none;' >";
         print "<thead> <th></th> ";
-        foreach ($this->column_kpi as $kpi)
-            print "<th>" . $kpi['abreviation'] . "</th>";
+        foreach ($this->column_kpi as $kpi){
+            if ($this->groupe_intervention != null) {
+                foreach ($this->groupe_intervention as $gi)
+                    print "<th>".$kpi['abreviation'] ."  ".$this->getGI($gi)['nom'] ."</th>";
+            }else{
+                print "<th>" . $kpi['abreviation'] . "</th>";
+            }
+        }
 
         print "</thead><tbody>";
         foreach ($this->date_column() as $day) {
-            if ($this->groupe_intervention == null):
                 print '<tr>';
-                print '<th>' . $day['column']. '</th>';
+                print '<th>' . $day['column'] . '</th>';
                 foreach ($this->column_kpi as $kpi) {
-                    $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
-                    $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
-                    $result = floatval(round(100 * ($ndr / $total), 2));
-                    $result = (is_nan($result)) ? 0 : $result;
-                    echo "<td > $result </td>";
-                }
-                print '</tr>';
-            else:
-                foreach ($this->groupe_intervention as $gi):
-                    print "<tr><th > " . $this->getGI($gi)['nom'] . " " . $day['column'] . " </th>";
-                    foreach ($this->column_kpi as $kpi) {
-                        $ndr = 1 * (int)$this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
-                        $total = 1 * (int)$this->ndr($day['rel'], $kpi['type_drgt'], $gi);
+                    if ($this->groupe_intervention == null){
+                        $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], null, $kpi['delai_time'], $kpi['delai']);
+                        $total = $this->ndr($day['rel'], $kpi['type_drgt'], null);
                         $result = floatval(round(100 * ($ndr / $total), 2));
                         $result = (is_nan($result)) ? 0 : $result;
                         echo "<td > $result </td>";
+
+                    }else{
+                        foreach ($this->groupe_intervention as $gi){
+                            $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
+                            $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
+                            $result = floatval(round(100 * ($ndr / $total), 2));
+                            $result = (is_nan($result)) ? 0 : $result;
+                            echo "<td > $result </td>";
+                        }
                     }
-                    print "</tr>";
-                endforeach;
-            endif;
-        }
+                }
+                print '</tr>';
+            }
         print "</tbody></table>";
     }
 

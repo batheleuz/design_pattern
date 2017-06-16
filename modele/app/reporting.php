@@ -9,12 +9,11 @@
 if ($_GET['controller'] == "ajax.php") {
 
     extract($_POST);
-    $_GLOBALS['vr'] = $_SESSION['vr'];
-    $_GLOBALS['kpi'] = $_SESSION['kpi'];
-    $_GLOBALS['ui'] =  $_SESSION['ui'];
     $_GLOBALS['service'] = $_SESSION['service'];
-    $_GLOBALS['groupe_intervention'] =  $_SESSION['groupe_intervention'] ;
-
+    $_GLOBALS['vr'] = Database::getDb()->all("formVrByDir");
+    $_GLOBALS['ui'] = Database::getDb()->all("ui");
+    $_GLOBALS['groupe_intervention'] = Database::getDb()->rqt("SELECT * FROM groupe_intervention WHERE deleted=0  AND (is_modifiable = 0 or id_service = '{$service[0]['id']}') ");
+    $_GLOBALS['kpi'] = Database::getDb()->all("kpi", "id_service", $service[0]['id']);
 
     if ($action == "getDistincts") {
 

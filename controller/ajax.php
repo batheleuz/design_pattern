@@ -6,7 +6,9 @@ if ($_SESSION['user'] != null) {
         include PATH.'/modele/admin/'.$_GET['param1'] . ".php";
 
     } elseif (isset($_GET['page'])) {
+
         include PATH.'/modele/app/'.$_GET['page'];
+
     }
 
 } else

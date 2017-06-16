@@ -103,6 +103,7 @@ class UploadDrgtFile {
             foreach ($pointer as $p) {
                 $entete[] = strtolower(str_replace(" ", "_", trim(substr($filesLine[$rowNum - 1], $p['start'], $p['end']))));
             }
+
             if ($this->compare($entete)) {
 
                 for ($i = $rowNum + 1; $i < count($filesLine); $i++) {
@@ -145,14 +146,14 @@ class UploadDrgtFile {
 
                 $entete[$i] = $champ;
 
-                //var_dump($entete);
-
             }
 
-            while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE) {
-                if (preg_match("/^[;]+$/", $data))
-                    continue;
+            var_dump($entete);
 
+            while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE) {
+                if (!preg_match("/^[;]+$/", $data))
+                    continue;
+                
                 $num = count($data);
                 for ($c = 0; $c < $num; $c++) {
                     $data[$c] . "\n ";
