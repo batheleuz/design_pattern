@@ -7,7 +7,7 @@ function page()
     ?>
     <link rel="stylesheet" href="<?= ASSETS; ?>css/dataTables/dataTables.min.css">
     <link rel="stylesheet" href="<?= ASSETS; ?>css/dataTables/dataTables.jquery-ui.min.css">
-    <div class="w3-card w3-animate-left" id="reporting-view">
+    <div class="w3-card w3-animate-left " id="reporting-view">
         <div class="w3-container">
             <h1><i class="fa fa-calendar"></i> Reportings du Service <?= $_SESSION['service']['nom'] ?>. </h1>
             <hr class="w3-border w3-border-blue">

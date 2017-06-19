@@ -236,6 +236,7 @@
             prevText: 'Précédent',
             nextText: 'Suivant',
             firstDay:1,
+            showWeek : true,
             monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
             dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
             weekHeader: 'Sem.',

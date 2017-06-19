@@ -55,6 +55,7 @@ if ($_POST['action'] == "upload_codif") {
         if ($inf_file_c['extension'] == "csv" or $inf_file_c['extension'] == "lis")
 
             if (move_uploaded_file($file_c['tmp_name'], "datas/uploads/drgt/" . $file_c['name'])) {
+                Database::getDb()->rqt("TRUNCATE TABLE drgt_encours");
                 $upload = new UploadDrgtFile ($file_c['name'], "drgt_encours");
                 $res_c = $upload->enrg($inf_file_c['extension']);
             } else

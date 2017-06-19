@@ -49,9 +49,11 @@ if ($_GET['controller'] == "ajax.php") {
         else echo 0;
 
     } else if ($action == "openReporting") {
+        
         $data = ReportingCRUD::getReportingById($_SESSION['service']['nom'], $id);
         $data['contenue'] = unserialize($data['contenue']);
         print json_encode($data);
+
     } else if ($action == "getAvailableReportings") {
 
         $today = new DateTime(Date("Y-m-d"));
@@ -67,16 +69,15 @@ if ($_GET['controller'] == "ajax.php") {
 
         $dates[] = array('start' => $start->format("d/m/Y"), 'end' => $end->format("d/m/Y"));
 
-        if ($par == "month" and $pas <= 31) {
+        if ($pas >= 28 && $pas <= 31 ) {
             for ($i = 0; $i < $nb; $i++)
-                $dates[] = array('start' => $start->modify(" +1 $par ")->format("d/m/Y"),
-                    'end' => $end->modify(" +1 day ")->modify('last day of')->format("d/m/Y"));
+                $dates[] = array('start' => $start->modify(" next month ")->format("d/m/Y"),
+                    'end' => $end->modify('last day of next month')->format("d/m/Y"));
         } else {
             for ($i = 0; $i < $nb; $i++)
                 $dates[] = array('start' => $start->modify(" +$pas days ")->format("d/m/Y"),
-                    'end' => $end->modify("+$pas days ")->format("d/m/Y"));
+                    'end' => $end->modify(" +$pas days ")->format("d/m/Y"));
         }
-
         echo json_encode(array_reverse($dates));
     }
 
@@ -99,19 +100,19 @@ if ($_GET['controller'] == "ajax.php") {
             $menu_lf = "w3-deep-orange";
             $reports = Database::getDb()->rqt("SELECT * FROM fichier");
 
-            include 'vue/app/reportingFiles.php';
+            include PATH.'/vue/app/reportingFiles.php';
 
         } else if ($_GET['param1'] == "nouveau" && $_GET['param2'] == "global") {
 
             $menu_ng = "w3-deep-orange";
             $pageTitle = "Nouveau Reporting global";
-            include 'vue/app/newReporting.php';
+            include PATH.'/vue/app/newReporting.php';
 
         } else if ($_GET['param1'] == "nouveau" && $_GET['param2'] == "autre") {
 
             $menu_na = "w3-deep-orange";
             $pageTitle = "Autre type de reporting";
-            include 'vue/app/newReporting.php';
+            include PATH.'/vue/app/newReporting.php';
 
         }
 
@@ -121,12 +122,12 @@ if ($_GET['controller'] == "ajax.php") {
 
             $menu_ng = "w3-deep-orange";
             $pageTitle = "Nouveau Reporting";
-            include 'vue/app/newReporting.php';
+            include PATH.'/vue/app/newReporting.php';
 
         } else if ($_GET['param1'] == "upload") {
 
             $menu_up = "w3-deep-orange";
-            include 'vue/app/uploadForm.php';
+            include PATH.'/vue/app/uploadForm.php';
         }
 
     }

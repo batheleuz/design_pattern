@@ -17,7 +17,6 @@ if ($_GET['controller'] == "ajax.php") {
     $repCharts['contenue'] = unserialize($repCharts['contenue']);
 
     $lr = $repCharts['contenue'];
-    var_dump( $lr['groupe_intervention']) ;
     if ($repCharts['type'] == "ReportingGlobalBuilder")
         $reportingCharts = new ReportingGlobalBuilder($lr['name'], $lr['direction'], $lr['groupe_intervention'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
 

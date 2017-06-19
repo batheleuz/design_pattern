@@ -37,26 +37,25 @@ class ReportingGlobalBuilder implements Serializable
 
             if ($this->groupe_intervention == null):
                 foreach ($this->column_kpi as $kpi ) {
-                    $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
-                    $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
+                    //var_dump($kpi);
+                    $ndr = $this->compute($day['rel'], $kpi['type_drgt'], null , $kpi['delai_time'], $kpi['delai'] , substr($kpi['abreviation'], null , 2 ));
+                    $total = $this->compute($day['rel'], $kpi['type_drgt'] , null, null, null, substr($kpi['abreviation'], null , 2) );
                     $result = floatval(round(100 * ($ndr / $total), 2));
                     $result = (is_nan($result)) ? 0 : $result;
                     echo "<td > $result </td>";
                 }
-
             else:
-                foreach ($this->groupe_intervention as $gi):
+                foreach ($this->groupe_intervention as $gi) {
                     print "<tr><td > " . $this->getGI($gi)['nom'] . " </td>";
                     foreach ($this->column_kpi as $kpi) {
-                        $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
-                        $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
+                        $ndr = $this->compute($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai'], substr($kpi['abreviation'], null, 2) );
+                        $total = $this->compute($day['rel'], $kpi['type_drgt'], $gi, null, null, substr($kpi['abreviation'],null, 2) );
                         $result = floatval(round(100 * ($ndr / $total), 2));
                         $result = (is_nan($result)) ? 0 : $result;
                         echo "<td > $result </td>";
                     }
                     print "</tr>";
-                endforeach;
-
+                }
             endif;
             print "</tr>";
         }
@@ -71,9 +70,15 @@ class ReportingGlobalBuilder implements Serializable
         return $tab;
     }
 
-    protected function compute ($date_releve, $produit, $gi = null, $tmpInd = null, $valueTmpInd = null){
-        return $this->ndr($date_releve, $produit, $gi, $tmpInd , $valueTmpInd);
+    protected function compute($date_releve, $produit, $gi = null, $tmpInd = null, $valueTmpInd = null, $typeKPI=null){
+
+        if ( $typeKPI === "Ba")
+           return $this->backlog($date_releve, $produit, $gi, $tmpInd , $valueTmpInd);
+        else if ( $typeKPI === "VR")
+           return $this->ndr($date_releve, $produit, $gi, $tmpInd , $valueTmpInd);
+
     }
+    
     protected function enteteTab(){
 
         print "<div class='w3-container w3-border w3-padding w3-white'>"
@@ -241,8 +246,7 @@ class ReportingGlobalBuilder implements Serializable
 
     }
 
-    protected function ndr($date_releve, $produit, $gi = null, $tmpInd = null, $valueTmpInd = null)
-    {
+    protected function ndr($date_releve, $produit, $gi = null, $tmpInd = null, $valueTmpInd = null){
 
         $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
         $rqt .= "AND " . $this->ndrByProd($produit) . " ";
@@ -253,14 +257,13 @@ class ReportingGlobalBuilder implements Serializable
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
 
-        //echo "$rqt <br>";
+       // echo "$rqt <br>";
 
         $n = Database::getDb()->rqt($rqt);
         return $n[0]['n'];
     }
 
-    protected function ndrByTime($par, $value, $year)
-    {
+    protected function ndrByTime($par, $value, $year){
 
         $rqt = "SELECT COUNT(*) as n FROM drgt_releves  WHERE ";
 
@@ -283,8 +286,7 @@ class ReportingGlobalBuilder implements Serializable
         return $rqt;
     }
 
-    protected function ndrByProd($produit)
-    {
+    protected function ndrByProd($produit) {
 
         if ($produit == "tvo")
             return " acces_tv !='' ";
@@ -297,12 +299,11 @@ class ReportingGlobalBuilder implements Serializable
 
     }
 
-    protected function ndrByDir($tmpInd, $valueTmpInd)
-    {
+    protected function ndrByDir($tmpInd, $valueTmpInd){
 
         $vr = $this->getFromGlobal("vr", "direction", $this->direction, "byTime", $tmpInd);
 
-        $rqt = "TIMESTAMPDIFF( " . $vr['byTime'] . " ," . $vr['col_start'] . " ," . $vr['col_end'] . " ) < $valueTmpInd ";
+        $rqt = "TIMESTAMPDIFF( " . $vr['byTime'] . " ," . $vr['col_start'] . " ," . $vr['col_end'] . " ) <= $valueTmpInd ";
 
         return $rqt;
     }
@@ -329,8 +330,8 @@ class ReportingGlobalBuilder implements Serializable
 
     }
 
-    protected function ndrByGI($id_gi = null)
-    {
+    protected function ndrByGI($id_gi = null){
+
         $gi = $this->getFromGlobal("groupe_intervention", "id", $id_gi);
         $uis = explode(";", $gi['id_uis']);
         $rqt = "";
@@ -418,6 +419,35 @@ class ReportingGlobalBuilder implements Serializable
 
         return unserialize($serialized);
 
+    }
+
+    protected function backlogByDir($tmpInd, $valueTmpInd)
+    {
+
+        $vr = $this->getFromGlobal("vr", "direction", $this->direction, "byTime", $tmpInd);
+
+        $rqt = " DATEDIFF( " . $vr['col_end'] . "," . $vr['col_start'] . ") > $valueTmpInd ";
+
+        return $rqt;
+    }
+
+    protected function backlog($date_releve, $produit, $gi = null , $tmpInd = null , $valueTmpInd = null){
+
+        if($tmpInd !=  null && $valueTmpInd != null ){
+            $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
+            $rqt .= "AND ". $this->backlogByDir($tmpInd, $valueTmpInd);
+            $rqt .= "AND ". $this->ndrByProd($produit) . " ";
+        }else{
+            $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
+            $rqt .= "AND ". $this->ndrByProd($produit) . " ";
+        }
+        if ($gi != null)
+            $rqt .= "AND " . $this->ndrByGI($gi);
+
+        $result = Database::getDb()->rqt($rqt);
+        $nombre =  $result[0]['n'];
+
+        return $nombre;
     }
 
 }

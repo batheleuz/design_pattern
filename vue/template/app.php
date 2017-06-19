@@ -89,14 +89,14 @@
             class="fa fa-plus-circle fa-fw"></i> Autre Reporting </a>
     <a href="<?= URL ?>app/reporting/liste/fichier" class="w3-padding <?= $menu_lf ?>"> <i
             class="fa fa-calendar fa-fw"></i> Mes reportings </a>
+    <a href="<?= URL ?>app/backlogs/liste" class="w3-padding <?= $menu_bg ?>"> <i
+            class="fa fa-list fa-fw"></i> Backlogs </a>
     <hr>
     <a href="#" class="w3-padding w3-hover-white w3-hover-text-red" onclick="deconnexion()"> <i class="fa fa-sign-out fa-fw"></i>
         Déconnexion </a>
 </nav>
-
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
      title="close side menu" id="myOverlay"></div>
-
 <div class="w3-main" style="margin-left:250px;margin-top:43px;">
     <div class="w3-container w3-padding-32">
         <div id='dialog-confirm'></div>
@@ -240,6 +240,14 @@ ob_start();
         window.setInterval( function(){
             getNotifications();
         } , 10*1000);
+
+        $(document).tooltip({
+            position: {
+                my: "left top",
+                at: "right+5 top-5"
+            }
+        });
+
     });
 
 </script>

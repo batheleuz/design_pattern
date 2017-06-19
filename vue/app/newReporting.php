@@ -1,12 +1,11 @@
 <?php
-function page($pageTitle)
-{
+function page($pageTitle){
 
     ob_start();
     ?>
     <div id="content" class="w3-animate-left">
         <form class="form" method="post" enctype="multipart/form-data" id="form">
-            <div class=" w3-card-4 w3-white  w3-border">
+            <div class=" w3-card-4 w3-white w3-padding-jumbo w3-border">
                 <header class="w3-container">
                     <h1><i class="fa fa-plus-circle"></i> <?= $pageTitle; ?> </h1>
                     <hr class="w3-boder w3-border-teal">
@@ -23,7 +22,7 @@ function page($pageTitle)
                                                          class="w3-input w3-border datepicker" placeholder="Date Fin"
                                                          required></div>
                         </div>
-                        <hr>
+                        <br>
                         <div class="w3-row-padding">
                             <div class="w3-quarter"><b>Nom du reporting: </b></div>
                             <div class="w3-twothird ">
@@ -34,7 +33,7 @@ function page($pageTitle)
                         <hr>
 
                         <div class="w3-row">
-                            <div class="w3-col w3-padding" style="width:170px"><b> Direction: </b></div>
+                            <div class="w3-col w3-padding" style="width:170px"><b> Direction de séjour: </b></div>
                             <div class="w3-rest w3-padding  ">
                                 <select name="direction" class="uniq" id="">
                                     <option value="sonatel"> ---- Choisir ----</option>
@@ -59,7 +58,7 @@ function page($pageTitle)
                                 <input type="hidden" name="action" value="reporting_global">
                             </div>
                         <?php endif; ?>
-                        <hr>
+                        <br>
                         <div class="w3-row">
                             <div class="w3-col w3-padding" style='width:170px;'><b>Périodicité:</b></div>
                             <div class="w3-rest w3-padding">
@@ -72,7 +71,7 @@ function page($pageTitle)
                                 </select>
                             </div>
                         </div>
-                        <hr>
+                        <br>
                         <div class="w3-row w3-margin-top">
                             <span class="w3-padding" style="display:inline-block;width:180px"> <b> KPI à calculer: </b></span>
                             <select data-placeholder="Choisir vos kpi" id="multi" name='kpi[]' multiple
@@ -83,14 +82,14 @@ function page($pageTitle)
                             </select>
                         </div>
                     </div>
-                    <hr>
                     <?php if ($_GET['param2'] == "autre"): ?>
+                        <br>
                         <div class="w3-row">
-                            <div class="w3-col w3-padding" style='width:170px;'>
-                                <a class="w3-btn w3-text-orange w3-hover-text-deep-orange w3-border w3-border-black w3-hover-white"
-                                   style="width:100%" onclick="getValue();">
-                                    <i class="fa fa-plus-square"></i> colonne </a></div>
-                            <div class="w3-rest w3-twothird" id="filtered_col">
+                            <div class="w3-col w3-padding" style='width:170px;'><b>Filtre:</b></div>
+                            <div class="w3-rest w3-padding">
+                                <a class="w3-text-deep-orange w3-hover-text-orange w3-large" onclick="getValue();"
+                                style="cursor: pointer;"> <i class="fa fa-plus-square"></i> filtrer une colonne </a>
+                                <div id="filtered_col" > </div>
                             </div>
                         </div>
                         <input type="hidden" name="action" value="autre_reporting">

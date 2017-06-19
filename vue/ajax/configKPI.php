@@ -109,7 +109,7 @@ function page()
                         <select name="origine" class="w3-input">
                             <option> -- Choisir --</option>
                             <?php foreach (all("indicateur", "type = 'origine' ") as $kpi): ?>
-                                <option value="<?= $kpi['abreviation'] ?>"> <?= $kpi['abreviation'] ?> </option>
+                                <option type="<?= $kpi['genre']; ?>" value="<?= $kpi['abreviation'] ?>"><?= $kpi['abreviation'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -127,6 +127,7 @@ function page()
                 <input type="hidden" name="delai" value="">
                 <input type="hidden" name="type_drgt" value="">
                 <input type="hidden" name="delai_time">
+                <input type="hidden" name="genre_kpi">
                 <div class="w3-row w3-padding">
                     <button type="submit" disabled
                             class="w3-btn w3-teal w3-padding w3-border w3-hover-white w3-border-white w3-hover-border-teal ">

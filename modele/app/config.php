@@ -47,8 +47,8 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
             echo 0;
 
         else:
-
-            $id_ind = Database::getDb()->add("pourcentage", array('delai' => $delai, 'type_drgt' => trim(strtolower($type_drgt)), 'delai_time' => $delai_time));
+            $id_ind = Database::getDb()->add("pourcentage",
+                array('delai' => $delai, 'type_drgt' => trim(strtolower($type_drgt)), 'delai_time' => $delai_time));
 
             if ($id_ind > 0) {
                 EventEmitter::getInstance()->on("notifyToService");

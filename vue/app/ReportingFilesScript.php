@@ -18,6 +18,7 @@
                 "</li>";
             innerHTML.append(buffer);
         });
+
     }
 
     function showReporting(li) {
@@ -53,14 +54,12 @@
     function printProjConfig(data) {
         $("#titre_report").html("<i class='fa fa-folder-open'></i> " + data.nom);
         $("#kpi_report ,#column_report , #periodicite_report , #user_report ").html("");
-        $("#periodicite_report").html("<h5 class='w3-text-teal'><b> Chaque " + data.periodicite + " jour(s) </b></h5>");
+        $("#periodicite_report").html("<h5 class='w3-text-teal'><b> " + data.periodicite + " jour(s) </b></h5>");
         $("#user_report").html("<h5 class='w3-text-teal'><b> " + data.user + " </b></h5>");
         $.each(data.kpi, function (k, v) {
             $("#kpi_report").append(" <span class='w3-tag w3-round-large w3-teal' style='display:inline-block;margin-top:5px;margin-bottom:5px;'> " + v.abreviation + " </span> ");
         });
         if (data.gi) {
-            console.log(data.gi);
-            console.log( liste_gi ) ;
             $.each(data.gi, function (k, v) {
                 $("#column_report")
                     .append(" <span class='w3-tag w3-round-large w3-teal' style='display:inline-block;margin-top:5px;margin-bottom:5px;'> " + __get(liste_gi , v ).nom + " </span> ");

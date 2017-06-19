@@ -4,9 +4,9 @@
     ob_start();
 
     ?>
-    <div id="content">
+    <div id="content" class="">
         <form class="form" id="form" method="post" enctype="multipart/form-data">
-            <div class=" w3-card w3-white w3-padding">
+            <div class=" w3-card w3-white w3-padding-jumbo ">
                 <header class="w3-container">
                     <h2><i class="fa fa-upload"></i> Chargement de fichier.</h2>
                     <hr class="w3-border w3-border-deep-orange">

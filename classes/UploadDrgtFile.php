@@ -116,7 +116,7 @@ class UploadDrgtFile {
                     $this->add_drgt($entete, $arr);
                 }
 
-                Database::getDb()->modif("fichier", "etat_fin", 1, "id", $this->id_fic);
+                Database::getDb()->modif("fichier", "etat_fin", 0 , "id", $this->id_fic);
                 return $this->feedback();
 
             } else
@@ -133,7 +133,7 @@ class UploadDrgtFile {
 
         if (($handle = fopen("datas/uploads/drgt/" . $this->fichier, "r")) !== FALSE) {
 
-            $data = fgetcsv($handle, 1000, "\n");
+            $data = fgetcsv($handle, 2048, "\n");
             $arr_entete = explode(";", $data[0]);
             $entete = null;
 
@@ -148,12 +148,8 @@ class UploadDrgtFile {
 
             }
 
-            var_dump($entete);
+            while (($data = fgetcsv($handle, 2048, "\n")) !== FALSE) {
 
-            while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE) {
-                if (!preg_match("/^[;]+$/", $data))
-                    continue;
-                
                 $num = count($data);
                 for ($c = 0; $c < $num; $c++) {
                     $data[$c] . "\n ";
@@ -164,7 +160,7 @@ class UploadDrgtFile {
             }
             fclose($handle);
 
-            Database::getDb()->modif("fichier", "etat_fin", 1, "id", $this->id_fic);
+            Database::getDb()->modif("fichier", "etat_fin", 0, "id", $this->id_fic);
             return $this->feedback();
 
 
@@ -191,22 +187,29 @@ class UploadDrgtFile {
 
         if ($valeurs['nd'] != "ND") {
 
-            $valeurs['h_date_ess'] = $this->formate_hour($valeurs['h_date_ess'], $valeurs['date_ess']);
-            $valeurs['h_date_sig'] = $this->formate_hour($valeurs['h_date_sig'], $valeurs['date_sig']);
-            $valeurs['h_date_ori'] = $this->formate_hour($valeurs['h_date_ori'], $valeurs['date_ori']);
-            $valeurs['h_date_plan'] = $this->formate_hour($valeurs['h_date_plan'], $valeurs['date_plan']);
-            $valeurs['h_date_rel'] = $this->formate_hour($valeurs['h_date_rel'], $valeurs['date_rel']);
+            if( $this->table == "drgt_releves" ){
+                $valeurs['h_date_ess'] = $this->formate_hour($valeurs['h_date_ess'], $valeurs['date_ess']);
+                $valeurs['h_date_sig'] = $this->formate_hour($valeurs['h_date_sig'], $valeurs['date_sig']);
+                $valeurs['h_date_ori'] = $this->formate_hour($valeurs['h_date_ori'], $valeurs['date_ori']);
+                $valeurs['h_date_plan'] = $this->formate_hour($valeurs['h_date_plan'], $valeurs['date_plan']);
+                $valeurs['h_date_rel'] = $this->formate_hour($valeurs['h_date_rel'], $valeurs['date_rel']);
+                $valeurs['date_ess'] = $this->formate_date($valeurs['date_ess']);
+                $valeurs['date_sig'] = $this->formate_date($valeurs['date_sig']);
+                $valeurs['date_ori'] = $this->formate_date($valeurs['date_ori']);
+                $valeurs['date_plan'] = $this->formate_date($valeurs['date_plan']);
+                $valeurs['date_rel'] = $this->formate_date($valeurs['date_rel']);
+            }
 
-            $valeurs['date_ess'] = $this->formate_date($valeurs['date_ess']);
-            $valeurs['date_sig'] = $this->formate_date($valeurs['date_sig']);
-            $valeurs['date_ori'] = $this->formate_date($valeurs['date_ori']);
-            $valeurs['date_plan'] = $this->formate_date($valeurs['date_plan']);
-            $valeurs['date_rel'] = $this->formate_date($valeurs['date_rel']);
+            else if ($this->table == "drgt_encours"){
+                $valeurs['date_sig'] = $this->formate_date($valeurs['date_sig']);
+                $valeurs['date_ess'] = $this->formate_date($valeurs['date_ess']);
+                $valeurs['date_ori'] = $this->formate_date($valeurs['date_ori']);
+                $valeurs['date_plan'] = $this->formate_date($valeurs['date_plan']);
+            }
 
             $valeurs['id_fichier'] = $this->id_fic;
 
-
-            if ($this->checkDoublon($valeurs['nd'], $valeurs['date_sig'], $valeurs['date_ori'], $valeurs['date_rel']) == true) {
+            if ($this->check( $valeurs ) == true ) {
 
                 if (Database::getDb()->add($this->table, $valeurs) > 0)
                     $this->nbre_enrg++;
@@ -231,8 +234,14 @@ class UploadDrgtFile {
 
     private function formate_date($date){
 
-        if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", $date))
+        if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{2})$#", $date))
+            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{2})$#", "20$3-$2-$1", $date);
+
+        else if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", $date))
             return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]+)$#", "$3-$2-$1", $date);
+
+        else if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{2}) ([0-9:]+)$#", $date))
+            return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{2}) ([0-9:]+)$#", "20$3-$2-$1", $date);
 
         else if (preg_match("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", $date))
             return preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4}) ([0-9:]+)$#", "$3-$2-$1", $date);
@@ -241,10 +250,21 @@ class UploadDrgtFile {
             return "0000-00-00";
     }
 
-    private function checkDoublon($nd, $date_sig, $date_ori, $date_rel){
+    private function check($valeurs){
 
-        $rqt = " SELECT nd FROM " . $this->table . " WHERE nd = '$nd' " .
-            " AND date_sig ='$date_sig' AND date_ori ='$date_ori' AND date_rel ='$date_rel'  ";
+        if( $this->table == "drgt_releves" ){
+            $rqt = " SELECT nd FROM drgt_releves WHERE nd = '{$valeurs['nd']}'".
+                   " AND date_sig ='{$valeurs['nd']}'".
+                   " AND date_ori ='{$valeurs['date_ori']}' ".
+                   "AND date_rel ='{$valeurs['date_rel']}'  ";
+
+        }else if($this->table == "drgt_encours" ){
+
+            if( $valeurs['agent_rel'] != "" ) return false;
+            
+            $rqt = "SELECT nd FROM drgt_encours WHERE nd='$nd' ";
+
+        }
 
         $line = Database::getDb()->rqt($rqt);
 

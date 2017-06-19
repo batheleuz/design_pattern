@@ -22,7 +22,12 @@
             $("input[name='abreviation']").val(kpi.trim());
             $("input[name='delai']").val(delai);
             $("input[name='type_drgt']").val(origine);
-            $("input[name='delai_time']").val(typekpi[typekpi.length - 2]);
+            $("input[name='delai_time']").val(typekpi[typekpi.length - 1]);
+            console.log(kpi.trim());
+            if( kpi.trim() == "VRnJ" || kpi.trim() == "VRnH" )
+                $("input[name='genre_kpi']").val("vr");
+            if( kpi.trim() == "BacklognJ")
+                $("input[name='genre_kpi']").val("backlog");
             /** Fin  **/
             if (isValid())
                 $("button.w3-teal").removeAttr("disabled");

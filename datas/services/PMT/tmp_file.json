@@ -1,72 +1,36 @@
 {
-    "name": "reporting journaliere",
-    "direction": "SONATEL",
+    "name": "Backlog cas Simple mars => mai",
+    "direction": "DINT",
     "column_kpi": [
         {
-            "id": "2",
+            "id": "38",
             "delai": "2",
             "type_drgt": "adsl",
             "delai_time": "DAY",
             "nom": "",
-            "abreviation": "VR2J ADSL",
+            "abreviation": "Backlog2J  ADSL",
             "type_kpi": "pourcentage",
-            "id_indicateur": "2"
+            "id_indicateur": "38",
+            "id_service": "1"
         },
         {
-            "id": "3",
+            "id": "41",
             "delai": "2",
             "type_drgt": "tvo",
             "delai_time": "DAY",
             "nom": "",
-            "abreviation": "VR2J TVO",
+            "abreviation": "Backlog2J TVO",
             "type_kpi": "pourcentage",
-            "id_indicateur": "3"
-        },
-        {
-            "id": "4",
-            "delai": "1",
-            "type_drgt": "tvo",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR1J TVO",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "4"
-        },
-        {
-            "id": "7",
-            "delai": "3",
-            "type_drgt": "adsl",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR3J ADSL",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "7"
-        },
-        {
-            "id": "8",
-            "delai": "24",
-            "type_drgt": "adsl",
-            "delai_time": "HOUR",
-            "nom": "",
-            "abreviation": "VR24H ADSL",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "8"
-        },
-        {
-            "id": "11",
-            "delai": "5",
-            "type_drgt": "tvo",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR5J  TVO",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "11"
+            "id_indicateur": "41",
+            "id_service": "1"
         }
     ],
     "dates": {
-        "start": "2017-03-04",
-        "end": "2017-04-03"
+        "start": "2017-03-01",
+        "end": "2017-05-31"
     },
-    "par": "day",
-    "groupe_intervention": null
+    "par": "week",
+    "groupe_intervention": [
+        "8"
+    ]
 }
