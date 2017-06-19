@@ -18,6 +18,8 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
 
         parent::__construct($name, $direction, null, $column_kpi, $dates, $par, $_GLOBALS);
 
+        var_dump($column_kpi);
+
         if ($column != null)
             $this->column = $column;
         else
@@ -49,8 +51,8 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
                     print "<td> $col </td>";
 
                 foreach ($this->column_kpi as $kpi) {
-                    $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $arr, $kpi['delai_time'], $kpi['delai']);
-                    $total = $this->ndr($day['rel'], $kpi['type_drgt'], $arr);
+                    $ndr = $this->compute($day['rel'], $kpi['type_drgt'], $arr, $kpi['delai_time'], $kpi['delai'] ,substr($kpi['abreviation'], null , 2 ) );
+                    $total = $this->compute($day['rel'], $kpi['type_drgt'], $arr , null, null, substr($kpi['abreviation'], null , 2 ));
                     $result = floatval(round(100 * ($ndr / $total), 2));
                     $result = (is_nan($result)) ? 0 : $result;
                     echo "<td > $result </td>";
@@ -110,8 +112,7 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
 
     }
 
-    private function produitCartesien(...$args)
-    {
+    private function produitCartesien(...$args){
 
         $result = array();
         if (count($args) == 1) {
@@ -133,8 +134,14 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
         return $result;
     }
 
-    protected function ndr($date_releve, $produit, $columns = null, $tmpInd = null, $valueTmpInd = null)
-    {
+    protected function compute($date_releve, $produit, $columns = null, $tmpInd = null, $valueTmpInd = null ,  $typeKPI ){
+        if ( $typeKPI === "Ba")
+            return $this->backlog($date_releve, $produit, $columns, $tmpInd, $valueTmpInd );
+        else if ( $typeKPI === "VR")
+            return $this->ndr($date_releve, $produit, $columns, $tmpInd, $valueTmpInd );
+    }
+
+    protected function ndr($date_releve, $produit, $columns = null, $tmpInd = null, $valueTmpInd = null){
 
         $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
         $rqt .= "AND " . $this->ndrByProd($produit) . " ";
@@ -151,20 +158,36 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
         return $n[0]['n'];
     }
 
-    private function ndrByColumn($columns)
-    {
-        $rqt = "";
+    protected function backlog($date_releve, $produit, $columns = null, $tmpInd = null, $valueTmpInd = null){
 
+        if($tmpInd !=  null && $valueTmpInd != null ){
+            $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
+            $rqt .= "AND ". $this->backlogByDir($tmpInd, $valueTmpInd);
+            $rqt .= "AND ". $this->ndrByProd($produit) . " ";
+        }else{
+            $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
+            $rqt .= "AND ". $this->ndrByProd($produit) . " ";
+        }
+        if ($columns != null)
+            $rqt .= $this->ndrByColumn($columns) . " ";
+
+        $result = Database::getDb()->rqt($rqt);
+        $nombre =  $result[0]['n'];
+
+        return $nombre;
+
+    }
+
+    private function ndrByColumn($columns){
+        $rqt = "";
         for ($i = 0; $i < count($this->column); $i++) {
             $key = array_keys($this->column)[$i];
             $rqt .= "AND $key = '" . $columns[$i] . "' ";
         }
-
         return $rqt;
     }
 
-    protected function toArray()
-    {
+    protected function toArray(){
 
         return array(
             "name" => $this->name,
@@ -176,8 +199,7 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
         );
     }
 
-    public function serialize()
-    {
+    public function serialize(){
 
         return serialize($this->toArray());
     }

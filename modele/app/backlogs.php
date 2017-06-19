@@ -19,7 +19,7 @@ if ($_GET['controller'] == "ajax.php") {
 
     if($action == "backlogNumbers"){
         
-        $calculator = new BacklogCalculator( $direction , $nbre , updatedLast() );
+        $calculator = new BacklogCalculator( $direction , $nbre , updatedLast() , $groupe_intervention );
         echo json_encode(array(
             "nbre" => $calculator->getCount() ,
             "backlog" => "Backlog ".$calculator->nbre." J",
@@ -31,7 +31,7 @@ if ($_GET['controller'] == "ajax.php") {
 
     else if($action == "getBacklogCases"){
 
-        $calculator = new BacklogCalculator( $direction , $nbre , updatedLast() );
+        $calculator = new BacklogCalculator( $direction , $nbre , updatedLast() , $groupe_intervention  );
         echo json_encode(
             $calculator->getBacklogs()
         ) ;

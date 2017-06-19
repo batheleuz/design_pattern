@@ -67,11 +67,11 @@
             <hr style="margin:10px">
 
             <?php if ($_SESSION['service']['id_admin'] == $_SESSION['user']['id'] || $_SESSION['user']['privileges'] == 3): ?>
-                <a href="<?= URL ?>app/users"
+                <a href="<?= URL ?>app/users" title="Configuration Utilisateurs"
                    class="w3-hover-none w3-hover-text-green w3-show-inline-block <?= $menu_conf_user ?>"><i
                         class="fa fa-2x fa-users"></i></a>
-                <a href="<?= URL ?>app/config"
-                   class="w3-hover-none w3-hover-text-blue w3-show-inline-block <?= $menu_conf ?> "><i
+                <a href="<?= URL ?>app/config" title="Configuration"
+                   class="w3-hover-none w3-hover-text-blue w3-show-inline-block <?= $menu_conf ?>"><i
                         class="fa fa-2x fa-cogs"></i></a>
             <?php endif; ?>
         </div>
@@ -241,10 +241,10 @@ ob_start();
             getNotifications();
         } , 10*1000);
 
-        $(document).tooltip({
+        $("[title]").tooltip({
             position: {
                 my: "left top",
-                at: "right+5 top-5"
+                at: "right+5 top-5",
             }
         });
 

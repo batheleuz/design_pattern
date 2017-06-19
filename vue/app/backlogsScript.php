@@ -57,8 +57,14 @@
         $("#backlog_liste_title").html("<h2> DÉRANGEMENTS EN BACKLOG "+formData[1]['value'] +" J - " + formData[0]['value'] + "</h2>");
         $("#backlog_liste_table").html("<h2 class='w3-center'><i class='fa fa-fw fa-pulse fa-spinner'></i> Chargement </h2>");
         switchPages("page_index" , "page_liste_backlog") ;
-        $.post( "<?= URL ?>ajax/backlogs", { action : "getBacklogCases", direction: formData[0]['value'] , nbre : formData[1]['value'] })
-            .done(function(data){
+        $.post("<?= URL ?>ajax/backlogs",
+            {
+            action : "getBacklogCases",
+            direction: formData[0]['value'] ,
+            nbre : formData[1]['value'],
+            groupe_intervention : formData[2]['value']
+             }
+        ).done(function(data){
                 var json = $.parseJSON(data);
                 window.setTimeout( function () {
                     printBacklogList(json);
@@ -66,9 +72,9 @@
             });
     }
 
-    function refreshBacklogTable(dir, nbreJrs ){
+    function refreshBacklogTable(dir, nbreJrs , id_gi ){
         $("#table_backlog").html("<h6 class='w3-center'><i class='fa fa-fw fa-pulse fa-spinner'></i> Chargement </h6>");
-        $.post( "<?= URL ?>ajax/backlogs", { action : "backlogNumbers", direction : dir, nbre : nbreJrs })
+        $.post( "<?= URL ?>ajax/backlogs", { action : "backlogNumbers", direction : dir, nbre : nbreJrs , groupe_intervention : id_gi })
         .done( function(data){
             var json = $.parseJSON(data);
             window.setTimeout( function () {
@@ -79,7 +85,7 @@
 
     $(document).ready(function(){
 
-        refreshBacklogTable("Sonatel" , 1 );
+        refreshBacklogTable("Sonatel" , 1 , 0 );
 
         $("select").selectmenu({
             change : function(event , ui ){
@@ -94,7 +100,8 @@
 
             var formData = $(this).serializeArray();
 
-            refreshBacklogTable(formData[0]['value'], formData[1]['value']);
+            refreshBacklogTable(formData[0]['value'], formData[1]['value'] , formData[2]['value'] );
+
 
         });
 

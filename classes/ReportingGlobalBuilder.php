@@ -257,7 +257,7 @@ class ReportingGlobalBuilder implements Serializable
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
 
-       // echo "$rqt <br>";
+        //echo "$rqt <br>";
 
         $n = Database::getDb()->rqt($rqt);
         return $n[0]['n'];
@@ -367,8 +367,8 @@ class ReportingGlobalBuilder implements Serializable
         );
     }
 
-    public function tableForChart()
-    {
+    public function tableForChart(){
+        
         print "<table id='table_charts' style='display:none;' >";
         print "<thead> <th></th> ";
         foreach ($this->column_kpi as $kpi){
@@ -386,16 +386,16 @@ class ReportingGlobalBuilder implements Serializable
                 print '<th>' . $day['column'] . '</th>';
                 foreach ($this->column_kpi as $kpi) {
                     if ($this->groupe_intervention == null){
-                        $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], null, $kpi['delai_time'], $kpi['delai']);
-                        $total = $this->ndr($day['rel'], $kpi['type_drgt'], null);
+                        $ndr = $this->compute($day['rel'], $kpi['type_drgt'], null, $kpi['delai_time'], $kpi['delai'], substr($kpi['abreviation'], null, 2) );
+                        $total = $this->compute($day['rel'], $kpi['type_drgt'], null , null, null, substr($kpi['abreviation'], null , 2) );
                         $result = floatval(round(100 * ($ndr / $total), 2));
                         $result = (is_nan($result)) ? 0 : $result;
                         echo "<td > $result </td>";
 
                     }else{
                         foreach ($this->groupe_intervention as $gi){
-                            $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai']);
-                            $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi);
+                            $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai'] ,  substr($kpi['abreviation'], null, 2));
+                            $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi , null, null, substr($kpi['abreviation'], null , 2 ));
                             $result = floatval(round(100 * ($ndr / $total), 2));
                             $result = (is_nan($result)) ? 0 : $result;
                             echo "<td > $result </td>";

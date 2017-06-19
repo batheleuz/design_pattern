@@ -48,7 +48,6 @@ function page($pageTitle){
                             <div class="w3-row w3-margin-top">
                                 <span class="w3-padding" style="display:inline-block;width:180px"> <b> Groupe
                                         d'Intervention: </b></span>
-
                                 <select data-placeholder="Sous traitant , Services , ...." name='groupe_intervention[]'
                                         multiple class="chosen-select">
                                     <?php foreach( all("groupe_intervention", " deleted=0 AND (id_service='{$_SESSION['service']['id']}' OR is_modifiable=0) ")  as $gi ): ?>
@@ -87,8 +86,8 @@ function page($pageTitle){
                         <div class="w3-row">
                             <div class="w3-col w3-padding" style='width:170px;'><b>Filtre:</b></div>
                             <div class="w3-rest w3-padding">
-                                <a class="w3-text-deep-orange w3-hover-text-orange w3-large" onclick="getValue();"
-                                style="cursor: pointer;"> <i class="fa fa-plus-square"></i> filtrer une colonne </a>
+                                <a class="w3-text-deep-orange w3-hover-text-orange w3-large" onclick="getValue();"  title="clicker pour ajouter une colonne avec ses valeurs "
+                                   style="cursor: pointer;"> <i class="fa fa-plus-square"></i> filtrer une colonne </a>
                                 <div id="filtered_col" > </div>
                             </div>
                         </div>

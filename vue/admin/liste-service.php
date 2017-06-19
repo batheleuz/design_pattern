@@ -31,14 +31,4 @@
 <script src="<?= ASSETS."js/dataTables.jquery-ui.min.js" ?>"></script>
 <script src="<?= ASSETS."js/dt.js" ?>"></script>
 
---------------------------------- Test Evenement ----------------------------------<br>
 
-<?php
-
-$emiter = EventEmitter::getInstance();
-
-$emiter->on("userCreated");
-
-$emiter->emit("userCreated", "moussa", "ndiaye");
-
-?>

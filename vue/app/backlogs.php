@@ -2,7 +2,7 @@
    <div id="page_index">
        <form action="" id="form_backlog">
            <div class="w3-row">
-               <h1> <i class="fa fa-bars"></i> Backlogs Instance  <span class="w3-small"> mis à jour : <?= $date_ajout_fr ?> </span> </h1>
+               <h1> <i class="fa fa-bars"></i> Backlogs Instance  <span class="w3-small"> dernier mis à jour : <?= $date_ajout_fr ?> </span> </h1>
                <hr>
            </div>
            <div class="w3-row w3-margin">
@@ -23,9 +23,22 @@
                        </select>
                    </div>
                </div>
+               <div class="w3-row w3-margin">
+                   <div class="w3-col m2"> <span class="w3-padding"><b> Groupe d'Intervention: </b></span> </div>
+                   <div class="w3-col m4">
+                       <select name='groupe_intervention'  class="w3-input w3-border">
+                           <option value="0" >-- Choisir --</option>
+                           <?php
+                           $rqt = "SELECT * FROM groupe_intervention WHERE id_service='{$_SESSION['service']['id']}' AND deleted = 0  ";
+                           foreach( Database::getDb()->rqt( $rqt )  as $gi ): ?>
+                               <option value="<?= $gi['id'] ?>"> <?= $gi['nom'] ?>  </option>
+                           <?php endforeach; ?>
+                       </select>
+                   </div>
+               </div>
            </div>
            <div class="w3-row w3-margin w3-center " style="display: none;">
-               <button class="w3-btn" title="retour"> <i class="fa fa-refresh"></i> rafraichir </button>
+               <button class="w3-btn"> <i class="fa fa-refresh"></i> rafraichir </button>
            </div>
        </form>
        <div class="w3-container w3-padding-jumbo">
