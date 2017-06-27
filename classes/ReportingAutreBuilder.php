@@ -17,13 +17,14 @@ class ReportingAutreBuilder extends ReportingGlobalBuilder
     {
 
         parent::__construct($name, $direction, null, $column_kpi, $dates, $par, $_GLOBALS);
-
-        var_dump($column_kpi);
-
+        
         if ($column != null)
             $this->column = $column;
-        else
-            exit ("Vous devez choisir des colonnes ");
+        else{
+            $this->enteteTab();
+            print " <div class='w3-container w3-padding-jumbo w3-white w3-text-red'> Veillez choisir des colonnes  </div> " ;
+            exit();
+        }
     }
 
     public function designTab(){

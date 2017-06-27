@@ -30,7 +30,7 @@ function page()
 
             <div style="max-height:600px; overflow:wrap;overflow-y: scroll;" class="w3-padding-bottom">
                 <ul class="w3-ul w3-hoverable" id="myUL">
-                    <?php foreach ($_SESSION['kpi'] as $kpi): ?>
+                    <?php foreach (Database::getDb()->all("kpi", "id_service", $_SESSION['service']['id']) as $kpi): ?>
                         <li class="w3-border">
                             <div class="w3-container">
                                 <div class="w3-left"><h6><b><?= $kpi['abreviation']; ?></b></h6></div>

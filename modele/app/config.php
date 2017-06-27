@@ -74,6 +74,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
         else:
             EventEmitter::getInstance()->on("notifyToService");
 
+            $_SESSION['groupe_intervention'] = all("groupe_intervention", "deleted=0 AND id_service={$_SESSION['service']['id']}");
             echo $id_gi = Database::getDb()->add("groupe_intervention",
                 array("nom" => strtoupper($nom_gi), "categorie" => $categorie, "id_service" => $_SESSION['service']['id']));
 
@@ -85,7 +86,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
     } else if ($action == "suppr_gi"){
         
         if( Database::getDb()->modif("groupe_intervention" , "deleted" , 1 , "id" , $id_gi ) ){
-            $_SESSION['groupe_intervention'] = all("groupe_intervention", "deleted=0 AND ( is_modifiable=0 OR id_service={$_SESSION['service']['id']} ) ");
+            $_SESSION['groupe_intervention'] = all("groupe_intervention", "deleted=0 AND id_service={$_SESSION['service']['id']} ");
             echo 1;
         }
         else echo 0 ;
@@ -97,7 +98,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
             echo 0;
         else:
             echo $id_ui = Database::getDb()->add("ui", array('nom' => strtoupper($nom_ui)));
-            $_SESSION['ui'] =  all("ui");
+            $_SESSION['ui'] = all("ui");
         endif;
 
     } else if ($action == "update_ui") {
@@ -145,6 +146,16 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
             $file_list[] = array('col' => $file['col_label'], 'nbre' => count_code($file['col_label']));
         }
         echo json_encode($file_list);
+
+    }else if ( $action == "updateTC"){
+       if(Database::getDb()->modif_plus("temps_de_cycle" , compact("col_date_debut" , "col_date_fin" , "valeur_tc") , "direction", $direction)){
+            Database::getDb()->rqt("UPDATE formVrByDir SET col_start='$col_date_debut',  col_end='$col_date_fin' WHERE direction = '".strtoupper($direction)."' AND byTime ='DAY' " );
+            $col_debut = "CONCAT (".$col_date_debut." ,\" \", h_".$col_date_debut.")";
+            $col_end = "CONCAT (".$col_date_fin." ,\" \", h_".$col_date_fin.")";
+            Database::getDb()->rqt( "UPDATE formVrByDir SET col_start='$col_debut' , col_end='$col_end' WHERE direction ='".strtoupper($direction)."' AND byTime ='HOUR' " );
+           echo 1;
+       }
+        else echo 0;
     }
     
 } else if ($_GET['controller'] == "app.php") {

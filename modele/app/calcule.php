@@ -11,11 +11,11 @@ require_once 'calcul_functions.php';
 if ($_GET['controller'] == "ajax.php") {
 
     extract($_POST);
-    $_GLOBALS['vr'] = $_SESSION['vr'];
-    $_GLOBALS['ui'] =  $_SESSION['ui'];
-    $_GLOBALS['kpi'] = $_SESSION['kpi'];
     $_GLOBALS['service'] = $_SESSION['service'];
-    $_GLOBALS['groupe_intervention'] =  $_SESSION['groupe_intervention'] ;
+    $_GLOBALS['vr'] = Database::getDb()->all("formVrByDir");
+    $_GLOBALS['ui'] = Database::getDb()->all("ui");
+    $_GLOBALS['groupe_intervention'] = Database::getDb()->rqt("SELECT * FROM groupe_intervention WHERE deleted=0  AND (is_modifiable = 0 or id_service = '{$_SESSION['service']['id']}') ");
+    $_GLOBALS['kpi'] = Database::getDb()->all("kpi", "id_service", $_SESSION['service']['id']);
 
     if ($action == "viewReporting") {
 
@@ -33,6 +33,7 @@ if ($_GET['controller'] == "ajax.php") {
         else if ($rep['type'] == "ReportingAutreBuilder")
             $reporting = new ReportingAutreBuilder($lr['name'], $lr['direction'], $lr['column'], $lr['column_kpi'], $dates, $lr['par'], $_GLOBALS);
     } else {
+
         foreach ($kpi as $key) {
             $_kpi = Database::getDb()->rqt("SELECT * FROM kpi where id = '$key' ");
             $_kpi = $_kpi[0];
@@ -41,16 +42,16 @@ if ($_GET['controller'] == "ajax.php") {
         }
 
         $dates = array("start" => preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4})$#", "$3-$1-$2", $date_debut),
-            "end" => preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4})$#", "$3-$1-$2", $date_fin));
+                       "end" => preg_replace("#^([0-9]{2})/([0-9]{2})/([0-9]{4})$#", "$3-$1-$2", $date_fin));
 
         if ($action == "reporting_global") {
 
-            if (!isset($groupe_intervention))
-                $groupe_intervention = null;
+            if (!isset($groupe_intervention))  $groupe_intervention = null;
 
             $reporting = new ReportingGlobalBuilder($nom_reporting, $direction, $groupe_intervention, $column_kpi, $dates, $par, $_GLOBALS);
 
-        } else if ($action == "autre_reporting") {
+        }
+        else if ($action == "autre_reporting") {
             if (isset($colonnes_selected)) {
                 $column = array();
                 foreach ($colonnes_selected as $col) {
@@ -58,13 +59,29 @@ if ($_GET['controller'] == "ajax.php") {
                     $column[$col] = $arr;
                 }
             }
-            
+
             $reporting = new ReportingAutreBuilder($nom_reporting, $direction, $column, $column_kpi, $dates, $par, $_GLOBALS);
         }
+        else if ($action == "reportingTC"){
+            foreach ($kpi as $key) {
+                $_kpi = Database::getDb()->rqt("SELECT * FROM kpi where id = '$key' ");$_kpi = $_kpi[0];
+                $ind = Database::getDb()->rqt("SELECT * FROM " . $_kpi['type_kpi'] . " where id ='" . $_kpi['id_indicateur'] . "' "); $ind = $ind[0] ;
+                $tcDir =  Database::getDb()->cherche("temps_de_cycle" , ["valeur_tc"], "direction" , strtolower($direction) ); $tcDir = $tcDir[0];
+                $ind['delai'] = $tcDir['valeur_tc'];
+                $column_kpi_tc[] = array_merge($ind, $_kpi);
+            }
+            $reporting = new ReportingGlobalBuilder($nom_reporting, $direction, $groupe_intervention, $column_kpi_tc, $dates, $par, $_GLOBALS);
+        }
+
         $serial = $reporting->serialize();
     }
-
-    $reporting->designTab();
+    
+    $reporting->enteteTab();
+    echo "<div class='w3-white w3-padding-jumbo' >";
+        $reporting->designTab("pourcentage");
+        echo "<hr>";
+        $reporting->designTab("nombre");
+    echo "</div>";
 }
 /*
     $monfichier = fopen("datas/services/PMT/tmp_file", 'r');

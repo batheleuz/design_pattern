@@ -15,8 +15,8 @@ ob_start();
     <ul>
         <li><a href="#tabs-1"> KPI </a></li>
         <li><a href="<?= URL ?>ajax/config/organisation"> Groupe Intervention / UI </a></li>
+        <li><a href="<?= URL ?>ajax/config/tempsDeCycle"> Temps de Cycle </a></li>
         <li><a href="<?= URL ?>ajax/config/codification"> Codification </a></li>
-        <li><a href="<?= URL ?>ajax/config/fichiers"> Fichiers Dérangements </a></li>
     </ul>
     <div id="tabs-1">
         <?php

@@ -157,7 +157,7 @@ function page()
                     <div class="w3-row w3-light-grey w3-border w3-round w3-padding" id="myUL_ui"
                          style="height:300px;overflow:scroll;">
                         <?php
-                        foreach ($_SESSION['ui'] as $ui): ?>
+                        foreach (Database::getDb()->all("ui") as $ui): ?>
                             <div class="w3-half">
                                 <input class="w3-checkbox" type="checkbox" name="liste_ui[]" value="<?= $ui['id']; ?>"
                                        id="ui_<?= $ui['id']; ?>">

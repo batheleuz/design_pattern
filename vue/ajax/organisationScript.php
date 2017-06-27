@@ -193,9 +193,8 @@
 
                 } else if (parseInt(data) >= 1) {
 
-                    $("#gi_rsl").html(verbose("w3-teal", " Création du groupe réussis."));
                     document.getElementById('modal_add_gi').style.display = 'none';
-                    $("#list_gi").append("<tr><td><h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4></td><td><td></tr>");
+                    $("#list_gi").append("<tr><td><h4 class='w3-text-grey'><i class='fa fa-spinner fa-pulse fa-spin'></i></h4></td><td><td></tr>");
                     window.setTimeout(function () {
                         $.post("<?= URL ?>ajax/config", {action: "getGIList"})
                             .done(function (data) {
@@ -234,7 +233,6 @@
 
                 } else if (parseInt(data) >= 1) {
 
-                    $("#ui_rsl").html(verbose("w3-teal", " Création de l'ui réussis."));
                     document.getElementById('modal_add_ui').style.display = 'none';
                     $("#list_ui").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
 
@@ -283,9 +281,8 @@
 
                 } else if (parseInt(data) >= 1) {
 
-                    $("#ui_rsl").html(verbose("w3-teal", " Modifications enregistrées."));
                     document.getElementById('modal_add_existant_ui').style.display = 'none';
-                    $("#list_ui").append("<h4 class='w3-text-grey'><i class='fa fa-refresh fa-spin'></i></h4>");
+                    $("#list_ui").append("<h4 class='w3-text-grey'><i class='fa fa-spinner fa-pulse fa-spin'></i></h4>");
 
                     window.setTimeout(function () {
                         $.post("<?= URL; ?>/ajax/config", {action: "list_table", table: "groupe_intervention"})

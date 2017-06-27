@@ -3,7 +3,7 @@ function page($pageTitle){
 
     ob_start();
     ?>
-    <div id="content" class="w3-animate-left">
+    <div id="content" class="w3-animate-left w3-light-grey">
         <form class="form" method="post" enctype="multipart/form-data" id="form">
             <div class=" w3-card-4 w3-white w3-padding-jumbo w3-border">
                 <header class="w3-container">
@@ -44,7 +44,7 @@ function page($pageTitle){
                             </div>
                         </div>
 
-                        <?php if ($_GET['param2'] == "global"): ?>
+                        <?php if ($_GET['param2'] == "global" || $_GET['param2'] == "tc"): ?>
                             <div class="w3-row w3-margin-top">
                                 <span class="w3-padding" style="display:inline-block;width:180px"> <b> Groupe
                                         d'Intervention: </b></span>
@@ -54,7 +54,9 @@ function page($pageTitle){
                                         <option value="<?= $gi['id'] ?>"> <?= $gi['nom'] ?>  </option>
                                     <?php endforeach; ?>
                                 </select>
-                                <input type="hidden" name="action" value="reporting_global">
+                                <?php if($_GET['param2'] == "global"){
+                                    echo "<input type='hidden' name='action' value='reporting_global'>";
+                                 } ?>
                             </div>
                         <?php endif; ?>
                         <br>
@@ -71,15 +73,29 @@ function page($pageTitle){
                             </div>
                         </div>
                         <br>
+                        <?php if ($_GET['param2'] != "tc"): ?>
                         <div class="w3-row w3-margin-top">
-                            <span class="w3-padding" style="display:inline-block;width:180px"> <b> KPI à calculer: </b></span>
+                            <span class="w3-padding" style="display:inline-block;width:180px"> <b> KPI : </b></span>
                             <select data-placeholder="Choisir vos kpi" id="multi" name='kpi[]' multiple
                                     class="chosen-select">
-                                <?php foreach (all("kpi", "id_service='{$_SESSION['service']['id']}' ") as $kpi): ?>
+                                <?php foreach (all("kpi", "id_service='{$_SESSION['service']['id']}' AND tc='0' ") as $kpi): ?>
                                     <option value="<?= $kpi['id'] ?>"> <?= $kpi['abreviation'] ?>  </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
+                        <?php else: ?>
+                        <input type="hidden" name="action" value="reportingTC">
+                        <div class="w3-row w3-margin-top">
+                            <span class="w3-padding" style="display:inline-block;width:180px"> <b> KPI à calculer: </b></span>
+                            <select data-placeholder="Choisir vos kpi" id="multi" name='kpi[]' multiple
+                                    class="chosen-select">
+                                <?php foreach (all("kpi", "id_service='{$_SESSION['service']['id']}' AND tc='1' ") as $kpi): ?>
+                                    <option value="<?= $kpi['id'] ?>"> <?= $kpi['abreviation'] ?>  </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <?php endif; ?>
+
                     </div>
                     <?php if ($_GET['param2'] == "autre"): ?>
                         <br>
@@ -106,7 +122,7 @@ function page($pageTitle){
         </form>
     </div>
     <?php if ($_GET['param2'] == "autre"): ?>
-    <div id="modal_add_filter" class="w3-modal ">
+        <div id="modal_add_filter" class="w3-modal ">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-round" style="width:500px;">
             <div class="w3-container">
         <span onclick="document.getElementById('modal_add_filter').style.display='none'"
@@ -133,9 +149,9 @@ function page($pageTitle){
             </div>
         </div>
     </div>
-<?php endif; ?>
-    <div id="result" class=" w3-card-4 w3-animate-right" style="display:none;"></div>
+    <?php endif; ?>
 
+    <div id="result" class=" w3-card-4 w3-animate-right" style="display:none;"></div>
     <script src="<?= ASSETS ?>js/jquery.table2excel.js"></script>
 
     <?php

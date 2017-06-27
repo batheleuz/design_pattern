@@ -73,7 +73,7 @@ class UploadDrgtFile {
             $row = $rowNum = 0;
             while (($buffer = fgets($handle, 1000)) !== false) {
 
-                if (trim($buffer) == null or strlen($buffer) < 10)
+                if (trim($buffer) == null )
                     continue;
 
                 if (preg_match("/^[\ -]+$/", $buffer)) // Detection de la ligne
@@ -209,12 +209,10 @@ class UploadDrgtFile {
 
             $valeurs['id_fichier'] = $this->id_fic;
 
-            if ($this->check( $valeurs ) == true ) {
+            if (Database::getDb()->add($this->table, $valeurs) > 0 && $this->check($valeurs) == true )
+                $this->nbre_enrg++;
 
-                if (Database::getDb()->add($this->table, $valeurs) > 0)
-                    $this->nbre_enrg++;
-
-            } else
+            else
                 $this->nbre_doublon++;
         }
 
@@ -256,7 +254,8 @@ class UploadDrgtFile {
             $rqt = " SELECT nd FROM drgt_releves WHERE nd = '{$valeurs['nd']}'".
                    " AND date_sig ='{$valeurs['nd']}'".
                    " AND date_ori ='{$valeurs['date_ori']}' ".
-                   "AND date_rel ='{$valeurs['date_rel']}'  ";
+                   " AND date_rel ='{$valeurs['date_rel']}' ".
+                   " AND id_fichier='{$this->id_fic}' " ;
 
         }else if($this->table == "drgt_encours" ){
 

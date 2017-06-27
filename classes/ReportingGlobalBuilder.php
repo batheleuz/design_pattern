@@ -24,12 +24,10 @@ class ReportingGlobalBuilder implements Serializable
         $this->_GLOBALS = $_GLOBALS;
     }
 
-    public function designTab()
-    {
+    public function designTab($calcType=null){
 
-        $this->enteteTab();
-        print "<div class='w3-responsive'><table class='w3-table-all' id='tabl' border >";
-        $this->thead();
+        print "<div class='w3-responsive '><table class='w3-table-all tables' id='tabl'>";
+        $this->thead($calcType);
 
         foreach ($this->date_column() as $day) {
             print "<tr>";
@@ -37,22 +35,31 @@ class ReportingGlobalBuilder implements Serializable
 
             if ($this->groupe_intervention == null):
                 foreach ($this->column_kpi as $kpi ) {
-                    //var_dump($kpi);
-                    $ndr = $this->compute($day['rel'], $kpi['type_drgt'], null , $kpi['delai_time'], $kpi['delai'] , substr($kpi['abreviation'], null , 2 ));
-                    $total = $this->compute($day['rel'], $kpi['type_drgt'] , null, null, null, substr($kpi['abreviation'], null , 2) );
-                    $result = floatval(round(100 * ($ndr / $total), 2));
-                    $result = (is_nan($result)) ? 0 : $result;
-                    echo "<td > $result </td>";
+                    $ndr = $this->compute($day['rel'], $kpi['type_drgt'], null , $kpi['delai_time'], $kpi['delai'] , $kpi['abreviation']);
+                    $total = $this->compute($day['rel'], $kpi['type_drgt'] , null, null, null, $kpi['abreviation']);
+
+                    if($calcType == "nombre")  echo "<td > $ndr </td><td > $total </td>";
+
+                    elseif($calcType == "pourcentage"){
+                        $result = floatval(round(100 * ($ndr / $total), 2));
+                        $result = (is_nan($result)) ? 0 : $result;
+                        echo "<td > $result </td>";
+                    }
                 }
             else:
                 foreach ($this->groupe_intervention as $gi) {
                     print "<tr><td > " . $this->getGI($gi)['nom'] . " </td>";
                     foreach ($this->column_kpi as $kpi) {
-                        $ndr = $this->compute($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai'], substr($kpi['abreviation'], null, 2) );
-                        $total = $this->compute($day['rel'], $kpi['type_drgt'], $gi, null, null, substr($kpi['abreviation'],null, 2) );
-                        $result = floatval(round(100 * ($ndr / $total), 2));
-                        $result = (is_nan($result)) ? 0 : $result;
-                        echo "<td > $result </td>";
+                        $ndr = $this->compute($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai'], $kpi['abreviation'] );
+                        $total = $this->compute($day['rel'], $kpi['type_drgt'], $gi, null, null, $kpi['abreviation'] );
+
+                        if($calcType == "nombre") echo "<td > $ndr </td><td > $total </td>";
+
+                        elseif($calcType == "pourcentage"){
+                            $result = floatval(round(100 * ($ndr / $total), 2));
+                            $result = (is_nan($result)) ? 0 : $result;
+                            echo "<td > $result </td>";
+                        }
                     }
                     print "</tr>";
                 }
@@ -72,14 +79,16 @@ class ReportingGlobalBuilder implements Serializable
 
     protected function compute($date_releve, $produit, $gi = null, $tmpInd = null, $valueTmpInd = null, $typeKPI=null){
 
-        if ( $typeKPI === "Ba")
+        $subKPI = substr($typeKPI, null , 3 );
+
+        if ( $subKPI === "Bac"  || $subKPI === "VRP" )
            return $this->backlog($date_releve, $produit, $gi, $tmpInd , $valueTmpInd);
-        else if ( $typeKPI === "VR")
+        else
            return $this->ndr($date_releve, $produit, $gi, $tmpInd , $valueTmpInd);
 
     }
     
-    protected function enteteTab(){
+    public function enteteTab(){
 
         print "<div class='w3-container w3-border w3-padding w3-white'>"
             . "<div class='w3-row'>"
@@ -95,7 +104,7 @@ class ReportingGlobalBuilder implements Serializable
             . "<div class='w3-right w3-dropdown-hover' >"
             . "<a class='w3-btn w3-teal w3-margin-top' > <i class='fa fa-2x fa-bars'></i></a>"
             . "<div class='w3-dropdown-content w3-bar-block w3-border' style='width:250px;right:0'>"
-            . "<a class='w3-white w3-hover-black w3-padding'  onclick='exporter(\"" . $this->name . "\")' "
+            . "<a class='w3-white w3-hover-black w3-padding'  onclick='exporter(\"".$this->name.' '.$this->dates['start'].' '. $this->dates['end']. "\")' "
             . "title ='Enregistrer sous format excel' ><i class='fa fa-file-excel-o'></i> Télécharger format excel </a>"
             . "<a class='w3-white w3-hover-black w3-padding' title ='Visualiser le graphe' "
             . " onclick='createCharts(\"" . $this->name . "\" ,\"" . $this->dates['start'] . "\" , \"" . $this->dates['end'] . "\" , \"area\")' >"
@@ -119,7 +128,7 @@ class ReportingGlobalBuilder implements Serializable
         return preg_replace("#^([0-9]{4})-([0-9]{2})-([0-9]{2})$#", "$3/$2/$1", $date);
     }
 
-    protected function thead()
+    protected function thead($calcType=null)
     {
 
         ob_start();
@@ -129,8 +138,14 @@ class ReportingGlobalBuilder implements Serializable
         if ($this->groupe_intervention != null)
             print "<th>Groupe d'intervention</th>";
 
-        foreach ($this->column_kpi as $kpi)
-            print "<th>" . $kpi['abreviation'] . "</th>";
+        foreach ($this->column_kpi as $kpi){
+            if($calcType == "nombre")
+                print "<th>Nombre " . $kpi['abreviation'] . "</th><th>Total " . $kpi['abreviation'] . "</th>";
+
+            else
+                print "<th>" . $kpi['abreviation'] . "</th>";
+
+        }
 
         print "</thead>";
 
@@ -205,8 +220,7 @@ class ReportingGlobalBuilder implements Serializable
         return $dates;
     }
 
-    protected function days_between($start, $end)
-    {
+    protected function days_between($start, $end){
 
         $start = new DateTime($start);
         $end = new DateTime($end);
@@ -252,7 +266,7 @@ class ReportingGlobalBuilder implements Serializable
         $rqt .= "AND " . $this->ndrByProd($produit) . " ";
 
         if ($tmpInd != null && $valueTmpInd != null)
-            $rqt .= "AND  " . $this->ndrByDir($tmpInd, $valueTmpInd);
+            $rqt .= "AND " . $this->ndrByDir($tmpInd, $valueTmpInd);
 
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
@@ -263,25 +277,25 @@ class ReportingGlobalBuilder implements Serializable
         return $n[0]['n'];
     }
 
-    protected function ndrByTime($par, $value, $year){
+    protected function ndrByTime($par, $value, $year , $col_end = "date_rel" ){
 
         $rqt = "SELECT COUNT(*) as n FROM drgt_releves  WHERE ";
 
         if ($par == "day") {
 
-            $rqt .= "drgt_releves.date_rel='$value' ";
+            $rqt .= "$col_end ='$value' ";
 
         } else if ($par == "week") {
 
-            $rqt .= "WEEK( drgt_releves.date_rel , 1 ) ='$value' AND YEAR (drgt_releves.date_rel) = '$year' ";
+            $rqt .= "WEEK( $col_end  , 1 ) ='$value' AND YEAR ($col_end ) = '$year' ";
 
         } else if ($par == "month") {
 
-            $rqt .= "MONTH(drgt_releves.date_rel) ='$value' AND YEAR (drgt_releves.date_rel) = '$year' ";
+            $rqt .= "MONTH($col_end) ='$value' AND YEAR ($col_end) = '$year' ";
 
         } else if ($par == "trimester") {
 
-            $rqt .= "QUARTER(drgt_releves.date_rel) ='$value' AND YEAR (drgt_releves.date_rel) = '$year' ";
+            $rqt .= "QUARTER($col_end ) ='$value' AND YEAR ($col_end ) = '$year' ";
         }
         return $rqt;
     }
@@ -292,10 +306,13 @@ class ReportingGlobalBuilder implements Serializable
             return " acces_tv !='' ";
 
         elseif ($produit == "adsl")
-            return " acces_tv ='' ";
+            return " acces_tv ='' AND acces_adsl != '' ";
 
         elseif ($produit == "bd")
             return " acces_tv ='' AND acces_adsl ='' ";
+
+        elseif($produit == "global")
+            return " 1 ";
 
     }
 
@@ -386,16 +403,16 @@ class ReportingGlobalBuilder implements Serializable
                 print '<th>' . $day['column'] . '</th>';
                 foreach ($this->column_kpi as $kpi) {
                     if ($this->groupe_intervention == null){
-                        $ndr = $this->compute($day['rel'], $kpi['type_drgt'], null, $kpi['delai_time'], $kpi['delai'], substr($kpi['abreviation'], null, 2) );
-                        $total = $this->compute($day['rel'], $kpi['type_drgt'], null , null, null, substr($kpi['abreviation'], null , 2) );
+                        $ndr = $this->compute($day['rel'], $kpi['type_drgt'], null, $kpi['delai_time'], $kpi['delai'],$kpi['abreviation'] );
+                        $total = $this->compute($day['rel'], $kpi['type_drgt'], null , null, null, $kpi['abreviation']);
                         $result = floatval(round(100 * ($ndr / $total), 2));
                         $result = (is_nan($result)) ? 0 : $result;
                         echo "<td > $result </td>";
 
                     }else{
                         foreach ($this->groupe_intervention as $gi){
-                            $ndr = $this->ndr($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai'] ,  substr($kpi['abreviation'], null, 2));
-                            $total = $this->ndr($day['rel'], $kpi['type_drgt'], $gi , null, null, substr($kpi['abreviation'], null , 2 ));
+                            $ndr = $this->compute($day['rel'], $kpi['type_drgt'], $gi, $kpi['delai_time'], $kpi['delai'] , $kpi['abreviation']);
+                            $total = $this->compute($day['rel'], $kpi['type_drgt'], $gi , null, null, $kpi['abreviation']);
                             $result = floatval(round(100 * ($ndr / $total), 2));
                             $result = (is_nan($result)) ? 0 : $result;
                             echo "<td > $result </td>";
@@ -426,15 +443,17 @@ class ReportingGlobalBuilder implements Serializable
 
         $vr = $this->getFromGlobal("vr", "direction", $this->direction, "byTime", $tmpInd);
 
-        $rqt = " DATEDIFF( " . $vr['col_end'] . "," . $vr['col_start'] . ") > $valueTmpInd ";
+        $rqt = " DATEDIFF(" . $vr['col_end'] . "," . $vr['col_start'] . ") > $valueTmpInd ";
 
         return $rqt;
     }
 
     protected function backlog($date_releve, $produit, $gi = null , $tmpInd = null , $valueTmpInd = null){
 
+        $vr = $this->getFromGlobal("vr", "direction", $this->direction, "byTime", $tmpInd);
+
         if($tmpInd !=  null && $valueTmpInd != null ){
-            $rqt = $this->ndrByTime($this->par, $date_releve, date("Y"));
+            $rqt = $this->ndrByTime($this->par, $date_releve, date("Y") , $vr['col_end']);
             $rqt .= "AND ". $this->backlogByDir($tmpInd, $valueTmpInd);
             $rqt .= "AND ". $this->ndrByProd($produit) . " ";
         }else{
@@ -443,6 +462,8 @@ class ReportingGlobalBuilder implements Serializable
         }
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
+
+        //echo $rqt ."<br>";
 
         $result = Database::getDb()->rqt($rqt);
         $nombre =  $result[0]['n'];

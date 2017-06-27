@@ -1,37 +1,54 @@
 {
-    "name": "mass",
-    "direction": "SONATEL",
-    "column": {
-        "defaut": "ADEL ",
-        "ui": "1413 "
-    },
+    "name": " ",
+    "direction": "DINT",
     "column_kpi": [
         {
-            "id": "23",
-            "delai": "2",
+            "id": "51",
+            "delai": "1",
             "type_drgt": "adsl",
             "delai_time": "DAY",
             "nom": "",
-            "abreviation": "VR2J  ADSL",
+            "abreviation": "VR ADSL",
             "type_kpi": "pourcentage",
-            "id_indicateur": "23",
-            "id_service": "1"
+            "id_indicateur": "51",
+            "id_service": "1",
+            "tc": "1"
         },
         {
-            "id": "38",
-            "delai": "2",
-            "type_drgt": "adsl",
+            "id": "53",
+            "delai": "1",
+            "type_drgt": "tvo",
             "delai_time": "DAY",
             "nom": "",
-            "abreviation": "Backlog2J  ADSL",
+            "abreviation": "VR TVO",
             "type_kpi": "pourcentage",
-            "id_indicateur": "38",
-            "id_service": "1"
+            "id_indicateur": "53",
+            "id_service": "1",
+            "tc": "1"
+        },
+        {
+            "id": "55",
+            "delai": "1",
+            "type_drgt": "global",
+            "delai_time": "DAY",
+            "nom": "",
+            "abreviation": "VR GLOBAL",
+            "type_kpi": "pourcentage",
+            "id_indicateur": "55",
+            "id_service": "1",
+            "tc": "1"
         }
     ],
     "dates": {
-        "start": "2017-05-01",
-        "end": "2017-05-31"
+        "start": "2017-03-01",
+        "end": "2017-06-30"
     },
-    "par": "week"
+    "par": "month",
+    "groupe_intervention": [
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+    ]
 }

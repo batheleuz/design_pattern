@@ -26,7 +26,7 @@
     <span class="w3-left">
          <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i> 
          </button>
-        <img src="<?= ASSETS ?>image/snt.png"  class="w3-hide-small" height="30" alt="LOGO">
+        <img src="<?= ASSETS ?>image/logo_snt.jpeg"  class="w3-hide-small" height="30" alt="LOGO">
     </span>
     <span class="w3-right">
         <?php $notifs = getNotifications($_SESSION['user']['service'], $_SESSION['user']['id'] , 0 ); ?>
@@ -83,6 +83,8 @@
     <a class="w3-padding-16  w3-grey w3-margin-bottom "> Reporting Dérangement</a>
     <a href="<?= URL ?>app/reporting/upload" class="w3-padding <?= $menu_up ?>"><i class="fa fa-upload fa-fw"></i>
         Charger Fichier </a>
+    <a href="<?= URL ?>app/reporting/nouveau/tc" class="w3-padding <?= $menu_tc ?>"><i
+            class="fa fa-plus-circle fa-fw"></i> Temps de Cycle </a>
     <a href="<?= URL ?>app/reporting/nouveau/global" class="w3-padding <?= $menu_ng ?>"><i
             class="fa fa-plus-circle fa-fw"></i> Reporting Global </a>
     <a href="<?= URL ?>app/reporting/nouveau/autre" class="w3-padding <?= $menu_na ?>"><i

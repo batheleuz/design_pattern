@@ -93,19 +93,6 @@
         $("#" + id_2).css({"display": "block"});
     }
 
-    function exporter(name) {
-
-        $("#tabl").table2excel({
-            exclude: ".noExl",
-            name: "Excel Document Name",
-            filename: "Exportation_" + name,
-            fileext: ".xls",
-            exclude_img: true,
-            exclude_links: true,
-            exclude_inputs: true
-        });
-    }
-
     function createCharts(name, start, end, type) {
         var dialogBox = $("#dialog-confirm");
         dialogBox.dialog({title: "Graphe", modal: true, show: {effect: "fade", duration: 600}});

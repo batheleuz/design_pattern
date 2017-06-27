@@ -31,12 +31,15 @@
             nom.addClass("w3-pale-red").focus();
             return false;
         }
-        if (kpi.children(":selected").length == 0) {
-            kpi.addClass("w3-pale-red");
-            kpi.parent()
-                .append("<span class='w3-feedback w3-text-red w3-right-align'><i class='fa fa-times'></i> Veillez choisir les KPI à calculer.</span>");
-            return false;
-        }
+        <?php if ( $_GET['param2'] != "tc" ): ?>
+            if (kpi.children(":selected").length == 0) {
+                kpi.addClass("w3-pale-red");
+                kpi.parent()
+                    .append("<span class='w3-feedback w3-text-red w3-right-align'><i class='fa fa-times'></i> Veillez choisir les KPI à calculer.</span>");
+                return false;
+            }
+        <?php endif; ?>
+
         return true;
     }
 
@@ -47,19 +50,21 @@
 
     }
 
+
     function exporter(name) {
 
-        $("#tabl").table2excel({
-            exclude: ".noExl",
-            name: "Excel Document Name",
-            filename: "Exportation_" + name,
-            fileext: ".xls",
-            exclude_img: true,
-            exclude_links: true,
-            exclude_inputs: true
-        });
+        var data_type = 'data:application/vnd.ms-excel';
+        var table_div = document.getElementsByClassName("tables");
+        var table_html=null;
+        for( var i=0 ; i < table_div.length ; i++ ){
+           table_html = table_html+ table_div[i].outerHTML.replace(/ /g, '%20');
+           var a = document.createElement('a');
+        };
+        a.href = data_type + ', ' + table_html;
+        a.download = name + '.xlsx';
+        a.click();
     }
-
+    
     function enrgReporting(classe) {
 
         var dialogBox = $("#dialog-confirm");
