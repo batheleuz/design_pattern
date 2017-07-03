@@ -21,8 +21,7 @@ class UploadDrgtFile {
         "commentaire_signalisation", "agent_sig", "date_sig", "hsi", "date_ess", "h_date_ess",
         "defaut", "commentaire_essai", "agent_ess", "date_ori", "h_date_ori", "agent_ori", "ui",
         "equipe", "date_plan", "h_date_plan", "date_rel", "h_date_rel", "releve", "locali", "cause",
-        "commentaire_releve", "agent_rel"
-    );
+        "commentaire_releve", "agent_rel" );
 
     public function __construct($fichier, $table){
 
@@ -283,12 +282,7 @@ class UploadDrgtFile {
         else
             $txte = "Une erreur s'est produite lors de l'enregistrement.";
 
-        return array(
-            'code' => 1,
-            'texte' => $txte,
-            'doublon' => $this->nbre_doublon,
-            'enrg' => $this->nbre_enrg
-        );
+        return array('code' => 1, 'texte' => $txte, 'doublon' => $this->nbre_doublon, 'enrg' => $this->nbre_enrg );
     }
 
     private function interrupt(){

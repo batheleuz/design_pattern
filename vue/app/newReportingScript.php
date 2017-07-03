@@ -207,7 +207,7 @@
 
     $("#form").submit(function (event) {
         event.preventDefault();
-        var loader = "<div class='loader'><img src='<?= ASSETS ?>image/hourglass.gif' class='w3-round img-loader' /></div>";
+        var loader = "<div class='loader'><img src='<?= ASSETS ?>image/squares.gif' class='w3-round img-loader' /></div>";
 
         if (formValidator()) {
 

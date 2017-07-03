@@ -151,10 +151,10 @@
                     uL.html("");
                     $.each(list, function (key, value) {
                         var li = "<li class='w3-border'><div class='w3-container'>" +
-                            "<div class='w3-left'><h6><b>" + value.abreviation + "</b></h6></div>" +
-                            "<div class='w3-right'><button data-abrev='" + value.abreviation + "' data-id='" + value.id + "' " +
-                            " class='w3-btn w3-red w3-hover-teal w3-btn-floating' onclick='suppr(this)'> " +
-                            "<i class='fa fa-trash'></i></button></div></div></li>";
+                            "<div class='w3-left'><b>" + value.abreviation + "</b></div>" +
+                            "<div class='w3-right'><a href='#' data-abrev='" + value.abreviation + "' data-id='" + value.id + "' " +
+                            " class='w3-text-red w3-hover-text-teal' onclick='suppr(this)'> " +
+                            "<i class='fa fa-trash'></i></a></div></div></li>";
                         uL.append(li);
                     });
                 });

@@ -7,11 +7,10 @@
  */
 
 function getNotifications( $idService , $idUser = null , $state = null ) {
-
-    $rqt = "SELECT * FROM  notification WHERE id_service = '$idService' " ;
+    $rqt = "SELECT * FROM  notification WHERE id_service=$idService " ;
 
     if( !is_null($state) && !is_null($idUser) ){
-        $rqt .= "AND for_user='$idUser' and state='$state' " ;
+        $rqt .= "AND for_user=$idUser AND state=$state " ;
     }
     return Database::getDb()->rqt( $rqt." ORDER BY id DESC LIMIT 10 " );
 }

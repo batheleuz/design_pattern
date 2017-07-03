@@ -32,13 +32,12 @@ function page()
                 <ul class="w3-ul w3-hoverable" id="myUL">
                     <?php foreach (Database::getDb()->all("kpi", "id_service", $_SESSION['service']['id']) as $kpi): ?>
                         <li class="w3-border">
-                            <div class="w3-container">
-                                <div class="w3-left"><h6><b><?= $kpi['abreviation']; ?></b></h6></div>
+                            <div class="w3-container ">
+                                <div class="w3-left"><b><?= $kpi['abreviation']; ?></b></div>
                                 <div class="w3-right">
-                                    <button data-abrev="<?= $kpi['abreviation']; ?>"
-                                    " data-id="<?= $kpi['id']; ?>"
-                                    class="w3-btn w3-hover-teal w3-red w3-btn-floating" onclick="suppr(this)"><i
-                                        class="fa fa-trash"></i></button></div>
+                                    <a data-abrev="<?= $kpi['abreviation']; ?>" href="#"  data-id="<?= $kpi['id']; ?>"
+                                    class="w3-hover-text-teal w3-text-red w3-large" onclick="suppr(this)"><i class="fa fa-trash"></i></a>
+                                </div>
                             </div>
                         </li>
                     <?php endforeach; ?>

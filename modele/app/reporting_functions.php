@@ -22,13 +22,12 @@ function getMonth($index)
  * @param null $where
  * @return mixed array qui contient les données demandées
  */
-function all($table, $where = null)
-{
+function all($table, $where = null){
 
     $rqt = "SELECT * FROM $table";
 
     if ($where != null)
         $rqt .= " WHERE $where";
-
+    echo $rqt ;
     return Database::getDb()->rqt($rqt);
 }
