@@ -77,12 +77,7 @@ if ($_POST['action'] == "upload_codif") {
 
     else
         echo json_encode(array('r' => array('code' => 0, 'texte' => 'Le fichier est trop lourd pour être chargé.')));
-
-
-    EventEmitter::getInstance()->emit(
-        "notifyToService", $_SESSION['service']['id'], "Chargement Fichier",
-        "Le fichier {$upload->fichier} enregistrée ", "#"  ,"file-o" );
-
+    
     unset($upload);
 
 }

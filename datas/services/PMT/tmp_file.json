@@ -1,50 +1,36 @@
 {
-    "name": " ",
+    "name": "reporting mensuelle",
     "direction": "DINT",
     "column_kpi": [
         {
-            "id": "35",
+            "id": "23",
             "delai": "2",
             "type_drgt": "adsl",
             "delai_time": "DAY",
             "nom": "",
-            "abreviation": "VR ADSL",
+            "abreviation": "VR2J  ADSL",
             "type_kpi": "pourcentage",
-            "id_indicateur": "36",
-            "id_service": "1",
-            "tc": "1"
+            "id_indicateur": "23",
+            "id_service": "1"
         },
         {
-            "id": "36",
-            "delai": "2",
+            "id": "34",
+            "delai": "24",
             "type_drgt": "tvo",
-            "delai_time": "DAY",
+            "delai_time": "HOUR",
             "nom": "",
-            "abreviation": "VR TVO",
+            "abreviation": "VR24H  TVO",
             "type_kpi": "pourcentage",
-            "id_indicateur": "35",
-            "id_service": "1",
-            "tc": "1"
-        },
-        {
-            "id": "37",
-            "delai": "2",
-            "type_drgt": "global",
-            "delai_time": "DAY",
-            "nom": "",
-            "abreviation": "VR GLOBAL",
-            "type_kpi": "pourcentage",
-            "id_indicateur": "37",
-            "id_service": "1",
-            "tc": "1"
+            "id_indicateur": "34",
+            "id_service": "1"
         }
     ],
     "dates": {
-        "start": "2017-01-01",
-        "end": "2017-01-31"
+        "start": "2017-03-01",
+        "end": "2017-03-31"
     },
-    "par": "day",
+    "par": "week",
     "groupe_intervention": [
-        "1"
+        "8"
     ]
 }

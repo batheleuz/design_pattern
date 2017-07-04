@@ -15,18 +15,15 @@ class UploadDrgtFile {
     private $nbre_doublon = 0; //  nombre de doublons
     private $nbre_enrg = 0;     //  nombre de lignes enregistrées
     private $id_fic;
-    private $entete = array(
-        "nd", "nom_du_client", "nd_contact", "commentaire_contact", "segment",
-        "categorie", "acces_reseau", "acces_adsl", "acces_tv", "etat", "origine", "csig",
-        "commentaire_signalisation", "agent_sig", "date_sig", "hsi", "date_ess", "h_date_ess",
-        "defaut", "commentaire_essai", "agent_ess", "date_ori", "h_date_ori", "agent_ori", "ui",
-        "equipe", "date_plan", "h_date_plan", "date_rel", "h_date_rel", "releve", "locali", "cause",
-        "commentaire_releve", "agent_rel" );
+    private $config;
 
     public function __construct($fichier, $table){
 
         $this->fichier = $fichier;
         $this->table = $table;
+
+        $file= file_get_contents(PATH."/Datas/configFiles/".$table.".json");
+        $this->config = json_decode( $file, true );
 
     }
 
@@ -84,69 +81,55 @@ class UploadDrgtFile {
             fclose($handle);
         }
 
-        if ($rowNum != 0) {
+        $colonneNum = $filesLine[$rowNum];
+        /*
+        $numbers = explode(" ", trim($colonneNum));
 
-            $colonneNum = $filesLine[$rowNum];
-            $numbers = explode(" ", trim($colonneNum));
+        $start = 0;
+        for ($i = 0; $i < count($numbers); $i++) {
+            $pointer[] = array("start" => $start, "end" => (strlen($numbers[$i]) + 1));
+            $start = $start + 1 + (int)strlen($numbers[$i]);
+        }
 
-            $start = 0;
-            for ($i = 0; $i < count($numbers); $i++) {
+        foreach ($this->config['pointer'] as $p) {
+            $entete[] = strtolower(str_replace(" ", "_", trim(substr($filesLine[$rowNum - 1], $p['start'], $p['end']))));
+        }
+        */
+        for ($i = 0 ; $i < count($filesLine); $i++) {
 
-                $pointer[] = array("start" => $start, "end" => (strlen($numbers[$i]) + 1));
-                $start = $start + 1 + (int)strlen($numbers[$i]);
+            $arr = null;
 
-            }
-            /******************************
-             * Construction de l'entete
-             *******************************/
-            foreach ($pointer as $p) {
-                $entete[] = strtolower(str_replace(" ", "_", trim(substr($filesLine[$rowNum - 1], $p['start'], $p['end']))));
-            }
+            foreach ($this->config['pointer'] as $p)
+                $arr[] = substr($filesLine[$i], $p['start'], $p['end']);
 
-            if ($this->compare($entete)) {
+            $this->add_drgt($this->config['entete'], $arr);
+        }
 
-                for ($i = $rowNum + 1; $i < count($filesLine); $i++) {
-
-                    $arr = null;
-
-                    foreach ($pointer as $p)
-                        $arr[] = substr($filesLine[$i], $p['start'], $p['end']);
-
-                    $this->add_drgt($entete, $arr);
-                }
-
-                Database::getDb()->modif("fichier", "etat_fin", 0 , "id", $this->id_fic);
-                return $this->feedback();
-
-            } else
-                $txt = " L'entête du fichier est incorrect ";
-
-        } else
-            $txt = " Veillez vérifier si le fichier contient une entête ";
-
-        $this->interrupt();
-        return array('code' => 0, 'texte' => $txt);
+        Database::getDb()->modif("fichier", "etat_fin", 0 , "id", $this->id_fic);
+        return $this->feedback();
     }
 
     private function enrgcsv(){
 
         if (($handle = fopen("datas/uploads/drgt/" . $this->fichier, "r")) !== FALSE) {
 
+            /*
             $data = fgetcsv($handle, 2048, "\n");
             $arr_entete = explode(";", $data[0]);
+            */
+
             $entete = null;
 
-            for ($i = 0; $i < count($arr_entete); $i++) {
+            for ($i = 0; $i < count($this->config['entete']); $i++) {
 
-                $champ = str_replace(" ", "_", strtolower($arr_entete[$i]));
+                $champ = $this->config['entete'][$i];
+                $entete[] = $champ ;
 
-                if ($champ == "")
-                    $champ = "h_" . $entete[$i - 1];
+                if (preg_match("#^date_#", $champ))
+                    $entete[] = "h_" . $this->config['entete'][$i];
 
-                $entete[$i] = $champ;
 
             }
-
             while (($data = fgetcsv($handle, 2048, "\n")) !== FALSE) {
 
                 $num = count($data);
@@ -162,17 +145,11 @@ class UploadDrgtFile {
             Database::getDb()->modif("fichier", "etat_fin", 0, "id", $this->id_fic);
             return $this->feedback();
 
-
         } else
             $txt = " Impossible d'ouvrir le fichier ";
 
         $this->interrupt();
         return array('code' => 0, 'texte' => $txt);
-    }
-
-    private function compare($arr){
-
-        return true;
     }
 
     private function add_drgt($entete, $line){
@@ -198,7 +175,6 @@ class UploadDrgtFile {
                 $valeurs['date_plan'] = $this->formate_date($valeurs['date_plan']);
                 $valeurs['date_rel'] = $this->formate_date($valeurs['date_rel']);
             }
-
             else if ($this->table == "drgt_encours"){
                 $valeurs['date_sig'] = $this->formate_date($valeurs['date_sig']);
                 $valeurs['date_ess'] = $this->formate_date($valeurs['date_ess']);
@@ -207,11 +183,12 @@ class UploadDrgtFile {
             }
 
             $valeurs['id_fichier'] = $this->id_fic;
+            $valeurs['identite'] = sha1($valeurs['nd'].$valeurs['date_sig'].$valeurs['date_rel']);
 
-            if (Database::getDb()->add($this->table, $valeurs) > 0 && $this->check($valeurs) == true )
+            if (($this->check($valeurs) == 1) ){
+                Database::getDb()->add($this->table, $valeurs );
                 $this->nbre_enrg++;
-
-            else
+            }else
                 $this->nbre_doublon++;
         }
 
@@ -249,28 +226,14 @@ class UploadDrgtFile {
 
     private function check($valeurs){
 
-        if( $this->table == "drgt_releves" ){
-            $rqt = " SELECT nd FROM drgt_releves WHERE nd = '{$valeurs['nd']}'".
-                   " AND date_sig ='{$valeurs['nd']}'".
-                   " AND date_ori ='{$valeurs['date_ori']}' ".
-                   " AND date_rel ='{$valeurs['date_rel']}' ".
-                   " AND id_fichier='{$this->id_fic}' " ;
-
-        }else if($this->table == "drgt_encours" ){
-
-            if( $valeurs['agent_rel'] != "" ) return false;
-            
-            $rqt = "SELECT nd FROM drgt_encours WHERE nd='$nd' ";
-
-        }
+        $rqt = " SELECT nd FROM drgt_releves WHERE nd='{$valeurs['nd']}' AND identite='{$valeurs['identite']}' ";
 
         $line = Database::getDb()->rqt($rqt);
 
-        if (isset($line[0]['nd']))
-            return false;
+        if (!empty($line[0]))
+            return 0;
 
-        return true;
-
+        return 1;
     }
 
     public function feedback(){
@@ -291,4 +254,6 @@ class UploadDrgtFile {
         Database::getDb()->suppr($this->table, "id_fichier", $this->id_fic);
 
     }
+
+
 }

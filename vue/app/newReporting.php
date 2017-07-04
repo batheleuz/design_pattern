@@ -89,7 +89,7 @@ function page($pageTitle){
                             <span class="w3-padding" style="display:inline-block;width:180px"> <b> KPI à calculer: </b></span>
                             <select data-placeholder="Choisir vos kpi" id="multi" name='kpi[]' multiple
                                     class="chosen-select">
-                                <?php foreach (all("kpi", "id_service='{$_SESSION['service']['id']}' AND tc='1' ") as $kpi): ?>
+                                <?php foreach (all("kpi", "tc='1' ") as $kpi): ?>
                                     <option value="<?= $kpi['id'] ?>"> <?= $kpi['abreviation'] ?>  </option>
                                 <?php endforeach; ?>
                             </select>

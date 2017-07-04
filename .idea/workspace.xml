@@ -3,12 +3,23 @@
   <component name="ChangeListManager">
     <list id="35a7ed7e-c580-42a3-b43e-641b7dfe0004" name="Default" comment="" />
     <list default="true" id="1e22ac67-7079-4bec-a9b7-0972d45a19c9" name="Failed commit: New changelist" comment="Temps de cycle">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/database MySQL/reporing.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/database MySQL/reporting.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/configFiles/drgt_encours.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datas/configFiles/drgt_releves.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_HPE_1456760.lis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt encours HPE .csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S04.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt_releves.lis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datas/uploads/drgt/test.lis" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/app.css" afterPath="$PROJECT_DIR$/assets/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" afterPath="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/UploadDrgtFile.php" afterPath="$PROJECT_DIR$/classes/UploadDrgtFile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/dec.php" afterPath="$PROJECT_DIR$/controller/dec.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/database MySQL/reporting.sql" afterPath="$PROJECT_DIR$/datas/database MySQL/reporting.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/services/PMT/tmp_file.json" afterPath="$PROJECT_DIR$/datas/services/PMT/tmp_file.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/agent_ori.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/agent_ori.csv" />
@@ -18,17 +29,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/nd.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/nd.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/releve.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/releve.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/codification/ui.csv" afterPath="$PROJECT_DIR$/datas/uploads/codification/ui.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" afterPath="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt encours HPE .csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt encours HPE .csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE S05.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt releves HPE.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" afterPath="$PROJECT_DIR$/datas/uploads/drgt/drgt relevés HPE .csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/notifications.php" afterPath="$PROJECT_DIR$/modele/app/notifications.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/reporting_functions.php" afterPath="$PROJECT_DIR$/modele/app/reporting_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/ajax/configKPI.php" afterPath="$PROJECT_DIR$/vue/ajax/configKPI.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/ajax/configKPIScript.php" afterPath="$PROJECT_DIR$/vue/ajax/configKPIScript.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/app/uploader.php" afterPath="$PROJECT_DIR$/modele/app/uploader.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/configuration.php" afterPath="$PROJECT_DIR$/vue/app/configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/newReportingScript.php" afterPath="$PROJECT_DIR$/vue/app/newReportingScript.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/newReporting.php" afterPath="$PROJECT_DIR$/vue/app/newReporting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/uploadForm.php" afterPath="$PROJECT_DIR$/vue/app/uploadForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/app/uploadFormScript.php" afterPath="$PROJECT_DIR$/vue/app/uploadFormScript.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/template/app.php" afterPath="$PROJECT_DIR$/vue/template/app.php" />
     </list>
     <ignored path="snt_drgt_reporting.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,15 +64,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="codificationScript.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/ajax/codificationScript.php">
+      <file leaf-file-name="uploadFormScript.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/app/uploadFormScript.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="960">
+              <caret line="89" column="12" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="27" />
               <folding>
-                <marker date="1492611057000" expanded="true" signature="809:841" placeholder="..." />
-                <marker date="1492611057000" expanded="true" signature="3088:3103" placeholder="..." />
+                <element signature="e#1003#3301#0#HTML" expanded="false" />
+                <element signature="e#3393#5682#0#HTML" expanded="false" />
+                <marker date="1499182125000" expanded="true" signature="2307:2322" placeholder="..." />
+                <marker date="1499182125000" expanded="true" signature="4699:4714" placeholder="..." />
+                <marker date="1499182125000" expanded="true" signature="5881:5888" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadDrgtFile.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/UploadDrgtFile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding>
+                <element signature="n#__construct#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#enrg#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#notExist#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#enrglis#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#enrgcsv#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#add_drgt#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#formate_hour#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#formate_date#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#check#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#feedback#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <element signature="n#interrupt#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+                <marker date="1499186020000" expanded="true" signature="1222:1293" placeholder="SELECT * FRO... fichier" />
+                <marker date="1499186020000" expanded="true" signature="7579:7634" placeholder="SELECT nd FR... drgt_releves" />
+                <marker date="1499186020000" expanded="true" signature="7579:7648" placeholder="SELECT nd FR... drgt_releves" />
+                <marker date="1499186020000" expanded="true" signature="7579:7672" placeholder="SELECT nd FR... drgt_releves" />
+                <marker date="1499186020000" expanded="true" signature="7579:7675" placeholder="SELECT nd FR... drgt_releves" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/app/uploader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1450">
+              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,81 +120,78 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/template/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-840">
-              <caret line="31" column="104" selection-start-line="31" selection-start-column="104" selection-end-line="31" selection-end-column="104" />
+            <state relative-caret-position="274">
+              <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
               <folding>
-                <marker date="1499075515000" expanded="true" signature="8159:8174" placeholder="..." />
-                <marker date="1499075515000" expanded="true" signature="8518:8532" placeholder="..." />
-                <marker date="1499075515000" expanded="true" signature="8603:8616" placeholder="..." />
+                <marker date="1499171869000" expanded="true" signature="8159:8174" placeholder="..." />
+                <marker date="1499171869000" expanded="true" signature="8518:8532" placeholder="..." />
+                <marker date="1499171869000" expanded="true" signature="8603:8616" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="acces_adsl.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datas/uploads/codification/acces_adsl.csv">
+      <file leaf-file-name="notifications.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/app/notifications.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="28" column="80" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+              <folding>
+                <marker date="1499171421000" expanded="true" signature="177:222" placeholder="SELECT * FRO... notification" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadForm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/app/uploadForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+              <folding>
+                <element signature="e#2084#2105#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporing.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datas/database MySQL/reporing.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporting.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datas/database MySQL/reporting.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3720">
+              <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
+              <folding>
+                <element signature="e#6#75#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drgt_encours.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datas/configFiles/drgt_encours.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drgt_releves.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datas/configFiles/drgt_releves.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="defaut.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datas/uploads/codification/defaut.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nd.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datas/uploads/codification/nd.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modele/app/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
-              <folding>
-                <marker date="1498185380000" expanded="true" signature="141:155" placeholder="SELECT * FRO... ${$table}" />
-                <marker date="1498185380000" expanded="true" signature="333:388" placeholder="select count... code" />
-                <marker date="1498185380000" expanded="true" signature="5198:5339" placeholder="UPDATE formV... " />
-                <marker date="1498185380000" expanded="true" signature="5550:5681" placeholder="UPDATE formV... " />
-                <marker date="1498185380000" expanded="true" signature="6118:6282" placeholder="..." />
-                <marker date="1498185380000" expanded="true" signature="6138:6260" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tempsDeCycle.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/ajax/tempsDeCycle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-              <folding>
-                <marker date="1498401364000" expanded="true" signature="73:132" placeholder="SELECT col_l... colonnes" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/EventHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -171,11 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/classes/LdapConnection.php" />
-        <option value="$PROJECT_DIR$/assets/js/app.js" />
-        <option value="$PROJECT_DIR$/vue/admin/ajouter-utilisateur.php" />
-        <option value="$PROJECT_DIR$/vue/admin/liste-utilisateur.php" />
-        <option value="$PROJECT_DIR$/modele/admin/users.php" />
         <option value="$PROJECT_DIR$/modele/app/users.php" />
         <option value="$PROJECT_DIR$/datas/__errors.log" />
         <option value="$PROJECT_DIR$/vue/app/notifications.php" />
@@ -185,12 +224,9 @@
         <option value="$PROJECT_DIR$/classes/EventHandler.php" />
         <option value="$PROJECT_DIR$/classes/ReportingCRUD.php" />
         <option value="$PROJECT_DIR$/controller/ajax.php" />
-        <option value="$PROJECT_DIR$/vue/app/uploadFormScript.php" />
-        <option value="$PROJECT_DIR$/modele/app/uploader.php" />
         <option value="$PROJECT_DIR$/datas/services/PMT/reportings.xml" />
         <option value="$PROJECT_DIR$/vue/app/backlogCalculator.php" />
         <option value="$PROJECT_DIR$/vue/app/backlogCalculatorScript.php" />
-        <option value="$PROJECT_DIR$/vue/app/uploadForm.php" />
         <option value="$PROJECT_DIR$/vue/app/reportingFiles.php" />
         <option value="$PROJECT_DIR$/classes/BacklogCalculator.php" />
         <option value="$PROJECT_DIR$/modele/app/backlogs.php" />
@@ -207,14 +243,9 @@
         <option value="$PROJECT_DIR$/modele/app/config.php" />
         <option value="$PROJECT_DIR$/modele/app/reporting.php" />
         <option value="$PROJECT_DIR$/modele/app/calcule.php" />
-        <option value="$PROJECT_DIR$/vue/app/newReporting.php" />
-        <option value="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" />
         <option value="$PROJECT_DIR$/vue/ajax/tempsDeCycle.php" />
         <option value="$PROJECT_DIR$/vue/app/newReportingScript.php" />
         <option value="$PROJECT_DIR$/vue/ajax/configKPIScript.php" />
-        <option value="$PROJECT_DIR$/classes/UploadDrgtFile.php" />
-        <option value="$PROJECT_DIR$/vue/template/app.php" />
-        <option value="$PROJECT_DIR$/modele/app/notifications.php" />
         <option value="$PROJECT_DIR$/modele/app/reporting_functions.php" />
         <option value="$PROJECT_DIR$/classes/Database.php" />
         <option value="$PROJECT_DIR$/vue/ajax/tempsDeCycleScript.php" />
@@ -222,6 +253,19 @@
         <option value="$PROJECT_DIR$/datas/database MySQL/reporting.sql" />
         <option value="$PROJECT_DIR$/datas/database MySQL/reporting.php" />
         <option value="$PROJECT_DIR$/datas/database MySQL/reporing.json" />
+        <option value="$PROJECT_DIR$/datas/configFiles/fichier_releves.json" />
+        <option value="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_HPE_1456760.lis" />
+        <option value="$PROJECT_DIR$/vue/app/newReporting.php" />
+        <option value="$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_RELEVES_HPE_1103236.lis" />
+        <option value="$PROJECT_DIR$/classes/ReportingGlobalBuilder.php" />
+        <option value="$PROJECT_DIR$/vue/template/app.php" />
+        <option value="$PROJECT_DIR$/modele/app/notifications.php" />
+        <option value="$PROJECT_DIR$/modele/app/uploader.php" />
+        <option value="$PROJECT_DIR$/assets/css/app.css" />
+        <option value="$PROJECT_DIR$/vue/app/uploadFormScript.php" />
+        <option value="$PROJECT_DIR$/vue/app/uploadForm.php" />
+        <option value="$PROJECT_DIR$/datas/configFiles/drgt_encours.json" />
+        <option value="$PROJECT_DIR$/classes/UploadDrgtFile.php" />
       </list>
     </option>
   </component>
@@ -279,8 +323,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -341,24 +383,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ajax" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design_pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design_pattern" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="modele" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -391,12 +415,14 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,20 +447,20 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="940" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/datas/services/PMT/reportings.xml&#10;/Users/mac/Desktop/public_html/design_pattern/datas/uploads/codification/nd.csv" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/datas/services/PMT/reportings.xml&#10;/Users/mac/Desktop/public_html/design_pattern/datas/uploads/codification/nd.csv&#10;/Users/mac/Desktop/public_html/design_pattern/datas/uploads/drgt/Z_DRG_RELEVES_HPE_1103236.lis" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/classes/Utils" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/classes" />
       <recent name="$PROJECT_DIR$/classes/Core" />
       <recent name="$PROJECT_DIR$/modele/admin" />
       <recent name="$PROJECT_DIR$/modele/app" />
-      <recent name="$PROJECT_DIR$/datas" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classes/Utils" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.app.php">
@@ -557,7 +583,8 @@
       <workItem from="1498732947852" duration="5577000" />
       <workItem from="1498956830611" duration="382000" />
       <workItem from="1499074883573" duration="746000" />
-      <workItem from="1499075659728" duration="3942000" />
+      <workItem from="1499075659728" duration="21209000" />
+      <workItem from="1499158703969" duration="17997000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1491391617895</created>
@@ -881,11 +908,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498557763561</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Temps de cycle">
+      <created>1499082573978</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1499082573978</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328988000" />
+    <option name="totallyTimeSpent" value="364252000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -900,24 +934,24 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21530758" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21816881" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771084" sideWeight="0.50572246" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2067239" sideWeight="0.5048193" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -930,7 +964,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19241774" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21816881" sideWeight="0.49518073" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -999,96 +1033,22 @@
           <line>14</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/UploadDrgtFile.php</url>
+          <line>111</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/UploadDrgtFile.php</url>
+          <line>250</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes/CodeCompressor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/calcul_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ReportingCRUD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/UploadCodiFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/uploader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="57" column="70" selection-start-line="57" selection-start-column="70" selection-end-line="57" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datas/services/PMT/reportings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/BacklogCalculator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/backlogs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="33" column="102" selection-start-line="33" selection-start-column="102" selection-end-line="33" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/app/backlogsScript.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1872">
@@ -1122,13 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="53" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/app/uploadForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1189,28 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ReportingGlobalBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="465" column="10" selection-start-line="465" selection-start-column="10" selection-end-line="465" selection-end-column="10" />
-          <folding>
-            <element signature="n#enteteTab#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#formate_fr#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#thead#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#date_column#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#getWeek#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#getMonth#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#trimestre#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#ndrByDir#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <element signature="n#toArray#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
-            <marker date="1498212360000" expanded="true" signature="4552:4571" placeholder="..." />
-            <marker date="1498212360000" expanded="true" signature="11365:11410" placeholder="SELECT COUNT... drgt_releves" />
-            <marker date="1498212360000" expanded="true" signature="14073:14086" placeholder="..." />
-            <marker date="1498212360000" expanded="true" signature="14595:14630" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modele/app/reporting.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1239,27 +1170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/UploadDrgtFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/app/ReportingFilesScript.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="80" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/app/uploadFormScript.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="22" column="82" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/ajax/codificationScript.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1268,14 +1178,6 @@
             <marker date="1492611057000" expanded="true" signature="809:841" placeholder="..." />
             <marker date="1492611057000" expanded="true" signature="3088:3103" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/EventHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1292,36 +1194,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
-          <folding>
-            <marker date="1498185380000" expanded="true" signature="141:155" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1498185380000" expanded="true" signature="333:388" placeholder="select count... code" />
-            <marker date="1498185380000" expanded="true" signature="5198:5339" placeholder="UPDATE formV... " />
-            <marker date="1498185380000" expanded="true" signature="5550:5681" placeholder="UPDATE formV... " />
-            <marker date="1498185380000" expanded="true" signature="6118:6282" placeholder="..." />
-            <marker date="1498185380000" expanded="true" signature="6138:6260" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/ajax/tempsDeCycleScript.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/ajax/tempsDeCycle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          <folding>
-            <marker date="1498401364000" expanded="true" signature="73:132" placeholder="SELECT col_l... colonnes" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1329,35 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
-          <folding>
-            <marker date="1499075907000" expanded="true" signature="574:588" placeholder="SELECT * FRO... ${$table}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/app/newReporting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="80" column="48" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datas/database MySQL/reporing.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datas/database MySQL/reporting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1310">
-          <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
-          <folding>
-            <element signature="e#6#75#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1365,7 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19968">
           <caret line="832" column="61" selection-start-line="832" selection-start-column="61" selection-end-line="832" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,29 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/app/notifications.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1499075632000" expanded="true" signature="177:222" placeholder="SELECT * FRO... notification" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/template/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="31" column="104" selection-start-line="31" selection-start-column="104" selection-end-line="31" selection-end-column="104" />
-          <folding>
-            <marker date="1499075515000" expanded="true" signature="8159:8174" placeholder="..." />
-            <marker date="1499075515000" expanded="true" signature="8518:8532" placeholder="..." />
-            <marker date="1499075515000" expanded="true" signature="8603:8616" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1403,15 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datas/uploads/codification/defaut.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,7 +1233,232 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/uploads/codification/defaut.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/ajax/tempsDeCycle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/EventHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/jQuery-File-Upload/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_PE_1433660.lis" />
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_ENCOURS_HPE_1456760.lis" />
+    <entry file="file://$PROJECT_DIR$/vue/app/newReporting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1714">
+          <caret line="91" column="59" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_RELEVES_HPE_1334828.lis" />
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/Z_SUIVI_INSTANCE_807768.lis" />
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/Z_DRG_RELEVES_HPE_1103236.lis">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/test.lis">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/uploads/drgt/Z_SUIVI_INSTANCE_1399938.lis" />
+    <entry file="file://$PROJECT_DIR$/vue/app/ReportingFilesScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3408">
+          <caret line="6" column="108" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ReportingGlobalBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="273" column="9" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
+          <folding>
+            <element signature="n#enteteTab#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#formate_fr#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#thead#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#date_column#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#getWeek#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#getMonth#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#trimestre#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#ndrByTime#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#ndrByProd#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#ndrByDir#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#getFromGlobal#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#ndrByGI#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#getGI#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#toArray#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#tableForChart#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#serialize#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#unserialize#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#backlogByDir#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <element signature="n#backlog#0;n#ReportingGlobalBuilder#0;n#!!top" expanded="false" />
+            <marker date="1499165987000" expanded="true" signature="4552:4571" placeholder="..." />
+            <marker date="1499165987000" expanded="true" signature="11365:11410" placeholder="SELECT COUNT... drgt_releves" />
+            <marker date="1499165987000" expanded="true" signature="14073:14086" placeholder="..." />
+            <marker date="1499165987000" expanded="true" signature="14595:14630" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/notifications.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="28" column="80" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+          <folding>
+            <marker date="1499171421000" expanded="true" signature="177:222" placeholder="SELECT * FRO... notification" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#153#271#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/template/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
+          <folding>
+            <marker date="1499171869000" expanded="true" signature="8159:8174" placeholder="..." />
+            <marker date="1499171869000" expanded="true" signature="8518:8532" placeholder="..." />
+            <marker date="1499171869000" expanded="true" signature="8603:8616" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/app/uploader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/app/uploadFormScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="89" column="12" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="27" />
+          <folding>
+            <element signature="e#1003#3301#0#HTML" expanded="false" />
+            <element signature="e#3393#5682#0#HTML" expanded="false" />
+            <marker date="1499182125000" expanded="true" signature="2307:2322" placeholder="..." />
+            <marker date="1499182125000" expanded="true" signature="4699:4714" placeholder="..." />
+            <marker date="1499182125000" expanded="true" signature="5881:5888" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/database MySQL/reporing.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/database MySQL/reporting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/configFiles/drgt_releves.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/configFiles/drgt_encours.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/app/uploadForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="e#2084#2105#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/UploadDrgtFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="n#__construct#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#enrg#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#notExist#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#enrglis#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#enrgcsv#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#add_drgt#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#formate_hour#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#formate_date#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#check#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#feedback#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <element signature="n#interrupt#0;n#UploadDrgtFile#0;n#!!top" expanded="false" />
+            <marker date="1499186020000" expanded="true" signature="1222:1293" placeholder="SELECT * FRO... fichier" />
+            <marker date="1499186020000" expanded="true" signature="7579:7634" placeholder="SELECT nd FR... drgt_releves" />
+            <marker date="1499186020000" expanded="true" signature="7579:7648" placeholder="SELECT nd FR... drgt_releves" />
+            <marker date="1499186020000" expanded="true" signature="7579:7672" placeholder="SELECT nd FR... drgt_releves" />
+            <marker date="1499186020000" expanded="true" signature="7579:7675" placeholder="SELECT nd FR... drgt_releves" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -173,22 +173,14 @@ ob_start();
 
     }
 
-    function notificationRedirect(that){
-        var notifDatas =  $(that).data();
-        if ( notifDatas.id !== 0 ){
-            $(that).html("<h4 class='w3-text-deep-orange w3-margin'><i class='fa fa-refresh fa-spin'></i> Patientez ... </h4>");
-            $.post("<?= URL ?>ajax/notifications" , {  action: "viewNotification", notifID : notifDatas.id })
-                .done(function(data){
-                    if(data == "1")
-                        window.setTimeout(function(){
-                            if(notifDatas.href != "#" ){
-                                location.href=notifDatas.href;
-                            }else{
-                                $(that).fadeOut();
-                            }
-                        } , 600 ) ;
-                });
-        }
+    function notificationRedirect(){
+        $.post("<?= URL ?>ajax/notifications" , {  action: "viewNotification" })
+            .done(function(data){
+                if(data == "1"){
+                    $(".notification").removeClass("w3-grey");
+                    console.log("vue");
+                }
+        });
     }
 
     function getNotifications(){
@@ -221,6 +213,7 @@ ob_start();
         var x = document.getElementById("notif_content");
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
+            notificationRedirect();
         } else {
             x.className = x.className.replace(" w3-show", "");
         }

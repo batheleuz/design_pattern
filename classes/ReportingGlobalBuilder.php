@@ -271,7 +271,7 @@ class ReportingGlobalBuilder implements Serializable
         if ($gi != null)
             $rqt .= "AND " . $this->ndrByGI($gi);
 
-        //echo "$rqt <br>";
+       // echo "$rqt <br>";
 
         $n = Database::getDb()->rqt($rqt);
         return $n[0]['n'];

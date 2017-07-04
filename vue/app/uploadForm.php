@@ -4,16 +4,17 @@
     ob_start();
 
     ?>
-    <div id="content" class="">
+    <link rel="stylesheet" href="<?=  ASSETS ?>jQuery-File-Upload/css/jquery.fileupload.css">
+    <div id="content">
         <form class="form" id="form" method="post" enctype="multipart/form-data">
             <div class=" w3-card w3-white w3-padding-jumbo ">
                 <header class="w3-container">
                     <h2><i class="fa fa-upload"></i> Chargement de fichier.</h2>
                     <hr class="w3-border w3-border-deep-orange">
                 </header>
-                <div class="w3-container w3-white" style="margin-top:25px;margin-bottom:40px;">
+                <div class="w3-container w3-white" style="margin-top:25px;margin-bottom:40px;" >
 
-                    <div class="w3-twothird" style="">
+                    <div class="w3-twothird">
 
                         <div class="w3-row ">
                             <div id="alert_rsl"></div>
@@ -21,7 +22,7 @@
                                 <label class="w3-panel w3-padding "><b> Choisir le fichier Relevés: </b> </label>
                             </div>
                             <div class="w3-padding">
-                                <input type="file" name="fichier_releves" value="" class="w3-input  w3-margin-left "
+                                <input type="file" id="fichier_releves" name="fichier_releves" value="" class="w3-input  w3-margin-left "
                                        accept=".csv , .lis "><br>
                             </div>
                         </div>
@@ -30,28 +31,28 @@
                                 <label class="w3-panel w3-padding "><b> Choisir le fichier En cours: </b> </label>
                             </div>
                             <div class="w3-padding ">
-                                <input type="file" name="fichier_encours" value="" class="w3-input  w3-margin-left "
+                                <input type="file" id="fichier_encours" name="fichier_encours" value="" class="w3-input  w3-margin-left "
                                        accept=".csv, .lis"><br>
                             </div>
                         </div>
                         <br>
-
                     </div>
                 </div>
-                <div class="w3-container" style="height: 80px;">
-                    <div class="w3-quarter w3-center w3-padding">
-                        <input type="hidden" name="action" value="enregistrer">
-                        <input type="submit"
-                               class="w3-btn w3-orange w3-hover-white w3-border w3-border-deep-orange w3-wide w3-padding-xlarge"
-                               name='enregistrer' value="Enregistrer">
-                        <span id="submit" class="w3-margin"></span>
+                <div class="w3-container" style="height:80px;">
+                    <div class="w3-animate-zoom" id="upload_animation" style="display:none;" >
+                        <div class="w3-light-grey w3-margin w3-border w3-border-orange ">
+                            <div id="progress" class="w3-container w3-deep-orange w3-center"></div>
+                        </div>
+                        <div class="w3-text-orange w3-margin-left" id="chargement"></div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
     <div id="feedback"></div>
-
+    <script src="<?= ASSETS ?>jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="<?= ASSETS ?>jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="<?= ASSETS ?>jQuery-File-Upload/js/jquery.fileupload.js"></script>
     <?php
 
     return ob_get_clean();

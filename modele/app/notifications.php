@@ -10,7 +10,7 @@ function getNotifications( $idService , $idUser = null , $state = null ) {
     $rqt = "SELECT * FROM  notification WHERE id_service=$idService " ;
 
     if( !is_null($state) && !is_null($idUser) ){
-        $rqt .= "AND for_user=$idUser AND state=$state " ;
+        $rqt .= "AND for_user=$idUser " ;
     }
     return Database::getDb()->rqt( $rqt." ORDER BY id DESC LIMIT 10 " );
 }
@@ -26,7 +26,7 @@ if( $_GET['controller'] == "ajax.php"){
         else  return;
     }
     else if ($action === "viewNotification" ){
-        if (Database::getDb()->modif( "notification", "state" , 1 , "id"  , $notifID ) )
+        if (Database::getDb()->modif( "notification", "state" , 1 , "state"  , 0 ) )
             echo 1;
     }
 
