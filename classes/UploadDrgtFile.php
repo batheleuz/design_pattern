@@ -12,7 +12,7 @@ class UploadDrgtFile {
 
     public $fichier;
     private $table;
-    private $nbre_doublon = 0; //  nombre de doublons
+    private $nbre_doublon = 0; //  nombre de de lignes rejetées
     private $nbre_enrg = 0;     //  nombre de lignes enregistrées
     private $id_fic;
     private $config;
@@ -24,14 +24,11 @@ class UploadDrgtFile {
 
         $file= file_get_contents(PATH."/Datas/configFiles/".$table.".json");
         $this->config = json_decode( $file, true );
-
     }
 
     public function enrg($extension){
 
         ini_set("auto_detect_line_endings", true);
-
-        $this->checkCode();
 
         if ($this->notExist() == true) {
 
@@ -45,9 +42,6 @@ class UploadDrgtFile {
             $res = array('code' => 0, 'texte' => $this->fichier . " a déjà été enregistré.");
 
         return $res;
-    }
-
-    private function checkCode(){
     }
 
     private function notExist(){
@@ -69,7 +63,7 @@ class UploadDrgtFile {
             $row = $rowNum = 0;
             while (($buffer = fgets($handle, 1000)) !== false) {
 
-                if (trim($buffer) == null )
+                if ((trim($buffer) == "" ) || (strlen(trim($buffer)) < 20 ) )
                     continue;
 
                 if (preg_match("/^[\ -]+$/", $buffer)) // Detection de la ligne
@@ -80,17 +74,14 @@ class UploadDrgtFile {
             }
             fclose($handle);
         }
-
-        $colonneNum = $filesLine[$rowNum];
         /*
+        $colonneNum = $filesLine[$rowNum];
         $numbers = explode(" ", trim($colonneNum));
-
         $start = 0;
         for ($i = 0; $i < count($numbers); $i++) {
             $pointer[] = array("start" => $start, "end" => (strlen($numbers[$i]) + 1));
             $start = $start + 1 + (int)strlen($numbers[$i]);
         }
-
         foreach ($this->config['pointer'] as $p) {
             $entete[] = strtolower(str_replace(" ", "_", trim(substr($filesLine[$rowNum - 1], $p['start'], $p['end']))));
         }
@@ -114,10 +105,9 @@ class UploadDrgtFile {
         if (($handle = fopen("datas/uploads/drgt/" . $this->fichier, "r")) !== FALSE) {
 
             /*
-            $data = fgetcsv($handle, 2048, "\n");
-            $arr_entete = explode(";", $data[0]);
+                $data = fgetcsv($handle, 2048, "\n");
+                $arr_entete = explode(";", $data[0]);
             */
-
             $entete = null;
 
             for ($i = 0; $i < count($this->config['entete']); $i++) {
@@ -127,7 +117,6 @@ class UploadDrgtFile {
 
                 if (preg_match("#^date_#", $champ))
                     $entete[] = "h_" . $this->config['entete'][$i];
-
 
             }
             while (($data = fgetcsv($handle, 2048, "\n")) !== FALSE) {
@@ -226,7 +215,7 @@ class UploadDrgtFile {
 
     private function check($valeurs){
 
-        $rqt = " SELECT nd FROM drgt_releves WHERE nd='{$valeurs['nd']}' AND identite='{$valeurs['identite']}' ";
+        $rqt = " SELECT nd FROM {$this->table} WHERE nd='{$valeurs['nd']}' AND identite='{$valeurs['identite']}' ";
 
         $line = Database::getDb()->rqt($rqt);
 
@@ -254,6 +243,5 @@ class UploadDrgtFile {
         Database::getDb()->suppr($this->table, "id_fichier", $this->id_fic);
 
     }
-
 
 }
