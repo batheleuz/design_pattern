@@ -93,10 +93,8 @@
             maxChunkSize: 1000000,
             sequentialUploads : true,
             formData: function() {
-                return [
-                    {name: "fichier_encours", value: ""},
-                    {name: "action" ,  value :"Enregistrer"}
-                ];
+                return [{name: "fichier_encours", value: ""},
+                        {name: "action" ,  value :"Enregistrer"} ];
             },
             start:function (e , data){
                 $("body").append("<div class='loader'></div>");
@@ -128,7 +126,6 @@
 
                 $("#feedback").append(txt);
                 feedback.dialog("open");
-
             },
             progressall: function (e, data) {
                 var progress = parseInt( data.loaded / data.total * 100, 10);

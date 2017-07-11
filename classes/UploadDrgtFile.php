@@ -75,21 +75,22 @@ class UploadDrgtFile {
             fclose($handle);
         }
         /*
-        $colonneNum = $filesLine[$rowNum];
-        $numbers = explode(" ", trim($colonneNum));
-        $start = 0;
-        for ($i = 0; $i < count($numbers); $i++) {
-            $pointer[] = array("start" => $start, "end" => (strlen($numbers[$i]) + 1));
-            $start = $start + 1 + (int)strlen($numbers[$i]);
-        }
+            $colonneNum = $filesLine[$rowNum];
+            $numbers = explode(" ", trim($colonneNum));
+            $start = 0;
+            for ($i = 0; $i < count($numbers); $i++) {
+                $pointer[] = array("start" => $start, "end" => (strlen($numbers[$i]) + 1));
+                $start = $start + 1 + (int)strlen($numbers[$i]);
+            }
+
+           */
         foreach ($this->config['pointer'] as $p) {
-            $entete[] = strtolower(str_replace(" ", "_", trim(substr($filesLine[$rowNum - 1], $p['start'], $p['end']))));
+                $firstLine[] = strtolower(str_replace(" ", "_", trim(substr($filesLine[$rowNum - 1], $p['start'], $p['end']))));
         }
-        */
+
         for ($i = 0 ; $i < count($filesLine); $i++) {
 
             $arr = null;
-
             foreach ($this->config['pointer'] as $p)
                 $arr[] = substr($filesLine[$i], $p['start'], $p['end']);
 
@@ -104,10 +105,9 @@ class UploadDrgtFile {
 
         if (($handle = fopen("datas/uploads/drgt/" . $this->fichier, "r")) !== FALSE) {
 
-            /*
-                $data = fgetcsv($handle, 2048, "\n");
-                $arr_entete = explode(";", $data[0]);
-            */
+            $data = fgetcsv($handle, 2048, "\n");
+            $arr_entete = explode(";", $data[0]);
+
             $entete = null;
 
             for ($i = 0; $i < count($this->config['entete']); $i++) {
@@ -119,20 +119,23 @@ class UploadDrgtFile {
                     $entete[] = "h_" . $this->config['entete'][$i];
 
             }
-            while (($data = fgetcsv($handle, 2048, "\n")) !== FALSE) {
+            if( count($arr_entete) == count($entete) ){
+                while (($data = fgetcsv($handle, 2048, "\n")) !== FALSE) {
 
-                $num = count($data);
-                for ($c = 0; $c < $num; $c++) {
-                    $data[$c] . "\n ";
-                    $arr = explode(";", $data[$c]);
-                    if ($arr[0] != "")
-                        $this->add_drgt($entete, $arr);
+                    $num = count($data);
+                    for ($c = 0; $c < $num; $c++) {
+                        $data[$c] . "\n ";
+                        $arr = explode(";", $data[$c]);
+                        if ($arr[0] != "")
+                            $this->add_drgt($entete, $arr);
+                    }
                 }
-            }
-            fclose($handle);
+                fclose($handle);
 
-            Database::getDb()->modif("fichier", "etat_fin", 0, "id", $this->id_fic);
-            return $this->feedback();
+                Database::getDb()->modif("fichier", "etat_fin", 0, "id", $this->id_fic);
+                return $this->feedback();
+            }else
+                $txt =  "Le fichier ne respecte pas le format requis ";
 
         } else
             $txt = " Impossible d'ouvrir le fichier ";

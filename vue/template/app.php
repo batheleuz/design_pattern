@@ -29,11 +29,12 @@
         <img src="<?= ASSETS ?>image/logo_snt.jpeg"  class="w3-hide-small" height="30" alt="LOGO">
     </span>
     <span class="w3-right">
-        <?php $notifs = getNotifications($_SESSION['user']['service'], $_SESSION['user']['id'] , 0 ); ?>
+        <?php $notifs = getNotifications($_SESSION['service']['id'], $_SESSION['user']['id']);
+              $notifNumber = newNotificationsNumber($_SESSION['service']['id'], $_SESSION['user']['id']) ; ?>
             <div class="w3-dropdown-click w3-right">
                 <button onclick="openNotification()" class="w3-btn w3-black w3-hover-text-teal" id="notifBtn" title="Notifications"> <i class="fa fa-bell"></i>
-                    <?php if ( count($notifs) > 0  ): ?>
-                        <span class="w3-badge w3-right w3-small w3-deep-orange" id="notifNumber"><?= count($notifs) ?></span>
+                    <?php if ( $notifNumber > 0 ): ?>
+                        <span class="w3-badge w3-right w3-small w3-deep-orange" id="notifNumber"><?= $notifNumber ?></span>
                     <?php endif; ?>
                 </button>
                 <div class="w3-dropdown-content w3-bar-block w3-border" id="notif_content" style="width:400px;max-height:400px;overflow-x:hidden;overflow-y:scroll;right:0">
@@ -124,7 +125,7 @@ ob_start();
     mySidenav = document.getElementById("mySidenav"),
     overlayBg = document.getElementById("myOverlay"),
     notifications = $(".notifications"),
-    notifNumber = <?= count($notifs) ?>;
+    notifNumber = <?= newNotificationsNumber($_SESSION['service']['id'], $_SESSION['user']['id']) ?>;
 
     function w3_open() {
         if (mySidenav.style.display === 'block') {
@@ -160,48 +161,65 @@ ob_start();
     /**
      * Template des notifications
      */
-    function notificationWrite( fa_icon , titre , contenu , id = 0 , href = "#"  ) {
-
-        return  "<a style='cursor:pointer;' data-href='"+href+"' data-id='"+id+"' onclick='notificationRedirect(this)' >"  +
-                "<li class='w3-padding-0'>" +
+    function notificationWrite( fa_icon , titre , contenu , id = 0 , href = "#" , date_heure  , state = 0  ) {
+        var classe = ( state == 1 ) ? "w3-pale-green w3-hover-white" : "";
+        return  "<a style='cursor:pointer;' class='"+classe+"' href='"+href+"' data-id='"+id+"'>"  +
+                "<li class='w3-padding-0 "+classe+"'>" +
                 "<div class='w3-row'> <div class='w3-col s2'>" +
                 "<span class='w3-left w3-circle w3-center w3-margin-top w3-text-deep-orange'><i class='fa fa-"+fa_icon+"' " +
                 "style='font-size:25px'></i></span>" +
                 "</div> <div class='w3-col s9' style='margin-top:0;'>" +
-                "<span class='w3-small w3-text-deep-orange'><b>"+titre + "</b></span><hr class='w3-margin-0'>" +
+                "<span class='w3-small w3-text-deep-orange'><b>"+titre+ "</b></span><span class='w3-tiny'>  "+formatDate_fr(date_heure)
+            +"</span><hr class='w3-margin-0'>" +
                 "<span class='w3-small w3-text-grey'> "+ contenu +" </span> </div> </div></li></a>"
 
     }
 
+    function formatDate_fr (date_heure){
+
+        if(date_heure){
+
+            var today = "<?= Date("Y-m-d"); ?>" ;
+            var date = new Date(date_heure);
+
+            console.log( today );
+
+            if(today == date.getFullYear()+"-"+ (date.getMonth() + 1)+"-"+date.getDate())
+                return " &#8212;	 Aujourd'hui à " + date.getHours() + 'h';
+
+            return ' &#8212;	 le ' + date.getDate()+ '/' + (date.getMonth() + 1) + '/' +  date.getFullYear() + ' à ' +date.getHours() + 'h';
+        }
+        return "";
+    }
     function notificationRedirect(){
-        $.post("<?= URL ?>ajax/notifications" , {  action: "viewNotification" })
+        $.post("<?= URL ?>ajax/notifications" , {  action:"viewNotification" })
             .done(function(data){
                 if(data == "1"){
-                    $(".notification").removeClass("w3-grey");
-                    console.log("vue");
+                    $("#notifNumber").remove();
                 }
         });
     }
 
     function getNotifications(){
         $.post("<?= URL ?>ajax/notifications" , { action: "getNotifications" , user : "<?= $_SESSION['user']['id'] ?>" , notifNumber : notifNumber })
-            .done( function(data ){
+            .done( function(data){
                 if (data){
                     var notifs = $.parseJSON(data) ;
-                    notifNumber = notifs.length;
-                    notifications.html("");
+                    notifNumber = parseInt(notifs.number);
                     $("#notifNumber").remove();
-                    if( notifNumber == 0 ){
+
+                    if( notifs.data.length == 0 ){
                         notifications.html(
-                           notificationWrite("bell-o" , "Aucune notification" , "Vous n'avez pas de nouvelles notifications." )
+                           notificationWrite("bell-o" , "Aucune notification" , "Vous n'avez pas de nouvelles notifications." , null )
                         );
-                    }else if(notifNumber > 0 ){
+                    } else if( notifNumber > 0 ){
+                        notifications.html("");
                         $("#notifBtn").append(
                             "<span class='w3-badge w3-right w3-small w3-deep-orange w3-animate-left' id='notifNumber'>"+notifNumber+"</span>"
                         );
-                        $.each( notifs , function(key , value){
+                        $.each( notifs.data , function(key , value){
                             notifications.append(
-                                notificationWrite( value.fa_icon , value.titre , value.contenu , value.id  , value.href )
+                                notificationWrite( value.fa_icon , value.titre , value.contenu , value.id  , value.href , value.date_heure ,  value.state  )
                             );
                         });
                     }
@@ -228,13 +246,13 @@ ob_start();
         else {
             notifications.html("");
             $.each( notifList , function(key , value ) {
-                notifications.append( notificationWrite( value.fa_icon , value.titre , value.contenu , value.id , value.href ));
+                notifications.append( notificationWrite( value.fa_icon , value.titre , value.contenu , value.id , value.href , value.date_heure  ,value.state ));
             });
         }
 
         window.setInterval( function(){
             getNotifications();
-        } , 10*1000);
+        } , 15*1000);
 
         $("[title]").tooltip({
             position: {

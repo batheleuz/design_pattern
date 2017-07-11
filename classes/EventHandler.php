@@ -35,7 +35,8 @@ class EventHandler{
                 "for_user" => $user["id"],
                 "id_service" => $id_service,
                 "href" => $link,
-                "fa_icon" => $fa_icon
+                "fa_icon" => $fa_icon,
+                "state" => 1
             ));
         };
     }

@@ -1,5 +1,5 @@
 {
-    "name": "reporting mensuelle",
+    "name": "mensuelle par jours",
     "direction": "DINT",
     "column_kpi": [
         {
@@ -29,8 +29,9 @@
         "start": "2017-03-01",
         "end": "2017-03-31"
     },
-    "par": "week",
+    "par": "day",
     "groupe_intervention": [
-        "8"
+        "8",
+        "13"
     ]
 }

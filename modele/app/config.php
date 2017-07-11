@@ -74,13 +74,13 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
         else:
             EventEmitter::getInstance()->on("notifyToService");
 
-            $_SESSION['groupe_intervention'] = all("groupe_intervention", "deleted=0 AND id_service={$_SESSION['service']['id']}");
             echo $id_gi = Database::getDb()->add("groupe_intervention",
                 array("nom" => strtoupper($nom_gi), "categorie" => $categorie, "id_service" => $_SESSION['service']['id']));
 
             EventEmitter::getInstance()->emit(
                 "notifyToService", $_SESSION['service']['id'], "Nouveau GI",
                 "Le groupe d'intervention <span class='w3-text-teal'><b>" . strtoupper($nom_gi) . "</b></span> vient d'être créé", "#", "plus-square");
+            $_SESSION['groupe_intervention'] = all("groupe_intervention", "deleted=0 AND id_service={$_SESSION['service']['id']}");
         endif;
 
     } else if ($action == "suppr_gi"){
@@ -129,11 +129,7 @@ if ($_GET['page'] == "config.php" and isset ($_GET['param1'])) {
 
     } else if ($action == "getGIList") {
 
-        echo json_encode( all(
-            "groupe_intervention" ,
-            "deleted=0  AND ( is_modifiable=0 OR id_service={$_SESSION['service']['id']} ) "
-            )
-        );
+        echo json_encode( all("groupe_intervention" , "deleted=0  AND id_service={$_SESSION['service']['id']} " ));
 
     } else if ($action == "getKpiList") {
 

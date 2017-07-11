@@ -3,14 +3,12 @@
 /**
  * @author MASS_DABOSS
  */
-class Database
-{
+class Database{
 
-    private static $pdo;
-    private static $_instance;
+    public static $pdo;
+    public static $_instance;
 
-    public function __construct()
-    {
+    public function __construct(){
 
         date_default_timezone_set('Africa/Dakar');
 
@@ -22,8 +20,7 @@ class Database
     }
 
 
-    static function connection()
-    {
+    static function connection(){
 
         try {
             self::$pdo = new pdo("mysql:host=" . ADD_BD . ";dbname=" . NOM_BD, USER_BD, PASS_BD);

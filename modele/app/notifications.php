@@ -6,28 +6,38 @@
  * Time: 14:53
  */
 
-function getNotifications( $idService , $idUser = null , $state = null ) {
-    $rqt = "SELECT * FROM  notification WHERE id_service=$idService " ;
+function getNotifications( $idService , $idUser ) {
 
-    if( !is_null($state) && !is_null($idUser) ){
-        $rqt .= "AND for_user=$idUser " ;
-    }
+    $rqt = "SELECT * FROM  notification WHERE id_service='$idService' AND for_user='$idUser'";
+    
     return Database::getDb()->rqt( $rqt." ORDER BY id DESC LIMIT 10 " );
 }
 
+function newNotificationsNumber($idService , $idUser){
+    
+    $rqt = "SELECT COUNT(*) AS nb FROM notification WHERE id_service='$idService' AND for_user='$idUser' AND state=1 ";
+
+    $res = Database::getDb()->rqt($rqt);
+    
+    return $res[0]['nb'];
+}
+
 if( $_GET['controller'] == "ajax.php"){
+
     extract($_POST) ;
+
     if($action === "getNotifications"){
 
-        $notifs = getNotifications( $_SESSION['user']['service'] ,  $user  ,  0 );
+        $number = newNotificationsNumber($_SESSION['service']['id'], $_SESSION['user']['id']) ;
 
-        if( $notifNumber != count($notifs) )
-            echo json_encode($notifs);
-        else  return;
+        echo json_encode( array('number'=> $number ,'data' => getNotifications($_SESSION['service']['id'], $_SESSION['user']['id'])));
+
     }
-    else if ($action === "viewNotification" ){
-        if (Database::getDb()->modif( "notification", "state" , 1 , "state"  , 0 ) )
+    else if ($action === "viewNotification"){
+
+        if (Database::getDb()->modif("notification", "state", 0 , "for_user", $_SESSION['user']['id']))
             echo 1;
+
     }
 
 }

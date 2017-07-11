@@ -37,8 +37,13 @@ if ($_GET['controller'] == "ajax.php") {
         if (ReportingCRUD::isExistant($_SESSION['service']['nom'], $lr['name'], $lr['par']) == TRUE) echo -1;
 
         else {
-            if (ReportingCRUD::append($_SESSION['service']['nom'], $lr['name'], $lr['par'], $_SESSION['user']['login'], trim($classe), $rep->serialize(), Date('Y-m-d h:i:s')) > 0)
+            if (ReportingCRUD::append($_SESSION['service']['nom'], $lr['name'], $lr['par'], $_SESSION['user']['login'], trim($classe), $rep->serialize(), Date('Y-m-d h:i:s')) > 0){
                 echo 1;
+                EventEmitter::getInstance()->on("notifyToService");
+                EventEmitter::getInstance()->emit(
+                    "notifyToService", $_SESSION['service']['id'], "Nouveau Projet",
+                    "{$_SESSION['user']['login']} a enregistré un nouveau projet : {$lr['name']} ", URL."app/reporting/liste/fichier", "folder-o");
+            }
             else echo 0;
         }
 
